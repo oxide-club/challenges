@@ -5,7 +5,12 @@ export function createClient({
   token,
   webhookUrl,
 } = {}) {
-  async function request(url, options, label) {
+  async function request(
+    url,
+    options,
+    label,
+    { retryServerErrors = false } = {},
+  ) {
     for (let attempt = 0; attempt < 3; attempt++) {
       let response;
       try {
@@ -18,6 +23,15 @@ export function createClient({
         throw new Error(
           `${label} request failed; reconcile any pending delivery before retrying.`,
         );
+      }
+      if (
+        retryServerErrors &&
+        [500, 502, 503, 504].includes(response.status) &&
+        attempt < 2
+      ) {
+        await response.body?.cancel();
+        await sleep(1000 * 2 ** attempt);
+        continue;
       }
       if (response.status === 429 && attempt < 2) {
         const data = await response.json().catch(() => ({}));
@@ -41,9 +55,14 @@ export function createClient({
     }
   }
   async function github(path, { method = 'GET', body } = {}) {
+    // GitHub separates comparison SHAs with three dots; only this route may contain them.
+    const isCommitComparison =
+      /^\/repos\/oxide-club\/[a-z0-9-]+(?:\.[a-z0-9-]+)*\/compare\/[a-f0-9]{40}\.\.\.[a-f0-9]{40}(?:\?per_page=\d+&page=\d+)?$/.test(
+        path,
+      );
     if (
       !/^\/repos\/oxide-club\/[a-z0-9.-]+\//.test(path) ||
-      path.includes('..') ||
+      (path.includes('..') && !isCommitComparison) ||
       path.includes('\\') ||
       /[\r\n]/.test(path)
     )
@@ -60,7 +79,8 @@ export function createClient({
         },
         ...(body === undefined ? {} : { body: JSON.stringify(body) }),
       },
-      'GitHub',
+      `GitHub ${method} ${new URL(`https://api.github.com${path}`).pathname}`,
+      { retryServerErrors: method === 'GET' },
     );
   }
   async function paginate(path, field) {
