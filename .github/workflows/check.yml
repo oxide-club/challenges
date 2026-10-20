@@ -10,4 +10,39 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Preparar Rust estável
+        run: |
+          rustup toolchain install stable --profile minimal --component rustfmt --component clippy
+          rustup default stable
       - run: make check
+      - run: make build
+  container:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compilar imagem Linux
+        run: docker build --build-arg "OXIDE_TEST_REVISION=${GITHUB_SHA}" -t oxide-test:ci .
+      - name: Listar desafios
+        run: docker run --rm --init oxide-test:ci list
+      - name: Compilar e testar submissões no container
+        run: |
+          docker run --rm --init \
+            --mount "type=bind,source=$PWD/tests/candidates,target=/submission,readonly" \
+            --entrypoint sh oxide-test:ci -ec '
+              for number in 1 2 3; do
+                case "$number" in
+                  1) challenge=001-wc ;;
+                  2) challenge=002-ppm ;;
+                  3) challenge=003-rle ;;
+                esac
+                cc -std=c11 -O2 -DCHALLENGE="$number" -DMUTATION=0 /submission/reference.c -o /tmp/candidate
+                oxide-test run "$challenge" /tmp/candidate --json
+                cc -std=c11 -O2 -DCHALLENGE="$number" -DMUTATION=1 /submission/reference.c -o /tmp/candidate
+                status=0
+                oxide-test run "$challenge" /tmp/candidate --fail-fast || status=$?
+                test "$status" -eq 1
+              done
+              printf "fn main() { println!(\"0 0 0\"); }\n" > /tmp/empty-wc.rs
+              rustc --edition=2021 /tmp/empty-wc.rs -o /tmp/empty-wc
+              oxide-test run 001-wc /tmp/empty-wc --case vazio
+            '

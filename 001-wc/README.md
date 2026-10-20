@@ -1,5 +1,16 @@
 # 001-wc — executar os testes
 
+Com o [runner independente](../README.md#como-testar-seu-programa) instalado:
+
+```sh
+oxide-test run 001-wc /caminho/para/oxide-wc
+oxide-test list 001-wc
+oxide-test run 001-wc /caminho/para/oxide-wc --case sem-quebra
+```
+
+O runner Rust incorpora as fixtures e dispensa Python em tempo de execução.
+O fluxo Python abaixo continua disponível por compatibilidade.
+
 Leia primeiro a [definição](index.md). Compile seu programa C11, por exemplo:
 
 ```sh
