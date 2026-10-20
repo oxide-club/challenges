@@ -55,6 +55,22 @@ class ProcessLimits(unittest.TestCase):
         with self.assertRaisesRegex(AssertionError, "tempo"):
             execute(candidate, timeout=0.1)
 
+    def test_arguments_preserve_spaces_and_empty_values(self):
+        candidate = self.program("import sys\nprint(repr(sys.argv[1:]))\n")
+        result = execute(candidate, argv=("encode", "a b", ""))
+        self.assertEqual(result.stdout, b"['encode', 'a b', '']\n")
+
+    def test_redirected_input_is_read_and_remains_open(self):
+        candidate = self.program(
+            "import sys\nsys.stdout.buffer.write(sys.stdin.buffer.read())\n"
+        )
+        with tempfile.TemporaryFile() as source:
+            source.write(b"\x00\xff")
+            source.seek(0)
+            result = execute(candidate, input_stream=source)
+            self.assertFalse(source.closed)
+        self.assertEqual(result.stdout, b"\x00\xff")
+
 
 if __name__ == "__main__":
     unittest.main()

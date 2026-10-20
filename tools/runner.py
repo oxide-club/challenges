@@ -35,11 +35,13 @@ def require(condition, message):
         raise AssertionError(message)
 
 
-def execute(program, data=b"", *, timeout=5, output=None, limit=262144):
+def execute(program, data=b"", *, timeout=5, output=None, limit=262144,
+            argv=(), input_stream=None):
     """Bound output during execution, while feeding stdin without pipe deadlocks."""
+    command = [str(program), *argv]
     try:
         process = subprocess.Popen(
-            [str(program)], stdin=subprocess.PIPE,
+            command, stdin=subprocess.PIPE if input_stream is None else input_stream,
             stdout=subprocess.PIPE if output is None else output,
             stderr=subprocess.PIPE, start_new_session=True, bufsize=0,
         )
@@ -60,10 +62,11 @@ def execute(program, data=b"", *, timeout=5, output=None, limit=262144):
                 selector.unregister(stream)
                 stream.close()
 
-            if data:
-                register(process.stdin, selectors.EVENT_WRITE, "stdin")
-            else:
-                process.stdin.close()
+            if process.stdin is not None:
+                if data:
+                    register(process.stdin, selectors.EVENT_WRITE, "stdin")
+                else:
+                    process.stdin.close()
             if process.stdout is not None:
                 register(process.stdout, selectors.EVENT_READ, "stdout")
             register(process.stderr, selectors.EVENT_READ, "stderr")
@@ -101,7 +104,7 @@ def execute(program, data=b"", *, timeout=5, output=None, limit=262144):
             # A candidate may close both streams and still keep running.
             process.wait(timeout=max(0, deadline - time.monotonic()))
         return subprocess.CompletedProcess(
-            [str(program)], process.returncode,
+            command, process.returncode,
             bytes(buffers["stdout"]), bytes(buffers["stderr"]),
         )
     except BaseException as error:

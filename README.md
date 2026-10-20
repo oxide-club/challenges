@@ -26,6 +26,7 @@ executar os testes e quais requisitos precisam de revisão do código.
 | --------- | --------------------------------------- | ------------------------- |
 | `001-wc`  | [Construa seu wc](001-wc/index.md)      | [Guia](001-wc/README.md)  |
 | `002-ppm` | [Gere uma imagem PPM](002-ppm/index.md) | [Guia](002-ppm/README.md) |
+| `003-rle` | [Construa um compressor RLE](003-rle/index.md) | [Guia](003-rle/README.md) |
 
 ## Como participar
 
