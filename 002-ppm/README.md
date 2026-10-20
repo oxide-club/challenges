@@ -23,3 +23,7 @@ Esse caso aparece como ignorado quando o dispositivo não existe.
 Os testes não verificam a linguagem utilizada, a ausência de bibliotecas
 gráficas ou o uso constante de memória. Revise essas exigências no código.
 Padrões, dimensões configuráveis e PPM P3 são extensões opcionais.
+
+Cada caso tem limite de cinco segundos, ajustável com `--timeout 10`.
+O executor interrompe programas que ultrapassem 196623 bytes em `stdout` ou
+64 KiB em `stderr` por caso. A saída correta cabe nesses limites.

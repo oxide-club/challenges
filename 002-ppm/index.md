@@ -10,6 +10,7 @@ categories: [build, investigate]
 participation: open
 recommendedLanguage: C
 topics: ['Representação binária', 'Pixels RGB', 'Coordenadas', 'Entrada e saída']
+referenceUrl: https://github.com/oxide-club/solutions/tree/main/002-ppm/c
 featured: false
 environment: 'C11 · Exemplos para terminais Unix/Linux'
 ---

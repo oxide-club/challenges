@@ -1,80 +1,63 @@
 # Desafios do Oxide Club
 
 Definições e testes públicos dos desafios do [Oxide Club](https://oxideclub.dev).
-Nosso método é **Explorar → Experimentar → Explicar**. Dúvidas, experimentos
-e implementações parciais também fazem parte da participação.
+Nosso método é **Explorar → Experimentar → Explicar**: desenvolver uma solução,
+investigar seu comportamento e compartilhar o que você aprendeu.
 
-| ID estável | Desafio | Guia dos testes |
-| --- | --- | --- |
-| `001-wc` | [Construa seu wc](001-wc/index.md) | [Executar os testes](001-wc/README.md) |
-| `002-ppm` | [Gere uma imagem PPM](002-ppm/index.md) | [Executar os testes](002-ppm/README.md) |
+## Estrutura
+
+Cada desafio tem um identificador estável no formato `NNN-name`, usado também
+no site e no repositório de soluções.
+
+```text
+NNN-name/
+  index.md       # Definição do desafio
+  README.md      # Ambiente, comandos e orientações de teste
+  tests/         # Testes públicos
+  fixtures/      # Entradas e saídas de teste, quando necessárias
+```
+
+O `index.md` é a especificação canônica. O README do desafio explica como
+executar os testes e quais requisitos precisam de revisão do código.
+
+## Índice de desafios
+
+| ID        | Desafio                                 | Guia de testes            |
+| --------- | --------------------------------------- | ------------------------- |
+| `001-wc`  | [Construa seu wc](001-wc/index.md)      | [Guia](001-wc/README.md)  |
+| `002-ppm` | [Gere uma imagem PPM](002-ppm/index.md) | [Guia](002-ppm/README.md) |
 
 ## Como participar
 
-1. Leia o `index.md` do desafio.
+1. Escolha um desafio e leia sua definição.
 2. Desenvolva sua implementação em seu próprio repositório.
-3. Execute os testes públicos contra seu programa.
-4. Compartilhe descobertas, dúvidas e resultados no tópico do Discord indicado na definição.
+3. Execute os testes e investigue os resultados.
+4. Compartilhe descobertas e dúvidas no tópico do Discord indicado no desafio.
 
-Você não precisa consultar uma solução para usar os testes. As implementações
-mantidas pelo clube ficam no repositório separado `solutions`, em
-`<id>/reference/`. O arquivo `COMMUNITY.md` daquele repositório reúne links
-para implementações dos participantes. Não envie sua solução como parte da definição.
+Não é necessário concluir o desafio para participar. Experimentos e soluções
+parciais também são bem-vindos. Para compartilhar seu repositório, envie um PR
+para o [índice da comunidade](https://github.com/oxide-club/solutions/blob/main/COMMUNITY.md).
+As referências comentadas do clube ficam em [solutions](https://github.com/oxide-club/solutions).
 
-## Testar seu programa
+## Como testar seu programa
 
-Requisitos: Python 3.10 ou superior e Unix/Linux. Os testes usam somente a
-biblioteca padrão do Python, sem instalação de pacotes.
-
-Na raiz deste repositório:
+Use Python 3.10 ou superior em Unix/Linux. Na raiz deste repositório, substitua
+`ID_DO_DESAFIO` pelo identificador escolhido:
 
 ```sh
-python3 001-wc/tests/test.py /caminho/para/oxide-wc
-python3 002-ppm/tests/test.py /caminho/para/oxide-ppm
+python3 ID_DO_DESAFIO/tests/test.py /caminho/para/seu-programa
 ```
 
-Caminhos relativos são interpretados a partir do diretório de onde você executa
-o comando. Use aspas quando houver espaços. Os programas são executados sem
-argumentos. Cada caso tem limite de cinco segundos, ajustável com
-`--timeout 10`. Falhas retornam status diferente de zero; cada resultado aparece
-no terminal. Em outros sistemas Unix, o teste PPM de erro de escrita é
-explicitamente ignorado se `/dev/full` não existir.
+Os executores usam a biblioteca padrão do Python. O programa deve estar
+compilado e ter permissão de execução. Consulte o README do desafio para os
+comandos de compilação, casos cobertos e opções do executor.
 
-O executor interrompe programas que excedam 1024 bytes de saída no WC,
-196623 bytes no PPM ou 64 KiB de diagnósticos em `stderr` por caso.
-Esses limites evitam que uma impressão acidentalmente repetida esgote o
-armazenamento; a saída válida de cada desafio cabe nesses limites.
+## Como contribuir
 
-Os testes verificam comportamento observável, não a linguagem utilizada,
-complexidade de memória ou todas as restrições de implementação. Leia a
-especificação e revise seu código; passar nos testes não substitui essa revisão.
+Proponha novos desafios, esclarecimentos ou testes por pull request.
+Combine o próximo número com os mantenedores e preserve os IDs já publicados.
+Execute `make check` antes de enviar alterações; essa verificação requer também
+Make e o utilitário Unix `wc`.
 
-## Contribuir com definições ou testes
-
-Veja [CONTRIBUTING.md](CONTRIBUTING.md). Um desafio ocupa um diretório
-`NNN-name`, com número sequencial de três dígitos e um nome curto em minúsculas.
-O diretório e o `slug` da definição devem ser iguais. Números publicados
-nunca são reutilizados e IDs não mudam com o título.
-
-O `index.md` é a especificação canônica. README, testes e fixtures são arquivos
-de apoio. O site poderá consumir apenas os arquivos `<id>/index.md`.
-
-Para verificar o repositório, instale também Make e o utilitário Unix `wc`:
-
-```sh
-make check
-```
-
-Esse comando valida os IDs, confere fixtures com `LC_ALL=C wc` e testa os
-próprios executores usando respostas de fixtures e programas deliberadamente
-incorretos. Não publica soluções. O CI executa o mesmo comando em Linux.
-
-As soluções mantidas pelo clube executam estes mesmos testes, fixando uma
-revisão deste repositório. Ao alterar um contrato ou teste, indique o impacto
-na revisão e atualize a referência em `solutions` quando a alteração for adotada.
-
-## Licenciamento
-
-Testes, ferramentas e documentação técnica original usam [MIT](LICENSE).
-As definições editoriais dos desafios têm escopo separado: consulte
-[LICENSING.md](LICENSING.md).
+Veja [CONTRIBUTING.md](CONTRIBUTING.md) para o processo e
+[LICENSING.md](LICENSING.md) para autoria e permissões.

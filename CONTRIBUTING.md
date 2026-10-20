@@ -49,3 +49,8 @@ não se exige cessão de direitos. Veja [LICENSING.md](LICENSING.md).
 Soluções dos participantes ficam em seus próprios repositórios e podem ser
 indicadas no `COMMUNITY.md` do repositório `solutions`. Não inclua credenciais,
 conversas privadas ou material sem permissão.
+
+Quando houver uma implementação comentada publicada pelo clube, inclua
+`referenceUrl` apontando para seu diretório em `solutions/<id>/<linguagem>`.
+O site usa esse campo opcional para oferecer um link de estudo ao final da
+página. Omita o campo enquanto não existir uma implementação publicada.

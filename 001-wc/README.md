@@ -25,3 +25,8 @@ o teste do participante não depende do `wc` original.
 O teste não verifica se o programa usa memória constante, foi escrito em C11
 ou invoca outra ferramenta. Revise essas exigências no código. Unicode,
 flags, caminhos de arquivos e falhas de I/O são extensões opcionais neste desafio.
+
+Cada caso tem limite de cinco segundos, ajustável com `--timeout 10`.
+O executor interrompe programas que ultrapassem 1024 bytes em `stdout` ou
+64 KiB em `stderr` por caso, evitando saídas acidentalmente ilimitadas. A
+saída correta cabe nesses limites.
