@@ -1,7 +1,7 @@
 ---
 title: '#1 — Construa seu wc'
 slug: '001-wc'
-summary: 'Implemente um wc em C para investigar streams, EOF e gerenciamento de estado: conte linhas, palavras e bytes com uso constante de memória.'
+summary: 'Conte linhas, palavras e bytes lendo a entrada aos poucos, sem carregar todos os dados na memória.'
 publishedAt: 2026-10-18
 updatedAt: 2026-10-19
 draft: false
@@ -9,6 +9,8 @@ difficulty: beginner
 categories: [build, investigate]
 participation: flagship
 recommendedLanguage: C
+acceptedLanguages: [C]
+cardTopics: ['Entrada e saída', 'Fim de arquivo', 'Estado']
 topics: ['Entrada e saída', 'Streams', 'EOF', 'Gerenciamento de estado']
 github:
   challenge: true

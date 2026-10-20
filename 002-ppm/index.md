@@ -1,7 +1,7 @@
 ---
 title: '#2 — Gere uma imagem PPM'
 slug: '002-ppm'
-summary: 'Gere uma imagem PPM em C, calculando pixels RGB e escrevendo dados binários sem bibliotecas gráficas.'
+summary: 'Crie uma imagem calculando as cores de cada pixel e escrevendo o resultado em um arquivo PPM.'
 publishedAt: 2026-10-20
 updatedAt: 2026-10-20
 draft: false
@@ -9,6 +9,8 @@ difficulty: intermediate
 categories: [build, investigate]
 participation: open
 recommendedLanguage: C
+acceptedLanguages: [C]
+cardTopics: ['Pixels RGB', 'Escrita binária', 'Formatos de arquivo']
 topics: ['Representação binária', 'Pixels RGB', 'Coordenadas', 'Entrada e saída']
 github:
   challenge: true
