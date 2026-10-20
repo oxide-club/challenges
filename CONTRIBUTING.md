@@ -28,6 +28,18 @@ descrevem atividades (`build`, `investigate`, `debug`, `optimize`, `experiment`)
 e são independentes da dificuldade (`beginner`, `intermediate`, `advanced`).
 Defina objetivo, escopo, requisitos, verificação e extensões opcionais.
 
+## Metadados para descoberta no site
+
+Declare `acceptedLanguages` como uma lista não vazia das linguagens permitidas
+pelo enunciado (por exemplo, `[C, Rust]`). `recommendedLanguage` é a sugestão
+para começar e deve pertencer à lista quando ambos forem declarados. Entradas
+antigas sem `acceptedLanguages` continuam usando a linguagem recomendada.
+
+Mantenha todos os assuntos de pesquisa em `topics`. Opcionalmente, use
+`cardTopics` para destacar até três conceitos no card sem reduzir o índice de
+busca. `difficultyContext` qualifica o nível quando o enunciado exigir contexto,
+como `primeiro mês`; não altera a classificação de dificuldade.
+
 ## Correções e testes
 
 Explique o problema e mostre um caso que falha antes da correção. Mudanças

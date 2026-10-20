@@ -1,7 +1,7 @@
 ---
 title: '#3 — Construa um compressor RLE'
 slug: '003-rle'
-summary: 'Comprima e descomprima bytes com RLE, processando streams e preservando exatamente os dados originais.'
+summary: 'Implemente a compressão e a descompressão de sequências de bytes, recuperando exatamente os dados originais.'
 publishedAt: 2026-10-20
 updatedAt: 2026-10-20
 draft: false
@@ -9,6 +9,9 @@ difficulty: advanced
 categories: [build, investigate]
 participation: open
 recommendedLanguage: C
+acceptedLanguages: [C, Rust]
+cardTopics: ['Compressão sem perda', 'Leitura incremental', 'Validação']
+difficultyContext: 'primeiro mês'
 topics: ['Processamento binário', 'Codificação', 'Streams', 'Gerenciamento de estado']
 github:
   challenge: true
