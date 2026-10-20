@@ -1,0 +1,30 @@
+name: Notify Discord contributions
+on:
+  pull_request_target:
+    branches: [main]
+    types: [opened, ready_for_review, synchronize, reopened]
+permissions: {}
+concurrency:
+  group: discord-contribution-${{ github.event.number }}
+  cancel-in-progress: false
+jobs:
+  notify:
+    if: github.repository == 'oxide-club/challenges'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository }}
+          ref: ${{ github.event.pull_request.base.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Notify ready proposals using trusted base code
+        run: node scripts/discord/contributions.mjs
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DISCORD_CONTRIBUTIONS_WEBHOOK_URL: ${{ secrets.DISCORD_CONTRIBUTIONS_WEBHOOK_URL }}
