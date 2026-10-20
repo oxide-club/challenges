@@ -60,4 +60,12 @@ Execute `make check` antes de enviar alterações; essa verificação requer tam
 Make e o utilitário Unix `wc`.
 
 Veja [CONTRIBUTING.md](CONTRIBUTING.md) para o processo e
-[LICENSING.md](LICENSING.md) para autoria e permissões.
+[LICENSE.md](LICENSE.md) para autoria e permissões.
+
+## Licenciamento
+
+Enunciados, explicações e textos educacionais usam CC BY 4.0; fixtures, dados
+de entrada e saídas esperadas usam CC0 1.0; scripts de teste, validadores,
+geradores e demais códigos executáveis usam MIT. Consulte a
+[política de licenciamento](LICENSE.md) e os textos completos em [LICENSES/](LICENSES/).
+Materiais de terceiros mantêm suas próprias licenças.

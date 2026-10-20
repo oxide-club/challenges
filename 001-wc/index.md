@@ -10,7 +10,10 @@ categories: [build, investigate]
 participation: flagship
 recommendedLanguage: C
 topics: ['Entrada e saída', 'Streams', 'EOF', 'Gerenciamento de estado']
-referenceUrl: https://github.com/oxide-club/solutions/tree/main/001-wc/c
+github:
+  challenge: true
+  solutions: [c]
+  community: true
 featured: true
 environment: 'C11 · Exemplos para terminais Unix/Linux'
 ---
