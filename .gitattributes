@@ -1,0 +1,3 @@
+# Preserve the exact bytes used by the public WC tests.
+001-wc/fixtures/*.in -text
+001-wc/fixtures/*.out -text
