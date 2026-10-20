@@ -62,6 +62,18 @@ Make e o utilitário Unix `wc`.
 Veja [CONTRIBUTING.md](CONTRIBUTING.md) para o processo e
 [LICENSE.md](LICENSE.md) para autoria e permissões.
 
+## Publicação no site
+
+Pushes em `main` que adicionam, alteram, removem ou renomeiam `*/index.md`
+disparam o workflow **Deploy production** no repositório do site, que valida
+o conteúdo antes de publicar. Alterações em READMEs, testes e fixtures não
+disparam esse deploy. PRs e outras branches também não publicam.
+
+O workflow **Publish website content** precisa do secret `WEBSITE_DEPLOY_TOKEN`.
+Consulte a [configuração no repositório do site](https://github.com/oxide-club/oxideclub.dev#one-time-trigger-setup).
+Seu sucesso confirma o envio da solicitação; acompanhe **Deploy production**
+no repositório do site para verificar o resultado da publicação.
+
 ## Licenciamento
 
 Enunciados, explicações e textos educacionais usam CC BY 4.0; fixtures, dados
