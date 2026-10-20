@@ -4,9 +4,10 @@ import argparse
 import math
 import os
 from pathlib import Path
+import selectors
 import signal
 import subprocess
-import tempfile
+import time
 import unittest
 
 
@@ -35,31 +36,87 @@ def require(condition, message):
 
 
 def execute(program, data=b"", *, timeout=5, output=None, limit=262144):
-    """Capture bounded diagnostics; isolate the process group for timeout cleanup."""
-    with tempfile.TemporaryFile() as stdout, tempfile.TemporaryFile() as stderr:
-        try:
-            process = subprocess.Popen(
-                [str(program)], stdin=subprocess.PIPE,
-                stdout=stdout if output is None else output, stderr=stderr,
-                start_new_session=True,
-            )
-        except OSError as error:
-            raise AssertionError(f"Não foi possível iniciar o executável: {error}") from error
-        try:
-            process.communicate(input=data, timeout=timeout)
-        except subprocess.TimeoutExpired:
-            try:
-                os.killpg(process.pid, signal.SIGKILL)
-            except ProcessLookupError:
-                pass
-            process.communicate()
-            raise AssertionError(f"Limite de tempo excedido ({timeout:g} s)") from None
-        stdout.seek(0)
-        stderr.seek(0)
+    """Bound output during execution, while feeding stdin without pipe deadlocks."""
+    try:
+        process = subprocess.Popen(
+            [str(program)], stdin=subprocess.PIPE,
+            stdout=subprocess.PIPE if output is None else output,
+            stderr=subprocess.PIPE, start_new_session=True, bufsize=0,
+        )
+    except OSError as error:
+        raise AssertionError(f"Não foi possível iniciar o executável: {error}") from error
+
+    buffers = {"stdout": bytearray(), "stderr": bytearray()}
+    caps = {"stdout": limit, "stderr": 65536}
+    deadline = time.monotonic() + timeout
+    position = 0
+    try:
+        with selectors.DefaultSelector() as selector:
+            def register(stream, event, name):
+                os.set_blocking(stream.fileno(), False)
+                selector.register(stream, event, name)
+
+            def close(stream):
+                selector.unregister(stream)
+                stream.close()
+
+            if data:
+                register(process.stdin, selectors.EVENT_WRITE, "stdin")
+            else:
+                process.stdin.close()
+            if process.stdout is not None:
+                register(process.stdout, selectors.EVENT_READ, "stdout")
+            register(process.stderr, selectors.EVENT_READ, "stderr")
+
+            while selector.get_map():
+                remaining = deadline - time.monotonic()
+                if remaining <= 0:
+                    raise subprocess.TimeoutExpired(str(program), timeout)
+                for key, _ in selector.select(remaining):
+                    stream, name = key.fileobj, key.data
+                    if name == "stdin":
+                        try:
+                            position += os.write(stream.fileno(), data[position:position + 65536])
+                        except BrokenPipeError:
+                            close(stream)
+                            continue
+                        except BlockingIOError:
+                            continue
+                        if position == len(data):
+                            close(stream)
+                    else:
+                        # Read at most one byte beyond the cap to detect overflow.
+                        size = min(65536, caps[name] - len(buffers[name]) + 1)
+                        try:
+                            chunk = os.read(stream.fileno(), size)
+                        except BlockingIOError:
+                            continue
+                        if not chunk:
+                            close(stream)
+                            continue
+                        buffers[name].extend(chunk)
+                        require(len(buffers[name]) <= caps[name],
+                                f"Limite de saída excedido ({name}: {caps[name]} bytes)")
+
+            # A candidate may close both streams and still keep running.
+            process.wait(timeout=max(0, deadline - time.monotonic()))
         return subprocess.CompletedProcess(
             [str(program)], process.returncode,
-            stdout.read(limit + 1), stderr.read(4096),
+            bytes(buffers["stdout"]), bytes(buffers["stderr"]),
         )
+    except BaseException as error:
+        try:
+            os.killpg(process.pid, signal.SIGKILL)
+        except ProcessLookupError:
+            pass
+        process.wait()
+        if isinstance(error, subprocess.TimeoutExpired):
+            raise AssertionError(f"Limite de tempo excedido ({timeout:g} s)") from None
+        raise
+    finally:
+        for stream in (process.stdin, process.stdout, process.stderr):
+            if stream is not None:
+                stream.close()
 
 
 def run_checks(checks):

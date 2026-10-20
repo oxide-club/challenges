@@ -40,6 +40,11 @@ argumentos. Cada caso tem limite de cinco segundos, ajustável com
 no terminal. Em outros sistemas Unix, o teste PPM de erro de escrita é
 explicitamente ignorado se `/dev/full` não existir.
 
+O executor interrompe programas que excedam 1024 bytes de saída no WC,
+196623 bytes no PPM ou 64 KiB de diagnósticos em `stderr` por caso.
+Esses limites evitam que uma impressão acidentalmente repetida esgote o
+armazenamento; a saída válida de cada desafio cabe nesses limites.
+
 Os testes verificam comportamento observável, não a linguagem utilizada,
 complexidade de memória ou todas as restrições de implementação. Leia a
 especificação e revise seu código; passar nos testes não substitui essa revisão.
