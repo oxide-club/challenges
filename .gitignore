@@ -2,3 +2,4 @@ docs/superpowers/
 __pycache__/
 *.py[cod]
 build/
+target/

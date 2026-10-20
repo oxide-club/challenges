@@ -18,6 +18,11 @@ Cada diretório contém:
 - `tests/test.py`: executor público que recebe o caminho do programa.
 - `fixtures/`: entradas e resultados quando úteis; preserve bytes e quebras de linha.
 
+As suítes independentes vivem na biblioteca Rust em `src/challenges/`, com um
+módulo por desafio (`wc`, `ppm`, `rle`). O ID público (`001-wc`, por exemplo)
+é metadado e não precisa ser um identificador Rust. Registre novos desafios em
+`src/challenges/mod.rs` e mantenha IDs de casos estáveis para `--case` e JSON.
+
 Use datas reais e mantenha o `slug` igual ao nome do diretório. Categorias
 descrevem atividades (`build`, `investigate`, `debug`, `optimize`, `experiment`)
 e são independentes da dificuldade (`beginner`, `intermediate`, `advanced`).
@@ -33,6 +38,12 @@ exigência silenciosa dos testes.
 Execute `make check`. Se modificar um contrato público, execute também a suíte
 contra a referência correspondente no checkout local de `solutions`; esse
 repositório mantém a revisão de testes adotada em `challenges.lock.json`.
+
+`make check` inclui testes Python e Rust, formatação e clippy; `make build` gera
+o executável otimizado. Os testes Rust de integração compilam candidatos C11 e
+comparam seus veredictos com os executores Python. Ao alterar um caso durante a
+migração, mantenha ambas as suítes consistentes. As entradas aleatórias de RLE
+usam geradores distintos, determinísticos, cobrindo os mesmos tamanhos.
 
 Os testes são executados em programas reais. Use limites de tempo, entradas
 reproduzíveis e mensagens úteis. Não adicione dependências sem necessidade.

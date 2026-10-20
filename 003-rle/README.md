@@ -1,5 +1,18 @@
 # 003-rle — executar os testes
 
+Com o [runner independente](../README.md#como-testar-seu-programa) instalado:
+
+```sh
+oxide-test run 003-rle /caminho/para/oxide-rle
+oxide-test list 003-rle
+oxide-test run 003-rle /caminho/para/oxide-rle --case encode-run-256
+```
+
+O runner Rust dispensa Python em tempo de execução e apresenta cada vetor como
+caso independente. As idas e voltas usam xorshift com estado inicial 3 e os mesmos
+tamanhos do executor Python; os bytes gerados diferem entre os dois executores.
+O fluxo Python abaixo continua disponível por compatibilidade.
+
 Leia primeiro a [definição](index.md). Compile seu programa, por exemplo:
 
 ```sh

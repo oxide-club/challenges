@@ -1,0 +1,12 @@
+# Only source/build inputs enter the image context. In particular, local Git
+# metadata, built host executables and participant files are never copied.
+**
+!Dockerfile
+!Cargo.toml
+!Cargo.lock
+!build.rs
+!src/
+!src/**
+!001-wc/
+!001-wc/fixtures/
+!001-wc/fixtures/**

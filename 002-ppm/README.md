@@ -1,5 +1,16 @@
 # 002-ppm — executar os testes
 
+Com o [runner independente](../README.md#como-testar-seu-programa) instalado:
+
+```sh
+oxide-test run 002-ppm /caminho/para/oxide-ppm
+oxide-test list 002-ppm
+oxide-test run 002-ppm /caminho/para/oxide-ppm --case image
+```
+
+O runner Rust dispensa Python em tempo de execução. O fluxo Python abaixo
+continua disponível por compatibilidade.
+
 Leia primeiro a [definição](index.md). Compile seu programa C11, por exemplo:
 
 ```sh
