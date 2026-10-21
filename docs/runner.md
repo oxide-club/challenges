@@ -35,7 +35,7 @@ O runner usa recursos específicos de Linux e não tem uma versão nativa para W
    ```sh
    git clone https://github.com/oxide-club/challenges.git
    cd challenges
-   cargo install --path . --locked
+   cargo install --path tools/oxide-test --locked
    ```
 
    A primeira instalação precisa de acesso à internet para baixar dependências.
