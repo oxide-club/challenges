@@ -3,96 +3,103 @@ title: '#1 — Construa seu wc'
 slug: '001-wc'
 summary: 'Conte linhas, palavras e bytes lendo a entrada aos poucos, sem carregar todos os dados na memória.'
 publishedAt: 2026-10-18
-updatedAt: 2026-10-19
+updatedAt: 2026-10-20
 draft: false
 difficulty: beginner
 categories: [build, investigate]
 participation: flagship
 recommendedLanguage: C
 acceptedLanguages: [C]
-cardTopics: ['Entrada e saída', 'Fim de arquivo', 'Estado']
-topics: ['Entrada e saída', 'Streams', 'EOF', 'Gerenciamento de estado']
+cardTopics: ['Bytes e fluxo', 'Contagem de palavras', 'Estado']
+topics: ['Entrada e saída', 'Streams', 'EOF', 'Separadores ASCII', 'Gerenciamento de estado']
 github:
   challenge: true
   solutions: [c]
   community: true
 featured: true
-environment: 'C11 · Exemplos para terminais Unix/Linux'
+environment: 'C11 · Unix/Linux · entrada ASCII'
 ---
 
-**Dificuldade:** Iniciante  
-**Linguagem:** C (C11)  
-**Conceitos:** Entrada e saída, streams, EOF e gerenciamento de estado.
+**Dificuldade:** Fácil  
+**Linguagem recomendada:** C (C11)  
+**Linguagens aceitas:** C (C11)  
+**Conceitos:** Entrada e saída, streams, EOF, separadores ASCII e estado.
 
 ## O desafio
 
-O `wc` (*word count*) é uma ferramenta Unix utilizada para contar linhas, palavras e bytes de uma entrada.
+O `wc` (*word count*) conta linhas, palavras e bytes de uma entrada.
 
-Seu objetivo é construir uma versão simplificada dessa ferramenta em C, chamada `oxide-wc`.
+Implemente o `oxide-wc`, uma versão simplificada dessa ferramenta. Leia a entrada aos poucos e mantenha as contagens entre leituras.
+
+Pré-requisitos: laços, variáveis e I/O básico. O desafio usa texto ASCII e não exige suporte a Unicode.
 
 ## Especificação
 
-Seu programa deve ler dados da entrada padrão (`stdin`) até o fim da entrada e contabilizar:
+Execute `oxide-wc` sem argumentos obrigatórios. Leia bytes de `stdin` até o fim da entrada e conte:
 
-- **Linhas:** número de ocorrências de `'\n'`.
-- **Palavras:** sequências contínuas de um ou mais bytes que não sejam separadores. Considere separadores: espaço, `'\t'`, `'\n'`, `'\r'`, `'\v'` e `'\f'`.
-- **Bytes:** quantidade total de bytes lidos, incluindo separadores.
+- **Linhas:** ocorrências do byte `\n`.
+- **Palavras:** sequências não vazias de bytes que não são separadores.
+- **Bytes:** todos os bytes lidos, inclusive os separadores.
 
-A saída deve conter exatamente três números inteiros não negativos, separados por um espaço, na ordem: linhas, palavras e bytes. Finalize com uma quebra de linha.
+Os seis separadores são espaço, `\t`, `\n`, `\r`, `\v` e `\f`. Separadores consecutivos não criam palavras vazias. Uma palavra pode terminar no fim da entrada, sem separador final.
 
-### Exemplo
+Escreva em `stdout` as contagens de linhas, palavras e bytes, nessa ordem. Use inteiros decimais não negativos, separados por um único espaço, com LF no final. Não acrescente espaços de alinhamento.
 
-```bash
-$ printf 'Hello world\nC is fun\n' | ./oxide-wc
+Entrada vazia produz `0 0 0` e LF. Uma última linha sem `\n` não aumenta a contagem de linhas.
+
+Considere entradas ASCII, operações de leitura e escrita bem-sucedidas e contagens que cabem no tipo inteiro escolhido. Falhas de I/O e overflow ficam fora do contrato básico.
+
+## Exemplo
+
+```sh
+printf 'Hello world\nC is fun\n' | ./oxide-wc
+```
+
+Saída exata:
+
+```text
 2 5 21
 ```
 
+A entrada tem duas quebras de linha, cinco palavras e 21 bytes. Os espaços e as quebras de linha contam como bytes.
+
 ## Requisitos
 
-- Utilize C11 e sua biblioteca padrão.
-- Leia os dados de `stdin`, sem argumentos obrigatórios.
-- Processe a entrada sem armazená-la integralmente na memória.
-- Não invoque o `wc` original.
-- Não imprima mensagens adicionais em `stdout`.
-
-Considere entradas ASCII, operações de leitura e escrita bem-sucedidas e contagens que caibam no tipo inteiro escolhido.
+- Implemente em C11, apenas com a biblioteca padrão.
+- Leia a entrada em fluxo, sem guardar todos os dados na memória. Use memória adicional constante.
+- Mantenha o estado necessário para distinguir separadores de palavras.
+- Não invoque o `wc` original para calcular o resultado.
+- Retorne status zero no sucesso. Escreva em `stdout` apenas as três contagens e o LF final.
+- Entregue o código-fonte, as instruções de compilação, os testes e uma explicação do estado usado.
 
 ## Casos de teste
 
-| Entrada | Saída esperada |
+| Entrada | Saída esperada, seguida de LF |
 |---|---|
-| `printf ''` | `0 0 0` |
-| `printf 'hello'` | `0 1 5` |
-| `printf 'hello\n'` | `1 1 6` |
-| `printf 'a b\n'` | `1 2 4` |
-| `printf 'a\nb'` | `1 2 3` |
-| `printf 'one   two\n'` | `1 2 10` |
-| `printf ' \t\n\r\v\f'` | `1 0 6` |
-| `printf '\r\n'` | `1 0 2` |
+| Vazia | `0 0 0` |
+| `hello` | `0 1 5` |
+| `hello\n` | `1 1 6` |
+| `a b\n` | `1 2 4` |
+| `a\nb` | `1 2 3` |
+| `one   two\n` | `1 2 10` |
+| ` \t\n\r\v\f` | `1 0 6` |
+| `\r\n` | `1 0 2` |
 
-Você pode comparar os resultados com `LC_ALL=C wc -l -w -c`, desconsiderando os espaços de alinhamento da ferramenta original.
+Os vetores também cobrem espaços nas bordas, uma palavra de 128 KiB e 32768 linhas. Compare as contagens com `LC_ALL=C wc -l -w -c`. Desconsidere os espaços de alinhamento da ferramenta original.
+
+Os vetores públicos ficam em `tests/cases.json`. O [guia de testes](README.md) contém os comandos de compilação e execução. Os [materiais](materials/README.md) fornecem entradas e saídas exatas. Acrescente casos próprios.
 
 ## Extensões opcionais
 
-1. **Arquivos:** aceite um caminho de arquivo como argumento.
-2. **Flags:** implemente as opções `-l`, `-w` e `-c`.
-3. **Desempenho:** compare estratégias de leitura utilizando `fgetc()` e `fread()`.
-4. **Robustez:** investigue UTF-8, entradas binárias, estouro de contadores e falhas de I/O.
+- Aceite um caminho de arquivo como argumento.
+- Acrescente as opções `-l`, `-w` e `-c`.
+- Compare as leituras com `fgetc` e `fread`.
+- Investigue UTF-8, entradas binárias, overflow de contadores e falhas de I/O.
+
+As extensões preservam a execução básica por `stdin` e a saída especificada.
 
 ## Como participar
 
-Compartilhe sua implementação no fórum de desafios do Discord, acompanhada de um exemplo de execução e de alguma descoberta ou dificuldade encontrada.
+Compartilhe sua implementação no fórum de desafios do Discord, com um exemplo e uma explicação das contagens. Dúvidas, descobertas e soluções parciais também são bem-vindas.
 
-**Não é necessário concluir o desafio para participar.** Dúvidas, experimentos, casos de teste e implementações parciais também são contribuições válidas.
-
-O objetivo não é apenas fazer o programa funcionar, mas compreender e explicar as decisões tomadas durante sua construção.
-
-## Precisa de uma dica?
-
-Está com dificuldades ou não sabe por onde começar?
-
-Preparamos **dicas progressivas** para ajudar você a avançar sem revelar a solução.
-
-[Acesse as dicas no Discord](https://discord.com/channels/1561460326136811570/1561825043577573547)
-
-Você também pode compartilhar dúvidas, experimentos e descobertas no tópico do desafio.
+Consulte as [dicas progressivas no Discord](https://discord.com/channels/1561460326136811570/1561825043577573547) quando precisar de apoio.
