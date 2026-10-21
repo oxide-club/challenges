@@ -1,1 +1,11 @@
-{"version":1,"initialized":false,"records":{},"revisions":{}}
+{
+  "version": 1,
+  "initialized": false,
+  "records": {
+    "pr:5": {
+      "url": "https://github.com/oxide-club/challenges/pull/5",
+      "pending": true
+    }
+  },
+  "revisions": {}
+}
