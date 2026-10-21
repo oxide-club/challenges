@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "v1",
+      "name": "alinhamento falha reset",
+      "argv": [],
+      "stdin_hex": "33320a61203120310a61203320380a730a6120312031360a6120313720310a730a720a612033322031360a730a",
+      "stdout_hex": "300a380a31312f33320a31360a6661696c0a31372f33320a300a33322f33320a"
+    },
+    {
+      "id": "v2",
+      "name": "overflow e alinhamentos inv\u00e1lidos",
+      "argv": [],
+      "stdin_hex": "31360a61203120330a61203120300a6120312033320a61203020380a6f0a730a612031362031360a61203120310a730a",
+      "stdout_hex": "6661696c0a6661696c0a6661696c0a6661696c0a6661696c0a302f31360a300a6661696c0a31362f31360a"
+    },
+    {
+      "id": "v3",
+      "name": "capacidade zero",
+      "argv": [],
+      "stdin_hex": "300a61203120310a720a730a",
+      "stdout_hex": "6661696c0a302f300a"
+    },
+    {
+      "id": "v4",
+      "name": "entrada inv\u00e1lida",
+      "argv": [],
+      "stdin_hex": "380a780a",
+      "reject": true
+    }
+  ]
+}

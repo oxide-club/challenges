@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "image3x2",
+      "name": "image3x2",
+      "argv": [],
+      "stdin_hex": "50360a3320320a3235350a00254a6f94b9de03284d7297bce1062b5075",
+      "stdout_hex": "50360a3320320a3235350a00254a6f94b9de03284d7297bce1062b5075"
+    },
+    {
+      "id": "image2x2",
+      "name": "image2x2",
+      "argv": [],
+      "stdin_hex": "50360a3220320a3235350a00254a6f94b9de03284d7297",
+      "stdout_hex": "50360a3220320a3235350a00254a6f94b9de03284d7297"
+    },
+    {
+      "id": "image1x4",
+      "name": "image1x4",
+      "argv": [],
+      "stdin_hex": "50360a3120340a3235350a00254a6f94b9de03284d7297",
+      "stdout_hex": "50360a3120340a3235350a00254a6f94b9de03284d7297"
+    },
+    {
+      "id": "image4x1",
+      "name": "image4x1",
+      "argv": [],
+      "stdin_hex": "50360a3420310a3235350a00254a6f94b9de03284d7297",
+      "stdout_hex": "50360a3420310a3235350a00254a6f94b9de03284d7297"
+    },
+    {
+      "id": "image1x1",
+      "name": "image1x1",
+      "argv": [],
+      "stdin_hex": "50360a3120310a3235350a00254a",
+      "stdout_hex": "50360a3120310a3235350a00254a"
+    },
+    {
+      "id": "badppm0",
+      "name": "badppm0",
+      "argv": [],
+      "stdin_hex": "",
+      "reject": true
+    },
+    {
+      "id": "badppm1",
+      "name": "badppm1",
+      "argv": [],
+      "stdin_hex": "50330a3120310a3235350a616263",
+      "reject": true
+    },
+    {
+      "id": "badppm2",
+      "name": "badppm2",
+      "argv": [],
+      "stdin_hex": "50360a3020310a3235350a",
+      "reject": true
+    },
+    {
+      "id": "badppm3",
+      "name": "badppm3",
+      "argv": [],
+      "stdin_hex": "50360a3120310a3235360a616263",
+      "reject": true
+    },
+    {
+      "id": "badppm4",
+      "name": "badppm4",
+      "argv": [],
+      "stdin_hex": "50360a3120310a3235350a6162",
+      "reject": true
+    },
+    {
+      "id": "badppm5",
+      "name": "badppm5",
+      "argv": [],
+      "stdin_hex": "50360a3120310a3235350a61626364",
+      "reject": true
+    },
+    {
+      "id": "badppm6",
+      "name": "badppm6",
+      "argv": [],
+      "stdin_hex": "50360a3120310a3235350a0000000a",
+      "reject": true
+    },
+    {
+      "id": "io-full",
+      "name": "Erro de I/O: full",
+      "argv": [],
+      "stdin_hex": "50360a3320320a3235350a00254a6f94b9de03284d7297bce1062b5075",
+      "reject": true,
+      "io": "full"
+    },
+    {
+      "id": "io-directory",
+      "name": "Erro de I/O: directory",
+      "argv": [],
+      "stdin_hex": "50360a3320320a3235350a00254a6f94b9de03284d7297bce1062b5075",
+      "reject": true,
+      "io": "directory"
+    },
+    {
+      "id": "io-broken-pipe",
+      "name": "Erro de I/O: broken_pipe",
+      "argv": [],
+      "stdin_hex": "50360a3320320a3235350a00254a6f94b9de03284d7297bce1062b5075",
+      "reject": true,
+      "io": "broken_pipe"
+    }
+  ]
+}

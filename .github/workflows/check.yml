@@ -27,7 +27,7 @@ jobs:
       - name: Compilar e testar submissões no container
         run: |
           docker run --rm --init \
-            --mount "type=bind,source=$PWD/tests/candidates,target=/submission,readonly" \
+            --mount "type=bind,source=$PWD/tools/oxide-test/tests/candidates,target=/submission,readonly" \
             --entrypoint sh oxide-test:ci -ec '
               for number in 1 2 3; do
                 case "$number" in

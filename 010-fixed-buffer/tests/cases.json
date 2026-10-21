@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "v1",
+      "name": "vazio",
+      "argv": [],
+      "stdin_hex": "380a730a",
+      "stdout_hex": "302f383a0a"
+    },
+    {
+      "id": "v2",
+      "name": "bin\u00e1rio e capacidade exata",
+      "argv": [],
+      "stdin_hex": "340a6120303030310a6120666630300a730a",
+      "stdout_hex": "6f6b0a6f6b0a342f343a30303031666630300a"
+    },
+    {
+      "id": "v3",
+      "name": "falha at\u00f4mica e clear",
+      "argv": [],
+      "stdin_hex": "320a6120616263640a612066660a730a630a730a",
+      "stdout_hex": "6f6b0a6661696c0a322f323a616263640a302f323a0a"
+    },
+    {
+      "id": "v4",
+      "name": "zero e overflow",
+      "argv": [],
+      "stdin_hex": "300a61202d0a612030300a6f0a730a",
+      "stdout_hex": "6f6b0a6661696c0a6661696c0a302f303a0a"
+    },
+    {
+      "id": "v5",
+      "name": "hex inv\u00e1lido",
+      "argv": [],
+      "stdin_hex": "380a61207a7a0a",
+      "reject": true
+    },
+    {
+      "id": "v6",
+      "name": "comando inv\u00e1lido",
+      "argv": [],
+      "stdin_hex": "380a780a",
+      "reject": true
+    }
+  ]
+}

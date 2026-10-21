@@ -1,0 +1,143 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "example",
+      "name": "example",
+      "argv": [],
+      "stdin_hex": "332034202b2032202a",
+      "stdout_hex": "31340a"
+    },
+    {
+      "id": "order",
+      "name": "order",
+      "argv": [],
+      "stdin_hex": "332037202d",
+      "stdout_hex": "2d340a"
+    },
+    {
+      "id": "negative",
+      "name": "negative",
+      "argv": [],
+      "stdin_hex": "2d32313437343833363438",
+      "stdout_hex": "2d323134373438333634380a"
+    },
+    {
+      "id": "literal-overflow",
+      "name": "literal-overflow",
+      "argv": [],
+      "stdin_hex": "32313437343833363438",
+      "reject": true
+    },
+    {
+      "id": "overflow",
+      "name": "overflow",
+      "argv": [],
+      "stdin_hex": "323134373438333634372031202b",
+      "reject": true
+    },
+    {
+      "id": "mul-overflow",
+      "name": "mul-overflow",
+      "argv": [],
+      "stdin_hex": "3530303030203530303030202a",
+      "reject": true
+    },
+    {
+      "id": "underflow",
+      "name": "underflow",
+      "argv": [],
+      "stdin_hex": "31202b",
+      "reject": true
+    },
+    {
+      "id": "extra",
+      "name": "extra",
+      "argv": [],
+      "stdin_hex": "312032",
+      "reject": true
+    },
+    {
+      "id": "bad",
+      "name": "bad",
+      "argv": [],
+      "stdin_hex": "3178",
+      "reject": true
+    },
+    {
+      "id": "empty",
+      "name": "empty",
+      "argv": [],
+      "stdin_hex": "",
+      "reject": true
+    },
+    {
+      "id": "capacity",
+      "name": "capacity",
+      "argv": [],
+      "stdin_hex": "312031203120312031203120312031203120312031203120312031203120312031203120312031203120312031203120312031203120312031203120312031203120312031203120312031203120312031203120312031203120312031203120312031203120312031203120312031203120312031203120312031203120312031",
+      "reject": true
+    },
+    {
+      "id": "limit",
+      "name": "limit",
+      "argv": [],
+      "stdin_hex": "31203120312031203120312031203120312031203120312031203120312031203120312031203120312031203120312031203120312031203120312031203120312031203120312031203120312031203120312031203120312031203120312031203120312031203120312031203120312031203120312031203120312031202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b202b",
+      "stdout_hex": "36340a"
+    },
+    {
+      "id": "embedded-zero",
+      "name": "embedded-zero",
+      "argv": [],
+      "stdin_hex": "3100",
+      "reject": true
+    },
+    {
+      "id": "arguments",
+      "name": "arguments",
+      "argv": [
+        "invalid"
+      ],
+      "stdin_hex": "",
+      "reject": true
+    },
+    {
+      "id": "io-directory",
+      "name": "Erro de I/O: directory",
+      "argv": [],
+      "stdin_hex": "332034202b2032202a",
+      "reject": true,
+      "io": "directory"
+    },
+    {
+      "id": "io-full",
+      "name": "Erro de I/O: full",
+      "argv": [],
+      "stdin_hex": "332034202b2032202a",
+      "reject": true,
+      "io": "full"
+    },
+    {
+      "id": "io-broken-pipe",
+      "name": "Erro de I/O: broken_pipe",
+      "argv": [],
+      "stdin_hex": "332034202b2032202a",
+      "reject": true,
+      "io": "broken_pipe"
+    },
+    {
+      "id": "whitespace",
+      "name": "whitespace",
+      "argv": [],
+      "stdin_hex": "2009390d320a2d0b330c2a20",
+      "stdout_hex": "32310a"
+    },
+    {
+      "id": "subtract-overflow",
+      "name": "subtract-overflow",
+      "argv": [],
+      "stdin_hex": "2d323134373438333634382031202d",
+      "reject": true
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "empty",
+      "name": "empty",
+      "argv": [],
+      "stdin_hex": "524543310000",
+      "stdout_hex": "636f756e743d300a"
+    },
+    {
+      "id": "records",
+      "name": "records",
+      "argv": [],
+      "stdin_hex": "5245433102000702004100020100ff",
+      "stdout_hex": "636f756e743d320a6f66667365743d3620747970653d37206c656e6774683d3220646174613d343130300a6f66667365743d313120747970653d32206c656e6774683d3120646174613d66660a"
+    },
+    {
+      "id": "truncated",
+      "name": "truncated",
+      "argv": [],
+      "stdin_hex": "5245433102000702004100020100",
+      "reject": true
+    },
+    {
+      "id": "extra",
+      "name": "extra",
+      "argv": [],
+      "stdin_hex": "52454331000078",
+      "reject": true
+    },
+    {
+      "id": "magic",
+      "name": "magic",
+      "argv": [],
+      "stdin_hex": "524558310000",
+      "reject": true
+    },
+    {
+      "id": "count",
+      "name": "count",
+      "argv": [],
+      "stdin_hex": "524543310100",
+      "reject": true
+    },
+    {
+      "id": "header",
+      "name": "header",
+      "argv": [],
+      "stdin_hex": "52",
+      "reject": true
+    },
+    {
+      "id": "arguments",
+      "name": "arguments",
+      "argv": [
+        "invalid"
+      ],
+      "stdin_hex": "",
+      "reject": true
+    },
+    {
+      "id": "io-directory",
+      "name": "Erro de I/O: directory",
+      "argv": [],
+      "stdin_hex": "524543310000",
+      "reject": true,
+      "io": "directory"
+    },
+    {
+      "id": "io-full",
+      "name": "Erro de I/O: full",
+      "argv": [],
+      "stdin_hex": "524543310000",
+      "reject": true,
+      "io": "full"
+    },
+    {
+      "id": "io-broken-pipe",
+      "name": "Erro de I/O: broken_pipe",
+      "argv": [],
+      "stdin_hex": "524543310000",
+      "reject": true,
+      "io": "broken_pipe"
+    },
+    {
+      "id": "zero-length",
+      "name": "zero-length",
+      "argv": [],
+      "stdin_hex": "524543310100000000",
+      "stdout_hex": "636f756e743d310a6f66667365743d3620747970653d30206c656e6774683d3020646174613d0a"
+    },
+    {
+      "id": "length-overrun",
+      "name": "length-overrun",
+      "argv": [],
+      "stdin_hex": "524543310100ffffff",
+      "reject": true
+    }
+  ]
+}
