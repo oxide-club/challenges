@@ -1,0 +1,58 @@
+=================================================================
+==9==ERROR: AddressSanitizer: heap-use-after-free on address 0x7151731e0010 at pc 0x596261a6e277 bp 0x7fff783545a0 sp 0x7fff78354590
+READ of size 1 at 0x7151731e0010 thread T0
+    #0 0x596261a6e276 in main challenges/016-use-after-free/materials/buggy.c:15
+    #1 0x753174427780  (/usr/lib/libc.so.6+0x27780) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #2 0x7531744278b8 in __libc_start_main (/usr/lib/libc.so.6+0x278b8) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #3 0x596261a6e104 in _start (/tmp/oxide-buggy+0x1104) (BuildId: a01d0bdd454b5a7c134719a942cc5c06d775cc09)
+
+0x7151731e0010 is located 0 bytes inside of 4-byte region [0x7151731e0010,0x7151731e0014)
+freed by thread T0 here:
+    #0 0x75317492ae91  (/usr/lib/libasan.so.8+0x12ae91) (BuildId: b8a4241051a1621937fdc46e867ba7ecb56d96ea)
+    #1 0x596261a6e22b in produce challenges/016-use-after-free/materials/buggy.c:10
+    #2 0x596261a6e23e in main challenges/016-use-after-free/materials/buggy.c:14
+    #3 0x753174427780  (/usr/lib/libc.so.6+0x27780) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #4 0x7531744278b8 in __libc_start_main (/usr/lib/libc.so.6+0x278b8) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #5 0x596261a6e104 in _start (/tmp/oxide-buggy+0x1104) (BuildId: a01d0bdd454b5a7c134719a942cc5c06d775cc09)
+
+previously allocated by thread T0 here:
+    #0 0x75317492c0c1 in malloc (/usr/lib/libasan.so.8+0x12c0c1) (BuildId: b8a4241051a1621937fdc46e867ba7ecb56d96ea)
+    #1 0x596261a6e1ea in produce challenges/016-use-after-free/materials/buggy.c:6
+    #2 0x596261a6e23e in main challenges/016-use-after-free/materials/buggy.c:14
+    #3 0x753174427780  (/usr/lib/libc.so.6+0x27780) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #4 0x7531744278b8 in __libc_start_main (/usr/lib/libc.so.6+0x278b8) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #5 0x596261a6e104 in _start (/tmp/oxide-buggy+0x1104) (BuildId: a01d0bdd454b5a7c134719a942cc5c06d775cc09)
+
+SUMMARY: AddressSanitizer: heap-use-after-free challenges/016-use-after-free/materials/buggy.c:15 in main
+Shadow bytes around the buggy address:
+  0x7151731dfd80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7151731dfe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7151731dfe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7151731dff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7151731dff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x7151731e0000: fa fa[fd]fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7151731e0080: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7151731e0100: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7151731e0180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7151731e0200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7151731e0280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==9==ABORTING

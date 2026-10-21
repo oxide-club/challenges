@@ -14,7 +14,7 @@ NNN-name/
   index.md       # Definição do desafio
   README.md      # Ambiente, comandos e orientações de teste
   tests/         # Testes públicos
-  fixtures/      # Entradas e saídas de teste, quando necessárias
+  materials/      # Entradas e saídas de teste, quando necessárias
 ```
 
 O `index.md` é a especificação canônica. O README do desafio explica como
@@ -27,6 +27,29 @@ executar os testes e quais requisitos precisam de revisão do código.
 | `001-wc`  | [Construa seu wc](001-wc/index.md)      | [Guia](001-wc/README.md)  |
 | `002-ppm` | [Gere uma imagem PPM](002-ppm/index.md) | [Guia](002-ppm/README.md) |
 | `003-rle` | [Construa um compressor RLE](003-rle/index.md) | [Guia](003-rle/README.md) |
+| `004-hexdump` | [Hexdump](004-hexdump/index.md) | [Guia](004-hexdump/README.md) |
+| `005-base64` | [Base64 de ida e volta](005-base64/index.md) | [Guia](005-base64/README.md) |
+| `006-stream-search` | [Busca de sequência em stream](006-stream-search/index.md) | [Guia](006-stream-search/README.md) |
+| `007-image-bug` | [Pixels fora do lugar](007-image-bug/index.md) | [Guia](007-image-bug/README.md) |
+| `008-image-transform` | [Recorte e gire uma imagem](008-image-transform/index.md) | [Guia](008-image-transform/README.md) |
+| `009-triangle` | [Rasterizador de triângulos 2D](009-triangle/index.md) | [Guia](009-triangle/README.md) |
+| `010-fixed-buffer` | [Array fixo](010-fixed-buffer/index.md) | [Guia](010-fixed-buffer/README.md) |
+| `011-dynamic-buffer` | [Array dinâmico](011-dynamic-buffer/index.md) | [Guia](011-dynamic-buffer/README.md) |
+| `012-hash-table` | [Uma tabela hash que cresce](012-hash-table/index.md) | [Guia](012-hash-table/README.md) |
+| `013-record-inspector` | [Inspetor de um formato documentado](013-record-inspector/index.md) | [Guia](013-record-inspector/README.md) |
+| `014-mystery-image` | [Que arquivo é este?](014-mystery-image/index.md) | [Guia](014-mystery-image/README.md) |
+| `015-mystery-program` | [O que este executável faz?](015-mystery-program/index.md) | [Guia](015-mystery-program/README.md) |
+| `016-use-after-free` | [Quem liberou este buffer?](016-use-after-free/index.md) | [Guia](016-use-after-free/README.md) |
+| `017-arena` | [Arena de memória alinhada](017-arena/index.md) | [Guia](017-arena/README.md) |
+| `018-free-list` | [Um alocador com liberação individual](018-free-list/index.md) | [Guia](018-free-list/README.md) |
+| `019-rpn` | [Calculadora RPN](019-rpn/index.md) | [Guia](019-rpn/README.md) |
+| `020-expressions` | [Interpretador de expressões](020-expressions/index.md) | [Guia](020-expressions/README.md) |
+| `021-bytecode` | [Uma VM de bytecode](021-bytecode/index.md) | [Guia](021-bytecode/README.md) |
+
+Os desafios `004`–`021` formam seis trios com um nível fácil, um
+intermediário e um difícil. Em cada trio, o frontmatter `participation: flagship`
+identifica o principal da livestream. Os três exercícios de um trio compartilham
+materiais, mas cada um pode ser iniciado de forma independente.
 
 ## Como participar
 
@@ -37,7 +60,8 @@ executar os testes e quais requisitos precisam de revisão do código.
 
 Não é necessário concluir o desafio para participar. Experimentos e soluções
 parciais também são bem-vindos. Para compartilhar seu repositório, envie um PR
-para o [índice da comunidade](https://github.com/oxide-club/solutions/blob/main/COMMUNITY.md).
+que adicione sua entrada ao `community.yaml` do desafio no
+[repositório de soluções](https://github.com/oxide-club/solutions).
 As referências comentadas do clube ficam em [solutions](https://github.com/oxide-club/solutions).
 
 ## Como testar seu programa
@@ -55,12 +79,12 @@ ambiente Linux escolhido; o runner não tem uma versão nativa para Windows.
 Para compilar, use Rust estável e Cargo na raiz deste repositório:
 
 ```sh
-cargo build --release --locked
-./target/release/oxide-test list
-./target/release/oxide-test run 001-wc /caminho/para/seu-programa
+cargo build --manifest-path tools/oxide-test/Cargo.toml --release --locked
+./tools/oxide-test/target/release/oxide-test list
+./tools/oxide-test/target/release/oxide-test run 001-wc /caminho/para/seu-programa
 ```
 
-O executável fica em `target/release/oxide-test`. Você pode copiá-lo para um
+O executável fica em `tools/oxide-test/target/release/oxide-test`. Você pode copiá-lo para um
 diretório do seu `PATH`. Ele precisa ser compatível com a arquitetura e o runtime
 Linux da máquina; as mesmas condições se aplicam ao programa submetido.
 
@@ -155,6 +179,6 @@ Mantenedores devem configurar `DISCORD_CONTRIBUTIONS_WEBHOOK_URL` como Actions
 Secret deste repositório antes de habilitar o workflow de contribuições.
 O registro permanente fica em `state.json` na branch `discord-state`.
 Veja a [configuração e recuperação das notificações](https://github.com/oxide-club/oxideclub.dev/blob/main/docs/DISCORD-NOTIFICATIONS.md).
-Para executar os testes sem enviar mensagens: `node --test tests/discord-*.test.mjs`
+Para executar os testes sem enviar mensagens: `node --test tools/tests/discord-*.test.mjs`
 com Node.js 24. Mantenha os módulos de `scripts/discord/` sincronizados com os
 correspondentes no repositório do site.

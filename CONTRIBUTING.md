@@ -16,12 +16,13 @@ Cada diretório contém:
 - `index.md`: definição em Markdown com frontmatter; copie a estrutura de um desafio existente.
 - `README.md`: requisitos e comandos para testar um programa do participante.
 - `tests/test.py`: executor público que recebe o caminho do programa.
-- `fixtures/`: entradas e resultados quando úteis; preserve bytes e quebras de linha.
+- `materials/`: entradas e resultados quando úteis; preserve bytes e quebras de linha.
 
-As suítes independentes vivem na biblioteca Rust em `src/challenges/`, com um
-módulo por desafio (`wc`, `ppm`, `rle`). O ID público (`001-wc`, por exemplo)
-é metadado e não precisa ser um identificador Rust. Registre novos desafios em
-`src/challenges/mod.rs` e mantenha IDs de casos estáveis para `--case` e JSON.
+Todas as suítes usam `tests/cases.json` como fonte comum para os executores
+Python e Rust. Registre o ID e o título na macro `roadmap!` de
+`tools/oxide-test/src/challenges/mod.rs`: ela incorpora os vetores no binário.
+Mantenha IDs de casos estáveis para `--case` e JSON.
+Consulte [o formato dos vetores](docs/vectors.md) para acrescentar casos.
 
 Use datas reais e mantenha o `slug` igual ao nome do diretório. Categorias
 descrevem atividades (`build`, `investigate`, `debug`, `optimize`, `experiment`)
@@ -37,8 +38,11 @@ antigas sem `acceptedLanguages` continuam usando a linguagem recomendada.
 
 Mantenha todos os assuntos de pesquisa em `topics`. Opcionalmente, use
 `cardTopics` para destacar até três conceitos no card sem reduzir o índice de
-busca. `difficultyContext` qualifica o nível quando o enunciado exigir contexto,
-como `primeiro mês`; não altera a classificação de dificuldade.
+busca. Use o nível de dificuldade sem qualificadores de calendário.
+
+Marque `featured: true` somente nos exercícios trabalhados no mês atual.
+Use `featured: false` nos demais. O campo `participation: flagship` identifica
+o principal de cada livestream e não determina o destaque atual.
 
 ## Correções e testes
 
@@ -76,8 +80,10 @@ Não se exige cessão de direitos. Identifique materiais de terceiros, suas
 fontes e licenças; eles não recebem automaticamente as licenças do repositório.
 Registre explicitamente qualquer exceção junto ao material afetado.
 
-Soluções dos participantes ficam em seus próprios repositórios e podem ser
-indicadas no `COMMUNITY.md` do repositório `solutions`. Não inclua credenciais,
+Soluções dos participantes ficam em seus próprios repositórios. Para indicar
+uma solução, adicione a entrada em `<id>/community.yaml` no repositório
+`solutions`, por pull request. O contrato está em `community.schema.json`
+desse repositório. Não inclua credenciais,
 conversas privadas ou material sem permissão.
 
 ## Recursos do desafio no GitHub
@@ -96,8 +102,8 @@ github:
 - `solutions`: lista apenas os identificadores de linguagens com implementações
   publicadas em `solutions/<id>/<linguagem>`. Não presuma que a linguagem
   recomendada é a única disponível, nem que existe uma implementação em C.
-- `community`: habilita o link para a seção deste desafio no índice existente
-  `solutions/COMMUNITY.md#<id>`.
+- `community`: habilita o link para o índice de implementações externas deste
+  desafio em `solutions/<id>/community.yaml`.
 
 Verifique os destinos publicados antes de habilitar qualquer recurso. Campos
 omitidos equivalem a `false` ou a uma lista vazia; omita `github` quando não
@@ -140,6 +146,6 @@ Mantenedores devem configurar `DISCORD_CONTRIBUTIONS_WEBHOOK_URL` como Actions
 Secret deste repositório antes de habilitar o workflow de contribuições.
 O registro permanente fica em `state.json` na branch `discord-state`.
 Veja a [configuração e recuperação das notificações](https://github.com/oxide-club/oxideclub.dev/blob/main/docs/DISCORD-NOTIFICATIONS.md).
-Para executar os testes sem enviar mensagens: `node --test tests/discord-*.test.mjs`
+Para executar os testes sem enviar mensagens: `node --test tools/tests/discord-*.test.mjs`
 com Node.js 24. Mantenha os módulos de `scripts/discord/` sincronizados com os
 correspondentes no repositório do site.

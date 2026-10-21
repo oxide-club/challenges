@@ -5,13 +5,11 @@ FROM ${RUST_IMAGE} AS build
 WORKDIR /build
 ARG OXIDE_TEST_REVISION=unknown
 ENV OXIDE_TEST_REVISION=${OXIDE_TEST_REVISION}
-COPY Cargo.toml Cargo.lock build.rs ./
-COPY src/ ./src/
-COPY 001-wc/fixtures/ ./001-wc/fixtures/
-RUN cargo build --release --locked
+COPY . .
+RUN cargo build --manifest-path tools/oxide-test/Cargo.toml --release --locked
 
 FROM ${RUST_IMAGE} AS runtime
-COPY --from=build /build/target/release/oxide-test /usr/local/bin/oxide-test
+COPY --from=build /build/tools/oxide-test/target/release/oxide-test /usr/local/bin/oxide-test
 RUN cc --version && rustc --version
 WORKDIR /submission
 ENTRYPOINT ["oxide-test"]

@@ -10,29 +10,34 @@ categories: [build, investigate]
 participation: open
 recommendedLanguage: C
 acceptedLanguages: [C]
-cardTopics: ['Pixels RGB', 'Escrita binária', 'Formatos de arquivo']
-topics: ['Representação binária', 'Pixels RGB', 'Coordenadas', 'Entrada e saída']
+cardTopics: ['Imagens e coordenadas', 'Pixels RGB', 'Escrita binária']
+topics: ['Pixels RGB', 'Coordenadas', 'PPM P6', 'Escrita binária', 'Erros de escrita']
 github:
   challenge: true
   solutions: [c]
   community: true
-featured: false
-environment: 'C11 · Exemplos para terminais Unix/Linux'
+featured: true
+environment: 'C11 · Unix/Linux · bytes de 8 bits'
 ---
 
 **Dificuldade:** Intermediário  
-**Linguagem:** C (C11)  
-**Conceitos:** Representação binária, pixels RGB, coordenadas e entrada e saída.
+**Linguagem recomendada:** C (C11)  
+**Linguagens aceitas:** C (C11)  
+**Conceitos:** Pixels RGB, coordenadas, PPM P6, escrita binária e erros de escrita.
 
 ## O desafio
 
-Uma imagem digital pode ser representada por uma sequência de pixels. Seu objetivo é construir o `oxide-ppm`, um programa que gera uma imagem no formato **PPM P6**, sem utilizar bibliotecas gráficas.
+Uma imagem digital pode ser uma sequência de pixels, cada um com três canais de cor.
+
+Implemente o `oxide-ppm`. Gere uma imagem PPM P6 com as cores calculadas a partir das coordenadas, sem bibliotecas gráficas.
+
+Pré-requisitos: laços, coordenadas e I/O básico. O objetivo é distinguir texto de cabeçalho e bytes de pixels.
 
 ## Especificação
 
-Ao ser executado sem argumentos, seu programa deve escrever em `stdout` uma imagem de **256 × 256 pixels**.
+Execute `oxide-ppm` sem argumentos. Escreva em `stdout` uma imagem de **256 × 256 pixels**. O programa não precisa ler `stdin`.
 
-O arquivo deve começar com este cabeçalho ASCII, incluindo a quebra de linha após `255`:
+Comece com este cabeçalho ASCII exato, com LF após `255`:
 
 ```text
 P6
@@ -40,62 +45,63 @@ P6
 255
 ```
 
-Após o cabeçalho, escreva os pixels como bytes binários, sem separadores nem dados adicionais. Cada pixel ocupa **3 bytes**, na ordem vermelho, verde e azul (**RGB**).
+Depois, escreva os pixels como bytes binários, sem separadores ou bytes finais. Cada pixel ocupa três bytes, na ordem vermelho, verde e azul (RGB).
 
-Percorra a imagem da esquerda para a direita, de cima para baixo. Para cada pixel `(x, y)`, com coordenadas de `0` a `255`, utilize:
+Percorra a imagem da esquerda para a direita e de cima para baixo. A origem `(0, 0)` fica no canto superior esquerdo. Para cada pixel `(x, y)`, com coordenadas de 0 a 255, use:
 
-- **Vermelho:** `x`
-- **Verde:** `y`
-- **Azul:** `0`
+- vermelho: `x`;
+- verde: `y`;
+- azul: `0`.
 
-## Requisitos
+O cabeçalho ocupa 15 bytes. Os pixels ocupam 196608 bytes. O arquivo completo tem exatamente **196623 bytes**.
 
-- Utilize C11 e sua biblioteca padrão.
-- Não utilize bibliotecas gráficas ou de processamento de imagens.
-- Gere a imagem sem armazená-la integralmente na memória.
-- Escreva apenas os bytes do arquivo PPM em `stdout`.
-- Em caso de erro de escrita, emita um diagnóstico em `stderr` e retorne um status diferente de zero.
+## Exemplo
 
-Considere um ambiente Unix/Linux com bytes de 8 bits.
-
-## Casos de teste
-
-```bash
+```sh
 ./oxide-ppm > imagem.ppm
 wc -c < imagem.ppm
 # 196623
 ```
 
+Abra `imagem.ppm` em um visualizador compatível com PPM P6. O canto superior esquerdo é preto. O superior direito é vermelho, e o inferior esquerdo é verde. O inferior direito é amarelo: vermelho e verde valem 255, e azul vale zero.
+
+## Requisitos
+
+- Implemente em C11, apenas com a biblioteca padrão, em Unix/Linux com bytes de 8 bits.
+- Não use bibliotecas gráficas ou de processamento de imagens.
+- Gere a imagem em fluxo, sem guardá-la inteira na memória. Use memória adicional constante.
+- Escreva em `stdout` apenas os bytes do arquivo PPM. Não acrescente LF depois dos pixels.
+- Retorne status zero somente no sucesso. Em erro de escrita, escreva um diagnóstico em `stderr` e retorne status diferente de zero.
+- Esvazie o buffer de saída antes de encerrar e verifique o resultado de `fflush`. Uma falha pode aparecer somente nessa etapa.
+- Entregue o código-fonte, as instruções de compilação, os testes e uma explicação da ordem dos pixels.
+
+## Casos de teste
+
 | Propriedade | Valor esperado |
 |---|---|
-| Cabeçalho | `P6\n256 256\n255\n` (15 bytes) |
-| Dados dos pixels | `196608` bytes |
+| Cabeçalho | `P6\n256 256\n255\n` — 15 bytes. |
+| Dados dos pixels | 196608 bytes. |
 | Pixel `(0, 0)` | `00 00 00` |
 | Pixel `(255, 0)` | `ff 00 00` |
 | Pixel `(0, 255)` | `00 ff 00` |
 | Pixel `(255, 255)` | `ff ff 00` |
+| Erro de escrita em `/dev/full` | Status diferente de zero e diagnóstico em `stderr`. |
 
-O arquivo deve ser aberto corretamente por um visualizador compatível com PPM P6.
+Compare todos os bytes, além de abrir a imagem em um visualizador. Uma imagem que parece correta pode ter cabeçalho, canais ou bytes finais incorretos.
+
+Os vetores públicos ficam em `tests/cases.json`. O [guia de testes](README.md) contém os comandos de compilação e execução. Os [materiais](materials/README.md) fornecem a imagem esperada e seu gerador.
 
 ## Extensões opcionais
 
-1. **Padrões:** gere um tabuleiro, listras, círculos ou outras figuras.
-2. **Dimensões:** aceite largura e altura como argumentos.
-3. **Formatos:** implemente também PPM P3 e compare os arquivos.
-4. **Investigação:** experimente comprimir imagens produzidas pelo seu programa utilizando RLE.
+- Gere tabuleiro, listras ou círculos em um modo separado.
+- Aceite largura e altura como argumentos opcionais.
+- Implemente PPM P3 em outro modo e compare os arquivos.
+- Compare a compressão RLE de imagens com padrões diferentes.
+
+As extensões preservam a imagem e o formato da execução sem argumentos.
 
 ## Como participar
 
-Compartilhe sua implementação no fórum de desafios do Discord, acompanhada de uma imagem gerada e de uma descoberta ou dificuldade encontrada.
+Compartilhe sua implementação no fórum de desafios do Discord, com a imagem gerada e uma descoberta. Dúvidas, experimentos e soluções parciais também são bem-vindas.
 
-**Não é necessário concluir o desafio para participar.** Experimentos, dúvidas e soluções parciais também são contribuições válidas.
-
-## Precisa de uma dica?
-
-Está com dificuldades ou não sabe por onde começar?
-
-Preparamos **três dicas progressivas**, ocultas como spoilers no tópico oficial do desafio.
-
-[Acesse as dicas no Discord](https://discord.com/channels/1561460326136811570/1561951075441967157)
-
-Você também pode compartilhar suas imagens, dúvidas e descobertas na mesma discussão.
+Consulte as [dicas progressivas no Discord](https://discord.com/channels/1561460326136811570/1561951075441967157) quando precisar de apoio.

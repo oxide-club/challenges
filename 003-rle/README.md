@@ -1,19 +1,8 @@
 # 003-rle — executar os testes
 
-Com o [runner independente](../README.md#como-testar-seu-programa) instalado:
+Leia primeiro a [definição](index.md). Este exercício não depende de outro desafio.
 
-```sh
-oxide-test run 003-rle /caminho/para/oxide-rle
-oxide-test list 003-rle
-oxide-test run 003-rle /caminho/para/oxide-rle --case encode-run-256
-```
-
-O runner Rust dispensa Python em tempo de execução e apresenta cada vetor como
-caso independente. As idas e voltas usam xorshift com estado inicial 3 e os mesmos
-tamanhos do executor Python; os bytes gerados diferem entre os dois executores.
-O fluxo Python abaixo continua disponível por compatibilidade.
-
-Leia primeiro a [definição](index.md). Compile seu programa, por exemplo:
+Compile seu programa, por exemplo:
 
 ```sh
 cc -std=c11 -Wall -Wextra -Wpedantic seu-rle.c -o oxide-rle
@@ -21,34 +10,35 @@ cc -std=c11 -Wall -Wextra -Wpedantic seu-rle.c -o oxide-rle
 rustc --edition=2021 seu-rle.rs -o oxide-rle
 ```
 
-Na raiz de `challenges`, execute com Python 3.10 ou superior em Unix/Linux:
+Com o [runner independente](../README.md#como-testar-seu-programa) instalado:
+
+```sh
+oxide-test list 003-rle
+oxide-test run 003-rle /caminho/para/oxide-rle
+oxide-test run 003-rle /caminho/para/oxide-rle --case encode-run-256
+```
+
+Com Python 3.10 ou superior, na raiz de `challenges`:
 
 ```sh
 python3 003-rle/tests/test.py /caminho/para/oxide-rle
 ```
 
-O executor passa `encode` ou `decode` ao programa e compara bytes exatos.
-Cobre entrada vazia, todos os valores de byte, sequências de 255, 256, 510,
-511 e 65536 bytes, pares adjacentes iguais e todas as contagens válidas.
-Também rejeita argumentos inválidos, contagens zero e pares incompletos,
-inclusive após um prefixo válido.
+Os dois runners usam os mesmos 54 vetores de `tests/cases.json`. O runner passa `encode` ou `decode` ao programa. Nos casos válidos, exige status zero e compara todos os bytes de `stdout`. Nos casos de erro, exige status diferente de zero e diagnóstico em `stderr`.
 
-As idas e voltas usam dados pseudoaleatórios com semente fixa, incluindo
-tamanhos próximos de 8192 bytes. Um oráculo independente verifica os pares
-emitidos, para que erros complementares nos dois modos não passem despercebidos.
+A suíte cobre:
 
-Em Linux, o executor verifica erros de leitura com um diretório em `stdin`.
-Quando `/dev/full` existe, verifica erros de escrita com saídas pequenas
-(falha no flush) e grandes. Verifica também pipes sem leitor.
-Casos indisponíveis aparecem como ignorados.
-Erros devem produzir status diferente de zero e diagnóstico em `stderr`;
-o teste não exige desfazer uma saída parcial já escrita.
+- entrada vazia e todos os valores de byte;
+- sequências de 255, 256, 510, 511 e 65536 bytes;
+- todas as contagens válidas e pares adjacentes com o mesmo valor;
+- argumentos inválidos, contagem zero e par incompleto, inclusive após um prefixo válido;
+- ida e volta com dados determinísticos, inclusive tamanhos próximos de 8192 bytes;
+- falhas de I/O.
 
-Cada caso tem limite de cinco segundos, ajustável com `--timeout 10`.
-O executor limita `stderr` a 64 KiB e `stdout` ao tamanho esperado, ao dobro
-da entrada no encode aleatório, ou a 256 KiB nos testes de erro.
+Cada ida e volta compara primeiro a codificação com o resultado de um oráculo independente. Depois, envia a saída real de `encode` a `decode` e exige a recuperação exata da entrada.
 
-Revise no código o processamento incremental, o uso de memória e o uso
-exclusivo da biblioteca padrão em C11 ou Rust estável. Os testes não provam
-essas propriedades. Extensões opcionais devem preservar a interface e o
-formato base usados pela suíte.
+Em Linux, o runner verifica erro de leitura com um diretório em `stdin`. Também verifica escrita em `/dev/full`, com saídas pequenas e grandes, e pipe sem leitor. Casos indisponíveis aparecem como ignorados. Uma falha pode deixar saída parcial.
+
+Cada invocação tem limite de cinco segundos, ajustável com `--timeout 10`. Uma ida e volta usa duas invocações. O diretório `materials/` contém exemplos binários e seu gerador. Consulte o [guia dos materiais](materials/README.md).
+
+Revise no código o processamento em fluxo, a memória constante e o uso exclusivo da biblioteca padrão. Os testes não provam essas propriedades. As extensões preservam a interface e o formato básicos.

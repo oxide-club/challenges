@@ -1,12 +1,13 @@
-# Only source/build inputs enter the image context. In particular, local Git
-# metadata, built host executables and participant files are never copied.
+# Include only build inputs; never Git metadata or local executables.
 **
 !Dockerfile
-!Cargo.toml
-!Cargo.lock
-!build.rs
-!src/
-!src/**
-!001-wc/
-!001-wc/fixtures/
-!001-wc/fixtures/**
+!tools/
+!tools/oxide-test/
+!tools/oxide-test/Cargo.toml
+!tools/oxide-test/Cargo.lock
+!tools/oxide-test/build.rs
+!tools/oxide-test/src/
+!tools/oxide-test/src/**
+![0-9][0-9][0-9]-*/
+![0-9][0-9][0-9]-*/tests/
+![0-9][0-9][0-9]-*/tests/cases.json

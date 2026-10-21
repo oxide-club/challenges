@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "empty",
+      "name": "empty",
+      "argv": [],
+      "stdin_hex": "",
+      "stdout_hex": ""
+    },
+    {
+      "id": "zero",
+      "name": "zero",
+      "argv": [],
+      "stdin_hex": "00",
+      "stdout_hex": "5a"
+    },
+    {
+      "id": "abc",
+      "name": "abc",
+      "argv": [],
+      "stdin_hex": "414243",
+      "stdout_hex": "1b191b"
+    },
+    {
+      "id": "fresh",
+      "name": "fresh",
+      "argv": [],
+      "stdin_hex": "ff0080115c2c01",
+      "stdout_hex": "617b0a4edc5ba5"
+    },
+    {
+      "id": "limit",
+      "name": "limit",
+      "argv": [],
+      "stdin_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f",
+      "stdout_hex": "a4a2a4a29c9a9c9aa4a2a4a29c9a9c9aa4a2a4a29c9a9c9aa4a2a4a29c9a9c9a646264625c5a5c5a646264625c5a5c5a646264625c5a5c5a646264625c5a5c5a"
+    },
+    {
+      "id": "too-long",
+      "name": "too-long",
+      "argv": [],
+      "stdin_hex": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "reject": true
+    },
+    {
+      "id": "arguments",
+      "name": "arguments",
+      "argv": [
+        "invalid"
+      ],
+      "stdin_hex": "",
+      "reject": true
+    },
+    {
+      "id": "io-directory",
+      "name": "Erro de I/O: directory",
+      "argv": [],
+      "stdin_hex": "00",
+      "reject": true,
+      "io": "directory"
+    },
+    {
+      "id": "io-full",
+      "name": "Erro de I/O: full",
+      "argv": [],
+      "stdin_hex": "00",
+      "reject": true,
+      "io": "full"
+    },
+    {
+      "id": "io-broken-pipe",
+      "name": "Erro de I/O: broken_pipe",
+      "argv": [],
+      "stdin_hex": "00",
+      "reject": true,
+      "io": "broken_pipe"
+    }
+  ]
+}

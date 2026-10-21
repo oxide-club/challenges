@@ -1,0 +1,143 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "precedence",
+      "name": "precedence",
+      "argv": [],
+      "stdin_hex": "32202b2033202a2034",
+      "stdout_hex": "31340a"
+    },
+    {
+      "id": "parens",
+      "name": "parens",
+      "argv": [],
+      "stdin_hex": "2832202b203329202a2034",
+      "stdout_hex": "32300a"
+    },
+    {
+      "id": "left",
+      "name": "left",
+      "argv": [],
+      "stdin_hex": "392d332d32",
+      "stdout_hex": "340a"
+    },
+    {
+      "id": "negative",
+      "name": "negative",
+      "argv": [],
+      "stdin_hex": "302d323134373438333634372d31",
+      "stdout_hex": "2d323134373438333634380a"
+    },
+    {
+      "id": "overflow",
+      "name": "overflow",
+      "argv": [],
+      "stdin_hex": "323134373438333634372b31",
+      "reject": true
+    },
+    {
+      "id": "literal",
+      "name": "literal",
+      "argv": [],
+      "stdin_hex": "32313437343833363438",
+      "reject": true
+    },
+    {
+      "id": "unary",
+      "name": "unary",
+      "argv": [],
+      "stdin_hex": "2d31",
+      "reject": true
+    },
+    {
+      "id": "double",
+      "name": "double",
+      "argv": [],
+      "stdin_hex": "312b2b32",
+      "reject": true
+    },
+    {
+      "id": "missing",
+      "name": "missing",
+      "argv": [],
+      "stdin_hex": "28322b33",
+      "reject": true
+    },
+    {
+      "id": "trailing",
+      "name": "trailing",
+      "argv": [],
+      "stdin_hex": "312032",
+      "reject": true
+    },
+    {
+      "id": "empty",
+      "name": "empty",
+      "argv": [],
+      "stdin_hex": "",
+      "reject": true
+    },
+    {
+      "id": "deep",
+      "name": "deep",
+      "argv": [],
+      "stdin_hex": "2828282828282828282828282828282828282828282828282828282828282828282828282828282828282828282828282828282828282828282828282828282828312929292929292929292929292929292929292929292929292929292929292929292929292929292929292929292929292929292929292929292929292929292929",
+      "reject": true
+    },
+    {
+      "id": "nul",
+      "name": "nul",
+      "argv": [],
+      "stdin_hex": "3100",
+      "reject": true
+    },
+    {
+      "id": "arguments",
+      "name": "arguments",
+      "argv": [
+        "invalid"
+      ],
+      "stdin_hex": "",
+      "reject": true
+    },
+    {
+      "id": "io-directory",
+      "name": "Erro de I/O: directory",
+      "argv": [],
+      "stdin_hex": "32202b2033202a2034",
+      "reject": true,
+      "io": "directory"
+    },
+    {
+      "id": "io-full",
+      "name": "Erro de I/O: full",
+      "argv": [],
+      "stdin_hex": "32202b2033202a2034",
+      "reject": true,
+      "io": "full"
+    },
+    {
+      "id": "io-broken-pipe",
+      "name": "Erro de I/O: broken_pipe",
+      "argv": [],
+      "stdin_hex": "32202b2033202a2034",
+      "reject": true,
+      "io": "broken_pipe"
+    },
+    {
+      "id": "max-depth",
+      "name": "max-depth",
+      "argv": [],
+      "stdin_hex": "282828282828282828282828282828282828282828282828282828282828282828282828282828282828282828282828282828282828282828282828282828283129292929292929292929292929292929292929292929292929292929292929292929292929292929292929292929292929292929292929292929292929292929",
+      "stdout_hex": "310a"
+    },
+    {
+      "id": "product-overflow",
+      "name": "product-overflow",
+      "argv": [],
+      "stdin_hex": "35303030302a3530303030",
+      "reject": true
+    }
+  ]
+}

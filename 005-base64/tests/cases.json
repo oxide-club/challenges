@@ -1,0 +1,332 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "encode0",
+      "name": "encode0",
+      "argv": [
+        "encode"
+      ],
+      "stdin_hex": "",
+      "stdout_hex": ""
+    },
+    {
+      "id": "decode0",
+      "name": "decode0",
+      "argv": [
+        "decode"
+      ],
+      "stdin_hex": "",
+      "stdout_hex": ""
+    },
+    {
+      "id": "encode1",
+      "name": "encode1",
+      "argv": [
+        "encode"
+      ],
+      "stdin_hex": "66",
+      "stdout_hex": "5a673d3d"
+    },
+    {
+      "id": "decode1",
+      "name": "decode1",
+      "argv": [
+        "decode"
+      ],
+      "stdin_hex": "5a673d3d",
+      "stdout_hex": "66"
+    },
+    {
+      "id": "encode2",
+      "name": "encode2",
+      "argv": [
+        "encode"
+      ],
+      "stdin_hex": "666f",
+      "stdout_hex": "5a6d383d"
+    },
+    {
+      "id": "decode2",
+      "name": "decode2",
+      "argv": [
+        "decode"
+      ],
+      "stdin_hex": "5a6d383d",
+      "stdout_hex": "666f"
+    },
+    {
+      "id": "encode3",
+      "name": "encode3",
+      "argv": [
+        "encode"
+      ],
+      "stdin_hex": "666f6f",
+      "stdout_hex": "5a6d3976"
+    },
+    {
+      "id": "decode3",
+      "name": "decode3",
+      "argv": [
+        "decode"
+      ],
+      "stdin_hex": "5a6d3976",
+      "stdout_hex": "666f6f"
+    },
+    {
+      "id": "encode4",
+      "name": "encode4",
+      "argv": [
+        "encode"
+      ],
+      "stdin_hex": "666f6f62",
+      "stdout_hex": "5a6d397659673d3d"
+    },
+    {
+      "id": "decode4",
+      "name": "decode4",
+      "argv": [
+        "decode"
+      ],
+      "stdin_hex": "5a6d397659673d3d",
+      "stdout_hex": "666f6f62"
+    },
+    {
+      "id": "encode5",
+      "name": "encode5",
+      "argv": [
+        "encode"
+      ],
+      "stdin_hex": "666f6f6261",
+      "stdout_hex": "5a6d3976596d453d"
+    },
+    {
+      "id": "decode5",
+      "name": "decode5",
+      "argv": [
+        "decode"
+      ],
+      "stdin_hex": "5a6d3976596d453d",
+      "stdout_hex": "666f6f6261"
+    },
+    {
+      "id": "encode6",
+      "name": "encode6",
+      "argv": [
+        "encode"
+      ],
+      "stdin_hex": "666f6f626172",
+      "stdout_hex": "5a6d3976596d4679"
+    },
+    {
+      "id": "decode6",
+      "name": "decode6",
+      "argv": [
+        "decode"
+      ],
+      "stdin_hex": "5a6d3976596d4679",
+      "stdout_hex": "666f6f626172"
+    },
+    {
+      "id": "encode7",
+      "name": "encode7",
+      "argv": [
+        "encode"
+      ],
+      "stdin_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff",
+      "stdout_hex": "41414543417751464267634943516f4c4441304f4478415245684d554652595847426b6147787764486838674953496a4a43556d4a7967704b6973734c5334764d4445794d7a51314e6a63344f546f375044302b50304242516b4e4552555a4853456c4b5330784e546b395155564a54564656575631685a576c746358563566594746695932526c5a6d646f615770726247317562334278636e4e3064585a3365486c3665337839666e2b4167594b44684957476834694a696f754d6a5936506b4a47536b3553566c7065596d5a71626e4a32656e3643686f714f6b7061616e714b6d717136797472712b7773624b7a744c573274376935757275387662362f774d484377385446787366497963724c7a4d334f7a3944523074505531646258324e6e6132397a6433742f6734654c6a354f586d352b6a70367576733765377638504879382f5431397666342b6672372f50332b2f773d3d"
+    },
+    {
+      "id": "decode7",
+      "name": "decode7",
+      "argv": [
+        "decode"
+      ],
+      "stdin_hex": "41414543417751464267634943516f4c4441304f4478415245684d554652595847426b6147787764486838674953496a4a43556d4a7967704b6973734c5334764d4445794d7a51314e6a63344f546f375044302b50304242516b4e4552555a4853456c4b5330784e546b395155564a54564656575631685a576c746358563566594746695932526c5a6d646f615770726247317562334278636e4e3064585a3365486c3665337839666e2b4167594b44684957476834694a696f754d6a5936506b4a47536b3553566c7065596d5a71626e4a32656e3643686f714f6b7061616e714b6d717136797472712b7773624b7a744c573274376935757275387662362f774d484377385446787366497963724c7a4d334f7a3944523074505531646258324e6e6132397a6433742f6734654c6a354f586d352b6a70367576733765377638504879382f5431397666342b6672372f50332b2f773d3d",
+      "stdout_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff"
+    },
+    {
+      "id": "encode8",
+      "name": "encode8",
+      "argv": [
+        "encode"
+      ],
+      "stdin_hex": "00ff00",
+      "stdout_hex": "41503841"
+    },
+    {
+      "id": "decode8",
+      "name": "decode8",
+      "argv": [
+        "decode"
+      ],
+      "stdin_hex": "41503841",
+      "stdout_hex": "00ff00"
+    },
+    {
+      "id": "invalid0",
+      "name": "invalid0",
+      "argv": [
+        "decode"
+      ],
+      "stdin_hex": "41",
+      "reject": true
+    },
+    {
+      "id": "invalid1",
+      "name": "invalid1",
+      "argv": [
+        "decode"
+      ],
+      "stdin_hex": "414141",
+      "reject": true
+    },
+    {
+      "id": "invalid2",
+      "name": "invalid2",
+      "argv": [
+        "decode"
+      ],
+      "stdin_hex": "4141414141",
+      "reject": true
+    },
+    {
+      "id": "invalid3",
+      "name": "invalid3",
+      "argv": [
+        "decode"
+      ],
+      "stdin_hex": "3d414141",
+      "reject": true
+    },
+    {
+      "id": "invalid4",
+      "name": "invalid4",
+      "argv": [
+        "decode"
+      ],
+      "stdin_hex": "41413d41",
+      "reject": true
+    },
+    {
+      "id": "invalid5",
+      "name": "invalid5",
+      "argv": [
+        "decode"
+      ],
+      "stdin_hex": "413d3d3d",
+      "reject": true
+    },
+    {
+      "id": "invalid6",
+      "name": "invalid6",
+      "argv": [
+        "decode"
+      ],
+      "stdin_hex": "414141413d3d3d3d",
+      "reject": true
+    },
+    {
+      "id": "invalid7",
+      "name": "invalid7",
+      "argv": [
+        "decode"
+      ],
+      "stdin_hex": "41413d3d41413d3d",
+      "reject": true
+    },
+    {
+      "id": "invalid8",
+      "name": "invalid8",
+      "argv": [
+        "decode"
+      ],
+      "stdin_hex": "41423d3d",
+      "reject": true
+    },
+    {
+      "id": "invalid9",
+      "name": "invalid9",
+      "argv": [
+        "decode"
+      ],
+      "stdin_hex": "4141423d",
+      "reject": true
+    },
+    {
+      "id": "invalid10",
+      "name": "invalid10",
+      "argv": [
+        "decode"
+      ],
+      "stdin_hex": "5a673d3d0a",
+      "reject": true
+    },
+    {
+      "id": "invalid11",
+      "name": "invalid11",
+      "argv": [
+        "decode"
+      ],
+      "stdin_hex": "205a673d3d",
+      "reject": true
+    },
+    {
+      "id": "invalid12",
+      "name": "invalid12",
+      "argv": [
+        "decode"
+      ],
+      "stdin_hex": "5f5f5f5f",
+      "reject": true
+    },
+    {
+      "id": "invalid13",
+      "name": "invalid13",
+      "argv": [
+        "decode"
+      ],
+      "stdin_hex": "ff414141",
+      "reject": true
+    },
+    {
+      "id": "mode",
+      "name": "mode",
+      "argv": [
+        "wrong"
+      ],
+      "stdin_hex": "",
+      "reject": true
+    },
+    {
+      "id": "io-full",
+      "name": "Erro de I/O: full",
+      "argv": [
+        "encode"
+      ],
+      "stdin_hex": "66",
+      "reject": true,
+      "io": "full"
+    },
+    {
+      "id": "io-directory",
+      "name": "Erro de I/O: directory",
+      "argv": [
+        "encode"
+      ],
+      "stdin_hex": "66",
+      "reject": true,
+      "io": "directory"
+    },
+    {
+      "id": "io-broken-pipe",
+      "name": "Erro de I/O: broken_pipe",
+      "argv": [
+        "encode"
+      ],
+      "stdin_hex": "66",
+      "reject": true,
+      "io": "broken_pipe"
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "red",
+      "name": "red",
+      "argv": [],
+      "stdin_hex": "50580100000100010000ff",
+      "stdout_hex": "50360a3120310a3235350aff0000"
+    },
+    {
+      "id": "rect",
+      "name": "rect",
+      "argv": [],
+      "stdin_hex": "50580100000300020201000b0a090504030e0d0c08070611100f",
+      "stdout_hex": "50360a3320320a3235350a000102030405060708090a0b0c0d0e0f1011"
+    },
+    {
+      "id": "fresh",
+      "name": "fresh",
+      "argv": [],
+      "stdin_hex": "50580100000200030900ff0706050d0c0b0421020a6358100f0e",
+      "stdout_hex": "50360a3220330a3235350aff000902210405060758630a0b0c0d0e0f10"
+    },
+    {
+      "id": "truncated",
+      "name": "truncated",
+      "argv": [],
+      "stdin_hex": "50580100000200030900ff0706050d0c0b0421020a6358100f",
+      "reject": true
+    },
+    {
+      "id": "zero",
+      "name": "zero",
+      "argv": [],
+      "stdin_hex": "5058010000000001",
+      "reject": true
+    },
+    {
+      "id": "version",
+      "name": "version",
+      "argv": [],
+      "stdin_hex": "5058020000010001616263",
+      "reject": true
+    },
+    {
+      "id": "extra",
+      "name": "extra",
+      "argv": [],
+      "stdin_hex": "505801000001000103020178",
+      "reject": true
+    },
+    {
+      "id": "arguments",
+      "name": "arguments",
+      "argv": [
+        "invalid"
+      ],
+      "stdin_hex": "",
+      "reject": true
+    },
+    {
+      "id": "io-directory",
+      "name": "Erro de I/O: directory",
+      "argv": [],
+      "stdin_hex": "50580100000100010000ff",
+      "reject": true,
+      "io": "directory"
+    },
+    {
+      "id": "io-full",
+      "name": "Erro de I/O: full",
+      "argv": [],
+      "stdin_hex": "50580100000100010000ff",
+      "reject": true,
+      "io": "full"
+    },
+    {
+      "id": "io-broken-pipe",
+      "name": "Erro de I/O: broken_pipe",
+      "argv": [],
+      "stdin_hex": "50580100000100010000ff",
+      "reject": true,
+      "io": "broken_pipe"
+    }
+  ]
+}

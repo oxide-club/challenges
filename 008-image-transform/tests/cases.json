@@ -1,0 +1,242 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "rotate",
+      "name": "rotate",
+      "argv": [
+        "rotate"
+      ],
+      "stdin_hex": "50360a3320320a3235350aff000000ff000000ffffff00ff00ff00ffff",
+      "stdout_hex": "50360a3220330a3235350affff00ff0000ff00ff00ff0000ffff0000ff"
+    },
+    {
+      "id": "crop",
+      "name": "crop",
+      "argv": [
+        "crop",
+        "1",
+        "0",
+        "2",
+        "2"
+      ],
+      "stdin_hex": "50360a3320320a3235350aff000000ff000000ffffff00ff00ff00ffff",
+      "stdout_hex": "50360a3220320a3235350a00ff000000ffff00ff00ffff"
+    },
+    {
+      "id": "identity",
+      "name": "identity",
+      "argv": [
+        "crop",
+        "0",
+        "0",
+        "3",
+        "2"
+      ],
+      "stdin_hex": "50360a3320320a3235350aff000000ff000000ffffff00ff00ff00ffff",
+      "stdout_hex": "50360a3320320a3235350aff000000ff000000ffffff00ff00ff00ffff"
+    },
+    {
+      "id": "last",
+      "name": "last",
+      "argv": [
+        "crop",
+        "2",
+        "1",
+        "1",
+        "1"
+      ],
+      "stdin_hex": "50360a3320320a3235350aff000000ff000000ffffff00ff00ff00ffff",
+      "stdout_hex": "50360a3120310a3235350a00ffff"
+    },
+    {
+      "id": "invalid0",
+      "name": "invalid0",
+      "argv": [
+        "crop",
+        "2",
+        "0",
+        "2",
+        "1"
+      ],
+      "stdin_hex": "50360a3320320a3235350aff000000ff000000ffffff00ff00ff00ffff",
+      "reject": true
+    },
+    {
+      "id": "invalid1",
+      "name": "invalid1",
+      "argv": [
+        "crop",
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "stdin_hex": "50360a3320320a3235350aff000000ff000000ffffff00ff00ff00ffff",
+      "reject": true
+    },
+    {
+      "id": "invalid2",
+      "name": "invalid2",
+      "argv": [
+        "crop",
+        "-1",
+        "0",
+        "1",
+        "1"
+      ],
+      "stdin_hex": "50360a3320320a3235350aff000000ff000000ffffff00ff00ff00ffff",
+      "reject": true
+    },
+    {
+      "id": "invalid3",
+      "name": "invalid3",
+      "argv": [
+        "crop",
+        "1x",
+        "0",
+        "1",
+        "1"
+      ],
+      "stdin_hex": "50360a3320320a3235350aff000000ff000000ffffff00ff00ff00ffff",
+      "reject": true
+    },
+    {
+      "id": "invalid4",
+      "name": "invalid4",
+      "argv": [
+        "rotate",
+        "extra"
+      ],
+      "stdin_hex": "50360a3320320a3235350aff000000ff000000ffffff00ff00ff00ffff",
+      "reject": true
+    },
+    {
+      "id": "invalid5",
+      "name": "invalid5",
+      "argv": [],
+      "stdin_hex": "50360a3320320a3235350aff000000ff000000ffffff00ff00ff00ffff",
+      "reject": true
+    },
+    {
+      "id": "badppm0",
+      "name": "badppm0",
+      "argv": [
+        "rotate"
+      ],
+      "stdin_hex": "",
+      "reject": true
+    },
+    {
+      "id": "badppm1",
+      "name": "badppm1",
+      "argv": [
+        "rotate"
+      ],
+      "stdin_hex": "50330a3120310a3235350a616263",
+      "reject": true
+    },
+    {
+      "id": "badppm2",
+      "name": "badppm2",
+      "argv": [
+        "rotate"
+      ],
+      "stdin_hex": "50360a3020310a3235350a",
+      "reject": true
+    },
+    {
+      "id": "badppm3",
+      "name": "badppm3",
+      "argv": [
+        "rotate"
+      ],
+      "stdin_hex": "50360a3120310a3235360a616263",
+      "reject": true
+    },
+    {
+      "id": "badppm4",
+      "name": "badppm4",
+      "argv": [
+        "rotate"
+      ],
+      "stdin_hex": "50360a3120310a3235350a6162",
+      "reject": true
+    },
+    {
+      "id": "badppm5",
+      "name": "badppm5",
+      "argv": [
+        "rotate"
+      ],
+      "stdin_hex": "50360a3120310a3235350a61626364",
+      "reject": true
+    },
+    {
+      "id": "badppm6",
+      "name": "badppm6",
+      "argv": [
+        "rotate"
+      ],
+      "stdin_hex": "50360a3120310a3235350a0000000a",
+      "reject": true
+    },
+    {
+      "id": "io-full",
+      "name": "Erro de I/O: full",
+      "argv": [
+        "rotate"
+      ],
+      "stdin_hex": "50360a3320320a3235350aff000000ff000000ffffff00ff00ff00ffff",
+      "reject": true,
+      "io": "full"
+    },
+    {
+      "id": "io-directory",
+      "name": "Erro de I/O: directory",
+      "argv": [
+        "rotate"
+      ],
+      "stdin_hex": "50360a3320320a3235350aff000000ff000000ffffff00ff00ff00ffff",
+      "reject": true,
+      "io": "directory"
+    },
+    {
+      "id": "io-broken-pipe",
+      "name": "Erro de I/O: broken_pipe",
+      "argv": [
+        "rotate"
+      ],
+      "stdin_hex": "50360a3320320a3235350aff000000ff000000ffffff00ff00ff00ffff",
+      "reject": true,
+      "io": "broken_pipe"
+    },
+    {
+      "id": "rotate-1x3",
+      "name": "Rota\u00e7\u00e3o de 1x3 e pixels whitespace",
+      "argv": [
+        "rotate"
+      ],
+      "stdin_hex": "50360a3120330a3235350a0a20ff0a20ff0a20ff",
+      "stdout_hex": "50360a3320310a3235350a0a20ff0a20ff0a20ff"
+    },
+    {
+      "id": "rotate-3x1",
+      "name": "Rota\u00e7\u00e3o de 3x1 e pixels whitespace",
+      "argv": [
+        "rotate"
+      ],
+      "stdin_hex": "50360a3320310a3235350a0a20ff0a20ff0a20ff",
+      "stdout_hex": "50360a3120330a3235350a0a20ff0a20ff0a20ff"
+    },
+    {
+      "id": "rotate-1x1",
+      "name": "Rota\u00e7\u00e3o de 1x1 e pixels whitespace",
+      "argv": [
+        "rotate"
+      ],
+      "stdin_hex": "50360a3120310a3235350a0a20ff",
+      "stdout_hex": "50360a3120310a3235350a0a20ff"
+    }
+  ]
+}
