@@ -1,6 +1,7 @@
 ---
-title: '#11 — Array dinâmico'
+title: 'Array dinâmico'
 slug: '011-dynamic-buffer'
+area: algorithms-data-structures
 summary: 'Implemente um buffer com crescimento geométrico que preserva os dados e o estado em falhas de alocação.'
 publishedAt: 2026-10-20
 updatedAt: 2026-10-20

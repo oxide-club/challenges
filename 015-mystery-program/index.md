@@ -1,6 +1,7 @@
 ---
-title: '#15 — O que este executável faz?'
+title: 'O que este executável faz?'
 slug: '015-mystery-program'
+area: binary-reverse-engineering
 summary: 'Reconstrua uma transformação determinística de bytes a partir de um executável, com traces, assembly e debugger.'
 publishedAt: 2026-10-20
 updatedAt: 2026-10-20

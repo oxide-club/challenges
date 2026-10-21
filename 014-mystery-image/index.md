@@ -1,6 +1,7 @@
 ---
-title: '#14 — Que arquivo é este?'
+title: 'Que arquivo é este?'
 slug: '014-mystery-image'
+area: binary-reverse-engineering
 summary: 'Infira um formato de imagem desconhecido com experimentos controlados e escreva um leitor que exporta PPM.'
 publishedAt: 2026-10-20
 updatedAt: 2026-10-20

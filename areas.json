@@ -1,0 +1,38 @@
+[
+  {
+    "id": "systems-fundamentals",
+    "slug": "fundamentos-de-sistemas",
+    "title": "Fundamentos de sistemas",
+    "description": "Explore bytes, entrada e saída e representações de dados."
+  },
+  {
+    "id": "algorithms-data-structures",
+    "slug": "algoritmos-e-estruturas-de-dados",
+    "title": "Algoritmos e estruturas de dados",
+    "description": "Construa estruturas e algoritmos e investigue seu comportamento."
+  },
+  {
+    "id": "graphics",
+    "slug": "computacao-grafica",
+    "title": "Computação gráfica",
+    "description": "Trabalhe com pixels, coordenadas, transformações e rasterização."
+  },
+  {
+    "id": "binary-reverse-engineering",
+    "slug": "formatos-binarios-e-engenharia-reversa",
+    "title": "Formatos binários e engenharia reversa",
+    "description": "Interprete arquivos e investigue formatos e programas."
+  },
+  {
+    "id": "memory",
+    "slug": "memoria-e-alocacao",
+    "title": "Memória e alocação",
+    "description": "Explore tempo de vida, alinhamento e estratégias de alocação."
+  },
+  {
+    "id": "languages-interpreters",
+    "slug": "linguagens-e-interpretadores",
+    "title": "Linguagens e interpretadores",
+    "description": "Avalie expressões e construa interpretadores e máquinas virtuais."
+  }
+]

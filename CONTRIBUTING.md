@@ -31,6 +31,13 @@ Defina objetivo, escopo, requisitos, verificação e extensões opcionais.
 
 ## Metadados para descoberta no site
 
+Use `title` sem o prefixo numérico: `Arena de memória alinhada`, por exemplo.
+O número continua no ID e no slug. Declare uma única área principal em `area`,
+como `area: memory`, conforme o objetivo principal do exercício. Os IDs, slugs,
+nomes e descrições das áreas ficam em `areas.json`; a ordem da lista define sua
+apresentação no site. Novas áreas precisam de ID e slug únicos e textos não vazios.
+Áreas são agrupamentos por interesse, sem sequência obrigatória de estudo.
+
 Declare `acceptedLanguages` como uma lista não vazia das linguagens permitidas
 pelo enunciado (por exemplo, `[C, Rust]`). `recommendedLanguage` é a sugestão
 para começar e deve pertencer à lista quando ambos forem declarados. Entradas

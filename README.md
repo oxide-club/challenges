@@ -22,6 +22,11 @@ executar os testes e quais requisitos precisam de revisão do código.
 
 ## Índice de desafios
 
+No site, explore os [desafios por área](https://oxideclub.dev/desafios) ou a
+[lista compacta](https://oxideclub.dev/desafios/lista). Cada enunciado declara
+sua única área principal em `area`; o registro ordenado fica em
+[`areas.json`](areas.json). Os títulos não incluem o número do desafio.
+
 | ID        | Desafio                                 | Guia de testes            |
 | --------- | --------------------------------------- | ------------------------- |
 | `001-wc`  | [Construa seu wc](001-wc/index.md)      | [Guia](001-wc/README.md)  |
@@ -146,7 +151,7 @@ Veja [CONTRIBUTING.md](CONTRIBUTING.md) para o processo e
 
 ## Publicação no site
 
-Pushes em `main` que adicionam, alteram, removem ou renomeiam `*/index.md`
+Pushes em `main` que alteram `areas.json` ou adicionam, alteram, removem ou renomeiam `*/index.md`
 disparam o workflow **Deploy production** no repositório do site, que valida
 o conteúdo antes de publicar. Alterações em READMEs, testes e fixtures não
 disparam esse deploy. PRs e outras branches também não publicam.

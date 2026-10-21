@@ -1,6 +1,7 @@
 ---
-title: '#10 — Array fixo'
+title: 'Array fixo'
 slug: '010-fixed-buffer'
+area: algorithms-data-structures
 summary: 'Acrescente bytes a uma região emprestada e rejeite excessos sem alterar o estado anterior.'
 publishedAt: 2026-10-20
 updatedAt: 2026-10-20

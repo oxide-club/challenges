@@ -1,6 +1,7 @@
 ---
-title: '#3 — Construa um compressor RLE'
+title: 'Construa um compressor RLE'
 slug: '003-rle'
+area: algorithms-data-structures
 summary: 'Implemente a compressão e a descompressão de sequências de bytes, recuperando exatamente os dados originais.'
 publishedAt: 2026-10-20
 updatedAt: 2026-10-20

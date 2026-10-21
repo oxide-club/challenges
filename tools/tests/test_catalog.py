@@ -1,4 +1,5 @@
 from pathlib import Path
+import json
 import subprocess
 import sys
 import tempfile
@@ -12,11 +13,12 @@ class Catalogue(unittest.TestCase):
         self.directory = tempfile.TemporaryDirectory()
         self.addCleanup(self.directory.cleanup)
         self.root = Path(self.directory.name)
+        (self.root / "areas.json").write_text(json.dumps([{"id": "systems", "slug": "sistemas", "title": "Sistemas", "description": "Explore sistemas."}]))
 
     def definition(self, directory, slug):
         path = self.root / directory
         path.mkdir()
-        (path / "index.md").write_text(f"---\ntitle: 'Example'\nslug: '{slug}'\n---\n")
+        (path / "index.md").write_text(f"---\ntitle: 'Example'\nslug: '{slug}'\narea: systems\n---\n")
 
     def check(self):
         return subprocess.run(

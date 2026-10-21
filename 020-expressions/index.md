@@ -1,6 +1,7 @@
 ---
-title: '#20 — Interpretador de expressões'
+title: 'Interpretador de expressões'
 slug: '020-expressions'
+area: languages-interpreters
 summary: 'Interprete expressões inteiras com precedência, associatividade e parênteses, e rejeite sintaxe inválida.'
 publishedAt: 2026-10-20
 updatedAt: 2026-10-20

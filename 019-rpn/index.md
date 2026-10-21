@@ -1,6 +1,7 @@
 ---
-title: '#19 — Calculadora RPN'
+title: 'Calculadora RPN'
 slug: '019-rpn'
+area: languages-interpreters
 summary: 'Avalie expressões em notação polonesa reversa (RPN) com uma pilha fixa e detecte tokens inválidos, falta de operandos e overflow.'
 publishedAt: 2026-10-20
 updatedAt: 2026-10-20

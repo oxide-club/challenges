@@ -1,6 +1,7 @@
 ---
-title: '#18 — Um alocador com liberação individual'
+title: 'Um alocador com liberação individual'
 slug: '018-free-list'
+area: memory
 summary: 'Gerencie uma região fixa com first-fit, divisão de blocos e união de vizinhos livres após liberações.'
 publishedAt: 2026-10-20
 updatedAt: 2026-10-20

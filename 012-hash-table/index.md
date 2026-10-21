@@ -1,6 +1,7 @@
 ---
-title: '#12 — Uma tabela hash que cresce'
+title: 'Uma tabela hash que cresce'
 slug: '012-hash-table'
+area: algorithms-data-structures
 summary: 'Mapeie inteiros com endereçamento aberto, resolva colisões e preserve todos os pares ao redimensionar.'
 publishedAt: 2026-10-20
 updatedAt: 2026-10-20
