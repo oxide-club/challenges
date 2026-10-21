@@ -1,6 +1,7 @@
 ---
-title: '#9 — Rasterizador de triângulos 2D'
+title: 'Rasterizador de triângulos 2D'
 slug: '009-triangle'
+area: graphics
 summary: 'Desenhe triângulos com cores por vértice, amostragem no centro do pixel e regra fixa de bordas.'
 publishedAt: 2026-10-20
 updatedAt: 2026-10-20

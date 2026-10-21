@@ -1,6 +1,7 @@
 ---
-title: '#13 — Inspetor de um formato documentado'
+title: 'Inspetor de um formato documentado'
 slug: '013-record-inspector'
+area: binary-reverse-engineering
 summary: 'Leia um formato binário de registros documentado, mostre campos e offsets e rejeite arquivos inconsistentes.'
 publishedAt: 2026-10-20
 updatedAt: 2026-10-20

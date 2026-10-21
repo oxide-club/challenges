@@ -1,15 +1,18 @@
 #!/usr/bin/env python3
-"""Check only identity conventions; the website owns the full Astro schema."""
+"""Check identity and primary areas; the website owns the full Astro schema."""
 
 from pathlib import Path
 import re
 import sys
+from challenge_areas import load_areas
 
 IDENTIFIER = re.compile(r"(?!000-)[0-9]{3}-[a-z0-9]+(?:-[a-z0-9]+)*")
 SLUG = re.compile(r"""^slug:\s*(?:'([^']+)'|"([^"]+)"|([a-z0-9-]+))[ \t]*$""", re.M)
+AREA = re.compile(r"""^area:[ \t]*(?:'([^']+)'|"([^"]+)"|([a-z0-9-]+))[ \t]*$""", re.M)
 
 
 def check(root):
+    areas = {area["id"] for area in load_areas(root / "areas.json")}
     definitions = sorted(root.glob("*/index.md"))
     if not definitions:
         raise ValueError("Nenhum desafio encontrado")
@@ -29,6 +32,11 @@ def check(root):
         slugs = SLUG.findall(parts[1])
         if len(slugs) != 1 or next(filter(None, slugs[0]), "") != identifier:
             raise ValueError(f"slug deve corresponder a {identifier}")
+        references = AREA.findall(parts[1])
+        if len(re.findall(r"^area:", parts[1], re.M)) != 1 or len(references) != 1:
+            raise ValueError(f"{identifier}: declare uma única area escalar")
+        if next(filter(None, references[0]), "") not in areas:
+            raise ValueError(f"{identifier}: area desconhecida")
     return len(definitions)
 
 

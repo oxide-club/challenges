@@ -1,6 +1,7 @@
 ---
-title: '#5 — Base64 de ida e volta'
+title: 'Base64 de ida e volta'
 slug: '005-base64'
+area: systems-fundamentals
 summary: 'Codifique e decodifique bytes em Base64 com padding obrigatório e forma canônica estrita.'
 publishedAt: 2026-10-20
 updatedAt: 2026-10-20

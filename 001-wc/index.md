@@ -1,6 +1,7 @@
 ---
-title: '#1 — Construa seu wc'
+title: 'Construa seu wc'
 slug: '001-wc'
+area: systems-fundamentals
 summary: 'Conte linhas, palavras e bytes lendo a entrada aos poucos, sem carregar todos os dados na memória.'
 publishedAt: 2026-10-18
 updatedAt: 2026-10-20

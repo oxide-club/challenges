@@ -1,6 +1,7 @@
 ---
-title: '#2 — Gere uma imagem PPM'
+title: 'Gere uma imagem PPM'
 slug: '002-ppm'
+area: graphics
 summary: 'Crie uma imagem calculando as cores de cada pixel e escrevendo o resultado em um arquivo PPM.'
 publishedAt: 2026-10-20
 updatedAt: 2026-10-20

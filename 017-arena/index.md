@@ -1,6 +1,7 @@
 ---
-title: '#17 — Arena de memória alinhada'
+title: 'Arena de memória alinhada'
 slug: '017-arena'
+area: memory
 summary: 'Entregue trechos alinhados de uma região fixa, sem sobreposição, e reinicialize tudo de uma vez.'
 publishedAt: 2026-10-20
 updatedAt: 2026-10-20

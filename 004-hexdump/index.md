@@ -1,6 +1,7 @@
 ---
-title: '#4 — Hexdump'
+title: 'Hexdump'
 slug: '004-hexdump'
+area: systems-fundamentals
 summary: 'Mostre offsets, bytes em hexadecimal e uma coluna ASCII, com 16 bytes por linha e saída exata.'
 publishedAt: 2026-10-20
 updatedAt: 2026-10-20

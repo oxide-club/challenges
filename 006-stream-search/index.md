@@ -1,6 +1,7 @@
 ---
-title: '#6 — Busca de sequência em stream'
+title: 'Busca de sequência em stream'
 slug: '006-stream-search'
+area: algorithms-data-structures
 summary: 'Encontre todas as ocorrências de um padrão binário em fluxo, inclusive sobrepostas, em tempo linear.'
 publishedAt: 2026-10-20
 updatedAt: 2026-10-20

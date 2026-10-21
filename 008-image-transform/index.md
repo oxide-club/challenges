@@ -1,6 +1,7 @@
 ---
-title: '#8 — Recorte e gire uma imagem'
+title: 'Recorte e gire uma imagem'
 slug: '008-image-transform'
+area: graphics
 summary: 'Implemente recorte retangular e rotação de 90 graus com mapeamento exato de coordenadas.'
 publishedAt: 2026-10-20
 updatedAt: 2026-10-20

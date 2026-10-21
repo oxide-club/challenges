@@ -1,6 +1,7 @@
 ---
-title: '#21 — Uma VM de bytecode'
+title: 'Uma VM de bytecode'
 slug: '021-bytecode'
+area: languages-interpreters
 summary: 'Execute bytecode de pilha com aritmética, memória e saltos, com validação prévia e orçamento de instruções.'
 publishedAt: 2026-10-20
 updatedAt: 2026-10-20

@@ -1,6 +1,7 @@
 ---
-title: '#7 — Pixels fora do lugar'
+title: 'Pixels fora do lugar'
 slug: '007-image-bug'
+area: graphics
 summary: 'Reproduza, explique e corrija um erro de mapeamento de pixels que só aparece em imagens retangulares.'
 publishedAt: 2026-10-20
 updatedAt: 2026-10-20

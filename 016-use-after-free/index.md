@@ -1,6 +1,7 @@
 ---
-title: '#16 — Quem liberou este buffer?'
+title: 'Quem liberou este buffer?'
 slug: '016-use-after-free'
+area: memory
 summary: 'Reproduza um uso de memória após liberação com sanitizador, reconstrua a linha do tempo e corrija o contrato.'
 publishedAt: 2026-10-20
 updatedAt: 2026-10-20
