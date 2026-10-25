@@ -4,7 +4,7 @@ slug: '017-arena'
 area: memory
 summary: 'Entregue trechos alinhados de uma região fixa, sem sobreposição, e reinicialize tudo de uma vez.'
 publishedAt: 2026-10-20
-updatedAt: 2026-10-20
+updatedAt: 2026-10-25
 draft: false
 difficulty: intermediate
 categories: [build, investigate]
@@ -105,6 +105,12 @@ Depois do primeiro byte, o segundo trecho começa no offset oito. Os sete bytes 
 | Capacidade zero | Toda solicitação positiva falha. O reset mantém `0/0`. |
 
 Os vetores públicos ficam em `tests/cases.json`. O teste direto `tests/api_test.c` verifica os endereços reais, os limites e a ausência de sobreposição. O [guia de testes](README.md) contém os comandos de compilação e execução. Não desreferencie ponteiros de alocações anteriores depois do reset. Teste a nova sequência de offsets.
+
+## Orientação e percurso consolidado
+
+O [roteiro de invariantes e alinhamento](materials/investigation.md) orienta a leitura do diagrama e das falhas sem acrescentar funções à API.
+
+Este desafio incorpora o percurso do antigo laboratório 004 de alocação. Quem já participou pode reaproveitar seu trabalho conforme o [guia de migração](../docs/labs-migration.md), sem concluir uma segunda implementação. O contrato acima e os testes públicos permanecem os mesmos.
 
 ## Extensões opcionais
 

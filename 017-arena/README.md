@@ -37,3 +37,9 @@ O adaptador é infraestrutura de teste. Não altere os comandos nem o formato de
 Cada caso tem limite de cinco segundos, ajustável com `--timeout 10`.
 
 Revise no código a verificação de overflow por subtração e a ausência de alocação dinâmica. Os testes não provam essas propriedades.
+
+## Orientação e migração
+
+O [roteiro de invariantes e alinhamento](materials/investigation.md) orienta a leitura do diagrama e das falhas sem acrescentar funções à API.
+
+Veio do laboratório 004? Consulte o [guia de migração](../docs/labs-migration.md) antes de adaptar seu projeto. Não é necessário refazer uma implementação já concluída; os testes daqui validam apenas o contrato deste desafio.

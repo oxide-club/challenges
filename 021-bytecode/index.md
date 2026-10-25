@@ -4,7 +4,7 @@ slug: '021-bytecode'
 area: languages-interpreters
 summary: 'Execute bytecode de pilha com aritmética, memória e saltos, com validação prévia e orçamento de instruções.'
 publishedAt: 2026-10-20
-updatedAt: 2026-10-20
+updatedAt: 2026-10-25
 draft: false
 difficulty: advanced
 categories: [build, investigate]
@@ -103,6 +103,12 @@ O programa `materials/sum-loop.bin` usa memória e saltos para somar 3+2+1. Ele 
 | Queda fora do código ou erros de I/O | Falhar com diagnóstico. |
 
 Os vetores públicos ficam em `tests/cases.json`. O [guia de testes](README.md) contém os comandos de compilação e execução. Passe todos os vetores e acrescente casos próprios.
+
+## Orientação e percurso consolidado
+
+O [roteiro junto ao trace](materials/trace.md#usar-o-trace-como-evidência) orienta previsões e uma intervenção opcional nos saltos, sem alterar a ISA.
+
+Este desafio incorpora o percurso do antigo laboratório 009 de máquinas virtuais. Quem já participou pode reaproveitar seu trabalho conforme o [guia de migração](../docs/labs-migration.md), sem concluir uma segunda implementação. O contrato acima e os testes públicos permanecem os mesmos.
 
 ## Extensões opcionais
 

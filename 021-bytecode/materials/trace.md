@@ -51,3 +51,54 @@ Estado após executar cada instrução; memória inicial zerada.
 | 15 | JZ | [] | 0, 6 |
 | 38 | LOAD | [6] | 0, 6 |
 | 40 | HALT | [6] | 0, 6 |
+
+## Usar o trace como evidência
+
+A tabela registra o estado **depois** da instrução no PC indicado. Antes de
+consultá-la, preveja as visitas ao PC 15: quais condições JZ retira e qual será
+o próximo PC? Compare as três visitas com condição não nula e a última com
+zero. JZ consome a condição nos dois caminhos; no último, salta para 38.
+No PC 35, JMP retorna a 7. Explique a relação entre a redução de `mem[0]`,
+o crescimento de `mem[1]` e a chegada ao HALT com exatamente um valor.
+
+Se instrumentar sua VM, registre separadamente passo, PC antes, opcode,
+pilha antes/depois, memória e próximo PC. Use um arquivo de diagnóstico ou
+`stderr`, mantendo apenas o resultado em `stdout`. Identifique o primeiro
+estado divergente; comparar apenas o resultado 6 pode esconder um erro de
+salto ou de consumo de pilha. Não é exigida uma API de trace.
+
+## Variar um salto sem trocar a ISA
+
+Como investigação opcional, faça duas cópias do programa fornecido. Partindo
+do diretório `021-bytecode`, o trecho abaixo modifica somente o operando do
+JMP no offset 35; preserva o original e grava as cópias em `/tmp`:
+
+```sh
+python3 - <<'PYCODE'
+from pathlib import Path
+code = Path("materials/sum-loop.bin").read_bytes()
+assert code[35:38] == bytes([0x08, 7, 0])
+for name, target in [("self-loop", 35), ("operand-jump", 36)]:
+    variant = bytearray(code)
+    variant[36:38] = target.to_bytes(2, "little")
+    Path(f"/tmp/oxide-{name}.bin").write_bytes(variant)
+PYCODE
+./oxide-bytecode < /tmp/oxide-self-loop.bin
+./oxide-bytecode < /tmp/oxide-operand-jump.bin
+```
+
+Preveja antes de executar: 35 é uma fronteira válida, enquanto 36 é um byte
+do operando. A primeira cópia passa na validação e, depois da primeira volta,
+repete JMP 35 sem mudar pilha nem memória. Ela deve falhar ao tentar executar
+a 1001ª instrução. A segunda deve ser rejeitada antes de executar qualquer
+instrução, mesmo que o destino contenha um byte que isoladamente pareça opcode.
+Em ambos os casos, confira status diferente de zero e diagnóstico em `stderr`.
+
+Use a comparação para explicar o que o mapa de fronteiras garante e o que
+não garante: um salto estruturalmente válido pode não terminar. O orçamento
+limita trabalho; não é prova de término nem substitui a validação integral.
+O limite continua sendo 1000 e inclui HALT; estas cópias não acrescentam
+requisitos à suíte ou ao protocolo.
+
+O [guia de migração](../../docs/labs-migration.md) distingue este trace da
+variante textual do antigo laboratório 009.

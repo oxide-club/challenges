@@ -53,3 +53,9 @@ Em Linux, o runner verifica erro de leitura com um diretório em `stdin`, erro d
 Cada caso tem limite de cinco segundos, ajustável com `--timeout 10`. O diretório `materials/` contém o leitor inicial em Python, o programa com laço e o seu trace.
 
 Revise no código a validação prévia de todo o programa e o trace do laço. Os testes verificam a saída, não o trace.
+
+## Orientação e migração
+
+O [roteiro junto ao trace](materials/trace.md#usar-o-trace-como-evidência) orienta previsões e uma intervenção opcional nos saltos, sem alterar a ISA.
+
+Veio do laboratório 009? Consulte o [guia de migração](../docs/labs-migration.md) antes de adaptar seu projeto. Não é necessário refazer uma implementação já concluída; os testes daqui validam apenas o contrato deste desafio.

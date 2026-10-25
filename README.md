@@ -56,6 +56,15 @@ intermediário e um difícil. Em cada trio, o frontmatter `participation: flagsh
 identifica o principal da livestream. Os três exercícios de um trio compartilham
 materiais, mas cada um pode ser iniciado de forma independente.
 
+## Percursos consolidados dos laboratórios
+
+Os antigos laboratórios 004 (arena) e 009 (VM) têm como destinos os desafios
+017 e 021. A orientação sobre invariantes, alinhamento e traces está integrada
+aos materiais desses desafios. Quem já participou pode reaproveitar seu trabalho,
+sem completar duas implementações; veja as diferenças de contrato e os caminhos
+no [guia de migração](docs/labs-migration.md). Os materiais históricos permanecem
+arquivados em `labs`; a extensão de pool se relaciona opcionalmente ao desafio 018.
+
 ## Como participar
 
 1. Escolha um desafio e leia sua definição.
