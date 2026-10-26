@@ -1,0 +1,147 @@
+{
+  "001-wc": {
+    "mode": "embedded"
+  },
+  "002-ppm": {
+    "mode": "embedded"
+  },
+  "003-rle": {
+    "mode": "embedded"
+  },
+  "004-hexdump": {
+    "mode": "embedded"
+  },
+  "005-base64": {
+    "mode": "embedded"
+  },
+  "006-stream-search": {
+    "mode": "embedded"
+  },
+  "007-image-bug": {
+    "mode": "embedded"
+  },
+  "008-image-transform": {
+    "mode": "embedded"
+  },
+  "009-triangle": {
+    "mode": "embedded"
+  },
+  "010-fixed-buffer": {
+    "mode": "embedded"
+  },
+  "011-dynamic-buffer": {
+    "mode": "embedded"
+  },
+  "012-hash-table": {
+    "mode": "embedded"
+  },
+  "013-record-inspector": {
+    "mode": "embedded"
+  },
+  "014-mystery-image": {
+    "mode": "embedded"
+  },
+  "015-mystery-program": {
+    "mode": "embedded"
+  },
+  "016-use-after-free": {
+    "mode": "embedded"
+  },
+  "017-arena": {
+    "mode": "embedded"
+  },
+  "018-free-list": {
+    "mode": "embedded"
+  },
+  "019-rpn": {
+    "mode": "embedded"
+  },
+  "020-expressions": {
+    "mode": "embedded"
+  },
+  "021-bytecode": {
+    "mode": "embedded"
+  },
+  "022-typestate": {
+    "mode": "package",
+    "guide": "README.md",
+    "check": "tests/check.py",
+    "validation": {
+      "path": "docs/validation/022-typestate.json",
+      "sha256": "d85a820464ee11d8eed3e35d0bddebd3affcbe8f3c3c17d7d2c02c62d160321c"
+    }
+  },
+  "023-mini-vec": {
+    "mode": "package",
+    "guide": "README.md",
+    "check": "tests/check.py",
+    "validation": {
+      "path": "docs/validation/023-mini-vec.json",
+      "sha256": "1074bfe8b1502fe6b8c05f0f5c984fbd2439b42e71ab2a38ba3bc24616e29beb"
+    }
+  },
+  "024-mini-refcell": {
+    "mode": "package",
+    "guide": "README.md",
+    "check": "tests/check.py",
+    "validation": {
+      "path": "docs/validation/024-mini-refcell.json",
+      "sha256": "714dafb686741613baf0a23244348b40b58cea833456e0924b61efd269822d29"
+    }
+  },
+  "025-rust-c-ffi": {
+    "mode": "package",
+    "guide": "README.md",
+    "check": "tests/check.py",
+    "validation": {
+      "path": "docs/validation/025-rust-c-ffi.json",
+      "sha256": "cf12cb6869b85465faab1f31f5723e3e325f3bf37c577944b5f64c6643636df3"
+    }
+  },
+  "026-no-std": {
+    "mode": "package",
+    "guide": "README.md",
+    "check": "tests/check.py"
+  },
+  "027-pe-inspector": {
+    "mode": "package",
+    "guide": "README.md",
+    "check": "tests/check.py",
+    "validation": {
+      "path": "docs/validation/027-pe-inspector.json",
+      "sha256": "93d68e9cbdb1d22b14da5a5916b18147f9bb0fcd69614e174d395a318edc9043"
+    }
+  },
+  "028-function-interposition": {
+    "mode": "package",
+    "guide": "README.md",
+    "check": "tests/check.py",
+    "validation": {
+      "path": "docs/validation/028-function-interposition.json",
+      "sha256": "b432feacb8390d4c8f70e4d385550982be0ab24d44aa431bc863dd7ecb36a06c"
+    }
+  },
+  "029-minimal-debugger": {
+    "mode": "package",
+    "guide": "README.md",
+    "check": "tests/check.py",
+    "validation": {
+      "path": "docs/validation/029-minimal-debugger.json",
+      "sha256": "b4886b086e80b93369667749270cba3374f75bddc5e2f9568864c454e22417f5"
+    }
+  },
+  "030-windows-inspector": {
+    "mode": "package",
+    "guide": "README.md",
+    "check": "tests/check.py"
+  },
+  "031-ipc-snapshots": {
+    "mode": "package",
+    "guide": "README.md",
+    "check": "tests/check.py",
+    "validation": {
+      "path": "docs/validation/031-ipc-snapshots.json",
+      "sha256": "ef48eb350118cbe5adb2c9049db61a3b2ed9c26db1c1d4aa637dc6a56ae92a7e"
+    }
+  }
+}

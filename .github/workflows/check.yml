@@ -10,11 +10,17 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Preparar Rust estável
+      - name: Preparar Rust validado na preparação
         run: |
-          rustup toolchain install stable --profile minimal --component rustfmt --component clippy
-          rustup default stable
+          rustup toolchain install 1.98.1 --profile minimal --component rustfmt --component clippy
+          rustup default 1.98.1
       - run: make check
+      - name: Preservar resultados dos pacotes (inclui não verificados)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: package-preparation
+          path: build/package-checks/
       - run: make build
   container:
     runs-on: ubuntu-latest

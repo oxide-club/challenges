@@ -1,0 +1,8 @@
+[
+ {"id":"positive","a":7,"b":2,"null":false,"before":71,"rc":0,"out":3,"after":71},
+ {"id":"negative","a":-7,"b":2,"null":false,"before":72,"rc":0,"out":-3,"after":72},
+ {"id":"zero","a":7,"b":0,"null":false,"before":73,"rc":-1,"out":123,"after":33},
+ {"id":"overflow","a":-2147483648,"b":-1,"null":false,"before":74,"rc":-1,"out":123,"after":34},
+ {"id":"null","a":7,"b":2,"null":true,"before":75,"rc":-1,"out":123,"after":22},
+ {"id":"precedence","a":7,"b":0,"null":true,"before":76,"rc":-1,"out":123,"after":22}
+]

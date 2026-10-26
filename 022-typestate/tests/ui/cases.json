@@ -1,0 +1,50 @@
+[
+  {
+    "id": "closed_write",
+    "code": "E0599"
+  },
+  {
+    "id": "finalized_write",
+    "code": "E0599"
+  },
+  {
+    "id": "twice_finalize",
+    "code": "E0382"
+  },
+  {
+    "id": "moved_open",
+    "code": "E0382"
+  },
+  {
+    "id": "open_bytes",
+    "code": "E0599"
+  },
+  {
+    "id": "resource_clone",
+    "code": "E0599"
+  },
+  {
+    "id": "open_clone",
+    "code": "E0599"
+  },
+  {
+    "id": "finalized_clone",
+    "code": "E0599"
+  },
+  {
+    "id": "closed_as_open",
+    "code": "E0308"
+  },
+  {
+    "id": "finalized_open",
+    "code": "E0599"
+  },
+  {
+    "id": "finalized_reopen",
+    "code": "E0599"
+  },
+  {
+    "id": "private_representation",
+    "code": "E0451"
+  }
+]

@@ -1,0 +1,45 @@
+{
+  "package": "029-minimal-debugger",
+  "status": "validated",
+  "reference": "passed",
+  "mutants": "rejected",
+  "pilot": "waived_by_owner",
+  "editorial": "approved",
+  "pilot_waiver": {
+    "approved_by": "responsavel",
+    "date": "2026-10-25",
+    "reason": "Dispensa explícita do piloto para a saída de rascunho dos oito pacotes tecnicamente validados; no_std e Windows continuam em rascunho.",
+    "request": "Resposta do usuário a call_cc76bdf2b404410a89b259c4a68ff51e, item 0: Dispensar piloto; manter no_std e Windows em rascunho"
+  },
+  "validation_scope": {
+    "technical_basis": "Resultado da revisão independente 6 informado pelo responsável nesta sessão; IDs anteriores relacionados pela renumeração de 25/10/2026.",
+    "reference_and_mutants": "Validação anterior preservada; referências completas e matrizes não foram reexecutadas nesta alteração de formatação.",
+    "changes": "Formatação de código e atualização do estado editorial. Preparação dos pacotes e verificações compartilhadas repetidas localmente.",
+    "pilot_executed": false,
+    "remote_ci_executed": false,
+    "publication_executed": false
+  },
+  "public_sha256": {
+    ".gitignore": "b53324a1fb82c9caa2fd8f4bcf53ce044045346cf888b8f17ac832fb4e295715",
+    "Makefile": "5741be90d8b70ae8ae471ec3372c207d87c362f0c6380e0cbd66c8915b337f4b",
+    "README.md": "8705940b17d2e056be62fef58ec78be5928a738afe3fa4f7e60ebc2c5918a1c4",
+    "index.md": "784ce2c2c2686a0af22d394ad645c0f2b4ea40aee08bc8681e8567679885df3d",
+    "materials/README.md": "cc65331313e570c9a32ef8033d3f8ca26d49c0890b5aa621e76fcc356d05dcef",
+    "materials/arithmetic.S": "99aa5d1005ce5d8c03d3963c46f8ef239b26f15712c4b16fd6fed9e7075c6b55",
+    "materials/probe.c": "f6e8963b71b6b30e4522c83cab108922ec674484c11beea73cf728919dc11233",
+    "materials/signals.c": "c71df9b2abbecb4279f1fbe8bf861c8a7ad6291224f79b64a12bdde6352cc5bb",
+    "materials/step-trap.S": "a7eaf0b9d5f819e71bcd95f9e5ae7a5585808e385ee1a98985ef5df30767090e",
+    "references.md": "ad072dacdd41e04bfed425abd806332fcbbf87d98dee8f3e8eaa0af219cf80b9",
+    "starter/oxdbg.c": "b0ae5fb7c294de3648fe62041154939c77986309387f56fcfadb1fec7b596705",
+    "tests/check.py": "e23e8cf2e1d7e17f2be91bd975b2dd9bbddaf06efa34d859d9493ac46691f39f",
+    "tests/deny_ptrace.c": "ead464512fb7c8d88850445f37859e0c9d0cce2cc906f99a5e9ca9151af76731",
+    "tests/eintr.c": "14b4718dadee7816927f302d7c0cd9bbd87ca3aaf0ce0918efa7c1f4630ea6b5",
+    "tests/lifecycle.py": "4e2dbc7acc09c6706429a1e39419a9b8849df438b3eb025dbdfa8d82074dcc6d",
+    "tests/neutral_seccomp.c": "17e5d27ff85fd5525ad0b2bf28aaad54966fb61e3cfcfd69ffe807f248c22dca",
+    "tests/notify_ptrace.c": "50b905fa727c31e68c65b6cbf55d58193f2e74568ab1bb1193d9ffd39f3dbe7b",
+    "tests/ptrace_attempt.c": "648f01a893d75b00306abc3e055af0247aea7e9ad4eac0a6661dceb2c7616f87",
+    "tests/setup_controls.py": "56fc8f9d8e87d2295cf51dabcb04d5286e5414f8b68b3654a9496e257e158e8f",
+    "tests/test.py": "0e935acf023ea864283dfc200041654f3dc3f14815212b2f6a5998b211b6af37",
+    "tests/unavailable.py": "4bdb5306960a6f34d1944073054fef20c81b24606daefe13041c60d6ccaf7a88"
+  }
+}

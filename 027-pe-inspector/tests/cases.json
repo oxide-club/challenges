@@ -1,0 +1,2338 @@
+[
+  {
+    "id": "inventory",
+    "fixture": "base",
+    "args": [],
+    "status": 0,
+    "expected": {
+      "schema_version": 1,
+      "machine": "0x8664",
+      "image_base": "0x140000000",
+      "entry_rva": "0x1010",
+      "size_of_headers": 512,
+      "data_directories": [],
+      "sections": [
+        {
+          "name_hex": "2e74657874000000",
+          "rva": "0x1000",
+          "virtual_size": 768,
+          "raw_offset": "0x200",
+          "raw_size": 512
+        }
+      ],
+      "query": null
+    }
+  },
+  {
+    "id": "overlay",
+    "fixture": "overlay",
+    "args": [],
+    "status": 0,
+    "expected": {
+      "schema_version": 1,
+      "machine": "0x8664",
+      "image_base": "0x140000000",
+      "entry_rva": "0x1010",
+      "size_of_headers": 512,
+      "data_directories": [],
+      "sections": [
+        {
+          "name_hex": "2e74657874000000",
+          "rva": "0x1000",
+          "virtual_size": 768,
+          "raw_offset": "0x200",
+          "raw_size": 512
+        }
+      ],
+      "query": null
+    }
+  },
+  {
+    "id": "query-0-1",
+    "fixture": "base",
+    "args": [
+      "--rva",
+      "0x0",
+      "--size",
+      "1"
+    ],
+    "status": 0,
+    "expected": {
+      "schema_version": 1,
+      "machine": "0x8664",
+      "image_base": "0x140000000",
+      "entry_rva": "0x1010",
+      "size_of_headers": 512,
+      "data_directories": [],
+      "sections": [
+        {
+          "name_hex": "2e74657874000000",
+          "rva": "0x1000",
+          "virtual_size": 768,
+          "raw_offset": "0x200",
+          "raw_size": 512
+        }
+      ],
+      "query": {
+        "rva": "0x0",
+        "size": 1,
+        "kind": "headers",
+        "section_index": null,
+        "file_offset": "0x0"
+      }
+    }
+  },
+  {
+    "id": "query-80-1",
+    "fixture": "base",
+    "args": [
+      "--rva",
+      "0x80",
+      "--size",
+      "1"
+    ],
+    "status": 0,
+    "expected": {
+      "schema_version": 1,
+      "machine": "0x8664",
+      "image_base": "0x140000000",
+      "entry_rva": "0x1010",
+      "size_of_headers": 512,
+      "data_directories": [],
+      "sections": [
+        {
+          "name_hex": "2e74657874000000",
+          "rva": "0x1000",
+          "virtual_size": 768,
+          "raw_offset": "0x200",
+          "raw_size": 512
+        }
+      ],
+      "query": {
+        "rva": "0x80",
+        "size": 1,
+        "kind": "headers",
+        "section_index": null,
+        "file_offset": "0x80"
+      }
+    }
+  },
+  {
+    "id": "query-1ff-1",
+    "fixture": "base",
+    "args": [
+      "--rva",
+      "0x1ff",
+      "--size",
+      "1"
+    ],
+    "status": 0,
+    "expected": {
+      "schema_version": 1,
+      "machine": "0x8664",
+      "image_base": "0x140000000",
+      "entry_rva": "0x1010",
+      "size_of_headers": 512,
+      "data_directories": [],
+      "sections": [
+        {
+          "name_hex": "2e74657874000000",
+          "rva": "0x1000",
+          "virtual_size": 768,
+          "raw_offset": "0x200",
+          "raw_size": 512
+        }
+      ],
+      "query": {
+        "rva": "0x1ff",
+        "size": 1,
+        "kind": "headers",
+        "section_index": null,
+        "file_offset": "0x1ff"
+      }
+    }
+  },
+  {
+    "id": "query-1ff-2",
+    "fixture": "base",
+    "args": [
+      "--rva",
+      "0x1ff",
+      "--size",
+      "2"
+    ],
+    "status": 0,
+    "expected": {
+      "schema_version": 1,
+      "machine": "0x8664",
+      "image_base": "0x140000000",
+      "entry_rva": "0x1010",
+      "size_of_headers": 512,
+      "data_directories": [],
+      "sections": [
+        {
+          "name_hex": "2e74657874000000",
+          "rva": "0x1000",
+          "virtual_size": 768,
+          "raw_offset": "0x200",
+          "raw_size": 512
+        }
+      ],
+      "query": {
+        "rva": "0x1ff",
+        "size": 2,
+        "kind": "cross_region",
+        "section_index": null,
+        "file_offset": null
+      }
+    }
+  },
+  {
+    "id": "query-200-4096",
+    "fixture": "base",
+    "args": [
+      "--rva",
+      "0x200",
+      "--size",
+      "4096"
+    ],
+    "status": 0,
+    "expected": {
+      "schema_version": 1,
+      "machine": "0x8664",
+      "image_base": "0x140000000",
+      "entry_rva": "0x1010",
+      "size_of_headers": 512,
+      "data_directories": [],
+      "sections": [
+        {
+          "name_hex": "2e74657874000000",
+          "rva": "0x1000",
+          "virtual_size": 768,
+          "raw_offset": "0x200",
+          "raw_size": 512
+        }
+      ],
+      "query": {
+        "rva": "0x200",
+        "size": 4096,
+        "kind": "unmapped",
+        "section_index": null,
+        "file_offset": null
+      }
+    }
+  },
+  {
+    "id": "query-1010-1",
+    "fixture": "base",
+    "args": [
+      "--rva",
+      "0x1010",
+      "--size",
+      "1"
+    ],
+    "status": 0,
+    "expected": {
+      "schema_version": 1,
+      "machine": "0x8664",
+      "image_base": "0x140000000",
+      "entry_rva": "0x1010",
+      "size_of_headers": 512,
+      "data_directories": [],
+      "sections": [
+        {
+          "name_hex": "2e74657874000000",
+          "rva": "0x1000",
+          "virtual_size": 768,
+          "raw_offset": "0x200",
+          "raw_size": 512
+        }
+      ],
+      "query": {
+        "rva": "0x1010",
+        "size": 1,
+        "kind": "section_raw",
+        "section_index": 0,
+        "file_offset": "0x210"
+      }
+    }
+  },
+  {
+    "id": "query-11ff-1",
+    "fixture": "base",
+    "args": [
+      "--rva",
+      "0x11ff",
+      "--size",
+      "1"
+    ],
+    "status": 0,
+    "expected": {
+      "schema_version": 1,
+      "machine": "0x8664",
+      "image_base": "0x140000000",
+      "entry_rva": "0x1010",
+      "size_of_headers": 512,
+      "data_directories": [],
+      "sections": [
+        {
+          "name_hex": "2e74657874000000",
+          "rva": "0x1000",
+          "virtual_size": 768,
+          "raw_offset": "0x200",
+          "raw_size": 512
+        }
+      ],
+      "query": {
+        "rva": "0x11ff",
+        "size": 1,
+        "kind": "section_raw",
+        "section_index": 0,
+        "file_offset": "0x3ff"
+      }
+    }
+  },
+  {
+    "id": "query-11ff-2",
+    "fixture": "base",
+    "args": [
+      "--rva",
+      "0x11ff",
+      "--size",
+      "2"
+    ],
+    "status": 0,
+    "expected": {
+      "schema_version": 1,
+      "machine": "0x8664",
+      "image_base": "0x140000000",
+      "entry_rva": "0x1010",
+      "size_of_headers": 512,
+      "data_directories": [],
+      "sections": [
+        {
+          "name_hex": "2e74657874000000",
+          "rva": "0x1000",
+          "virtual_size": 768,
+          "raw_offset": "0x200",
+          "raw_size": 512
+        }
+      ],
+      "query": {
+        "rva": "0x11ff",
+        "size": 2,
+        "kind": "cross_region",
+        "section_index": 0,
+        "file_offset": null
+      }
+    }
+  },
+  {
+    "id": "query-1200-1",
+    "fixture": "base",
+    "args": [
+      "--rva",
+      "0x1200",
+      "--size",
+      "1"
+    ],
+    "status": 0,
+    "expected": {
+      "schema_version": 1,
+      "machine": "0x8664",
+      "image_base": "0x140000000",
+      "entry_rva": "0x1010",
+      "size_of_headers": 512,
+      "data_directories": [],
+      "sections": [
+        {
+          "name_hex": "2e74657874000000",
+          "rva": "0x1000",
+          "virtual_size": 768,
+          "raw_offset": "0x200",
+          "raw_size": 512
+        }
+      ],
+      "query": {
+        "rva": "0x1200",
+        "size": 1,
+        "kind": "zero_fill",
+        "section_index": 0,
+        "file_offset": null
+      }
+    }
+  },
+  {
+    "id": "query-12ff-1",
+    "fixture": "base",
+    "args": [
+      "--rva",
+      "0x12ff",
+      "--size",
+      "1"
+    ],
+    "status": 0,
+    "expected": {
+      "schema_version": 1,
+      "machine": "0x8664",
+      "image_base": "0x140000000",
+      "entry_rva": "0x1010",
+      "size_of_headers": 512,
+      "data_directories": [],
+      "sections": [
+        {
+          "name_hex": "2e74657874000000",
+          "rva": "0x1000",
+          "virtual_size": 768,
+          "raw_offset": "0x200",
+          "raw_size": 512
+        }
+      ],
+      "query": {
+        "rva": "0x12ff",
+        "size": 1,
+        "kind": "zero_fill",
+        "section_index": 0,
+        "file_offset": null
+      }
+    }
+  },
+  {
+    "id": "query-12ff-2",
+    "fixture": "base",
+    "args": [
+      "--rva",
+      "0x12ff",
+      "--size",
+      "2"
+    ],
+    "status": 0,
+    "expected": {
+      "schema_version": 1,
+      "machine": "0x8664",
+      "image_base": "0x140000000",
+      "entry_rva": "0x1010",
+      "size_of_headers": 512,
+      "data_directories": [],
+      "sections": [
+        {
+          "name_hex": "2e74657874000000",
+          "rva": "0x1000",
+          "virtual_size": 768,
+          "raw_offset": "0x200",
+          "raw_size": 512
+        }
+      ],
+      "query": {
+        "rva": "0x12ff",
+        "size": 2,
+        "kind": "cross_region",
+        "section_index": 0,
+        "file_offset": null
+      }
+    }
+  },
+  {
+    "id": "query-1300-1",
+    "fixture": "base",
+    "args": [
+      "--rva",
+      "0x1300",
+      "--size",
+      "1"
+    ],
+    "status": 0,
+    "expected": {
+      "schema_version": 1,
+      "machine": "0x8664",
+      "image_base": "0x140000000",
+      "entry_rva": "0x1010",
+      "size_of_headers": 512,
+      "data_directories": [],
+      "sections": [
+        {
+          "name_hex": "2e74657874000000",
+          "rva": "0x1000",
+          "virtual_size": 768,
+          "raw_offset": "0x200",
+          "raw_size": 512
+        }
+      ],
+      "query": {
+        "rva": "0x1300",
+        "size": 1,
+        "kind": "unmapped",
+        "section_index": null,
+        "file_offset": null
+      }
+    }
+  },
+  {
+    "id": "query-ffffffff-1",
+    "fixture": "base",
+    "args": [
+      "--rva",
+      "0xffffffff",
+      "--size",
+      "1"
+    ],
+    "status": 0,
+    "expected": {
+      "schema_version": 1,
+      "machine": "0x8664",
+      "image_base": "0x140000000",
+      "entry_rva": "0x1010",
+      "size_of_headers": 512,
+      "data_directories": [],
+      "sections": [
+        {
+          "name_hex": "2e74657874000000",
+          "rva": "0x1000",
+          "virtual_size": 768,
+          "raw_offset": "0x200",
+          "raw_size": 512
+        }
+      ],
+      "query": {
+        "rva": "0xffffffff",
+        "size": 1,
+        "kind": "unmapped",
+        "section_index": null,
+        "file_offset": null
+      }
+    }
+  },
+  {
+    "id": "padding",
+    "fixture": "padding",
+    "args": [],
+    "status": 0,
+    "expected": {
+      "schema_version": 1,
+      "machine": "0x8664",
+      "image_base": "0x140000000",
+      "entry_rva": "0x1010",
+      "size_of_headers": 512,
+      "data_directories": [],
+      "sections": [
+        {
+          "name_hex": "2e74657874000000",
+          "rva": "0x1000",
+          "virtual_size": 256,
+          "raw_offset": "0x200",
+          "raw_size": 512
+        }
+      ],
+      "query": null
+    }
+  },
+  {
+    "id": "padding-query",
+    "fixture": "padding",
+    "args": [
+      "--rva",
+      "0x1100",
+      "--size",
+      "1"
+    ],
+    "status": 0,
+    "expected": {
+      "schema_version": 1,
+      "machine": "0x8664",
+      "image_base": "0x140000000",
+      "entry_rva": "0x1010",
+      "size_of_headers": 512,
+      "data_directories": [],
+      "sections": [
+        {
+          "name_hex": "2e74657874000000",
+          "rva": "0x1000",
+          "virtual_size": 256,
+          "raw_offset": "0x200",
+          "raw_size": 512
+        }
+      ],
+      "query": {
+        "rva": "0x1100",
+        "size": 1,
+        "kind": "unmapped",
+        "section_index": null,
+        "file_offset": null
+      }
+    }
+  },
+  {
+    "id": "empty",
+    "fixture": "empty",
+    "args": [],
+    "status": 0,
+    "expected": {
+      "schema_version": 1,
+      "machine": "0x8664",
+      "image_base": "0x140000000",
+      "entry_rva": "0x1010",
+      "size_of_headers": 512,
+      "data_directories": [],
+      "sections": [
+        {
+          "name_hex": "2e74657874000000",
+          "rva": "0x0",
+          "virtual_size": 0,
+          "raw_offset": "0xffffffff",
+          "raw_size": 0
+        }
+      ],
+      "query": null
+    }
+  },
+  {
+    "id": "empty-query",
+    "fixture": "empty",
+    "args": [
+      "--rva",
+      "0x1000",
+      "--size",
+      "1"
+    ],
+    "status": 0,
+    "expected": {
+      "schema_version": 1,
+      "machine": "0x8664",
+      "image_base": "0x140000000",
+      "entry_rva": "0x1010",
+      "size_of_headers": 512,
+      "data_directories": [],
+      "sections": [
+        {
+          "name_hex": "2e74657874000000",
+          "rva": "0x0",
+          "virtual_size": 0,
+          "raw_offset": "0xffffffff",
+          "raw_size": 0
+        }
+      ],
+      "query": {
+        "rva": "0x1000",
+        "size": 1,
+        "kind": "unmapped",
+        "section_index": null,
+        "file_offset": null
+      }
+    }
+  },
+  {
+    "id": "zero-fill-only",
+    "fixture": "zero-fill-only",
+    "args": [],
+    "status": 0,
+    "expected": {
+      "schema_version": 1,
+      "machine": "0x8664",
+      "image_base": "0x140000000",
+      "entry_rva": "0x1010",
+      "size_of_headers": 512,
+      "data_directories": [],
+      "sections": [
+        {
+          "name_hex": "2e74657874000000",
+          "rva": "0x1000",
+          "virtual_size": 768,
+          "raw_offset": "0xffffffff",
+          "raw_size": 0
+        }
+      ],
+      "query": null
+    }
+  },
+  {
+    "id": "zero-fill-only-query",
+    "fixture": "zero-fill-only",
+    "args": [
+      "--rva",
+      "0x1000",
+      "--size",
+      "1"
+    ],
+    "status": 0,
+    "expected": {
+      "schema_version": 1,
+      "machine": "0x8664",
+      "image_base": "0x140000000",
+      "entry_rva": "0x1010",
+      "size_of_headers": 512,
+      "data_directories": [],
+      "sections": [
+        {
+          "name_hex": "2e74657874000000",
+          "rva": "0x1000",
+          "virtual_size": 768,
+          "raw_offset": "0xffffffff",
+          "raw_size": 0
+        }
+      ],
+      "query": {
+        "rva": "0x1000",
+        "size": 1,
+        "kind": "zero_fill",
+        "section_index": 0,
+        "file_offset": null
+      }
+    }
+  },
+  {
+    "id": "top-boundary",
+    "fixture": "top-boundary",
+    "args": [],
+    "status": 0,
+    "expected": {
+      "schema_version": 1,
+      "machine": "0x8664",
+      "image_base": "0x140000000",
+      "entry_rva": "0x1010",
+      "size_of_headers": 512,
+      "data_directories": [],
+      "sections": [
+        {
+          "name_hex": "2e74657874000000",
+          "rva": "0xfffffd00",
+          "virtual_size": 768,
+          "raw_offset": "0x200",
+          "raw_size": 512
+        }
+      ],
+      "query": null
+    }
+  },
+  {
+    "id": "top-boundary-query",
+    "fixture": "top-boundary",
+    "args": [
+      "--rva",
+      "0xffffffff",
+      "--size",
+      "1"
+    ],
+    "status": 0,
+    "expected": {
+      "schema_version": 1,
+      "machine": "0x8664",
+      "image_base": "0x140000000",
+      "entry_rva": "0x1010",
+      "size_of_headers": 512,
+      "data_directories": [],
+      "sections": [
+        {
+          "name_hex": "2e74657874000000",
+          "rva": "0xfffffd00",
+          "virtual_size": 768,
+          "raw_offset": "0x200",
+          "raw_size": 512
+        }
+      ],
+      "query": {
+        "rva": "0xffffffff",
+        "size": 1,
+        "kind": "zero_fill",
+        "section_index": 0,
+        "file_offset": null
+      }
+    }
+  },
+  {
+    "id": "binary-name",
+    "fixture": "binary-name",
+    "args": [],
+    "status": 0,
+    "expected": {
+      "schema_version": 1,
+      "machine": "0x8664",
+      "image_base": "0x140000000",
+      "entry_rva": "0x1010",
+      "size_of_headers": 512,
+      "data_directories": [],
+      "sections": [
+        {
+          "name_hex": "00ff227f80414243",
+          "rva": "0x1000",
+          "virtual_size": 768,
+          "raw_offset": "0x200",
+          "raw_size": 512
+        }
+      ],
+      "query": null
+    }
+  },
+  {
+    "id": "two",
+    "fixture": "two",
+    "args": [],
+    "status": 0,
+    "expected": {
+      "schema_version": 1,
+      "machine": "0x8664",
+      "image_base": "0x140000000",
+      "entry_rva": "0x1010",
+      "size_of_headers": 512,
+      "data_directories": [],
+      "sections": [
+        {
+          "name_hex": "2e74657874000000",
+          "rva": "0x1000",
+          "virtual_size": 768,
+          "raw_offset": "0x200",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x2000",
+          "virtual_size": 768,
+          "raw_offset": "0x400",
+          "raw_size": 512
+        }
+      ],
+      "query": null
+    }
+  },
+  {
+    "id": "directories",
+    "fixture": "directories",
+    "args": [],
+    "status": 0,
+    "expected": {
+      "schema_version": 1,
+      "machine": "0x8664",
+      "image_base": "0x140000000",
+      "entry_rva": "0x1010",
+      "size_of_headers": 512,
+      "data_directories": [
+        {
+          "address": "0xf0000000",
+          "size": 17
+        },
+        {
+          "address": "0xf0000001",
+          "size": 18
+        },
+        {
+          "address": "0xf0000002",
+          "size": 19
+        },
+        {
+          "address": "0xf0000003",
+          "size": 20
+        },
+        {
+          "address": "0xf0000004",
+          "size": 21
+        },
+        {
+          "address": "0xf0000005",
+          "size": 22
+        },
+        {
+          "address": "0xf0000006",
+          "size": 23
+        },
+        {
+          "address": "0xf0000007",
+          "size": 24
+        },
+        {
+          "address": "0xf0000008",
+          "size": 25
+        },
+        {
+          "address": "0xf0000009",
+          "size": 26
+        },
+        {
+          "address": "0xf000000a",
+          "size": 27
+        },
+        {
+          "address": "0xf000000b",
+          "size": 28
+        },
+        {
+          "address": "0xf000000c",
+          "size": 29
+        },
+        {
+          "address": "0xf000000d",
+          "size": 30
+        },
+        {
+          "address": "0xf000000e",
+          "size": 31
+        },
+        {
+          "address": "0xf000000f",
+          "size": 32
+        }
+      ],
+      "sections": [
+        {
+          "name_hex": "2e74657874000000",
+          "rva": "0x1000",
+          "virtual_size": 768,
+          "raw_offset": "0x200",
+          "raw_size": 512
+        }
+      ],
+      "query": null
+    }
+  },
+  {
+    "id": "count-96",
+    "fixture": "count-96",
+    "args": [],
+    "status": 0,
+    "expected": {
+      "schema_version": 1,
+      "machine": "0x8664",
+      "image_base": "0x140000000",
+      "entry_rva": "0x1010",
+      "size_of_headers": 4608,
+      "data_directories": [],
+      "sections": [
+        {
+          "name_hex": "2e74657874000000",
+          "rva": "0x2000",
+          "virtual_size": 768,
+          "raw_offset": "0x1200",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x3000",
+          "virtual_size": 768,
+          "raw_offset": "0x1400",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x4000",
+          "virtual_size": 768,
+          "raw_offset": "0x1600",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x5000",
+          "virtual_size": 768,
+          "raw_offset": "0x1800",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x6000",
+          "virtual_size": 768,
+          "raw_offset": "0x1a00",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x7000",
+          "virtual_size": 768,
+          "raw_offset": "0x1c00",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x8000",
+          "virtual_size": 768,
+          "raw_offset": "0x1e00",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x9000",
+          "virtual_size": 768,
+          "raw_offset": "0x2000",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0xa000",
+          "virtual_size": 768,
+          "raw_offset": "0x2200",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0xb000",
+          "virtual_size": 768,
+          "raw_offset": "0x2400",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0xc000",
+          "virtual_size": 768,
+          "raw_offset": "0x2600",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0xd000",
+          "virtual_size": 768,
+          "raw_offset": "0x2800",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0xe000",
+          "virtual_size": 768,
+          "raw_offset": "0x2a00",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0xf000",
+          "virtual_size": 768,
+          "raw_offset": "0x2c00",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x10000",
+          "virtual_size": 768,
+          "raw_offset": "0x2e00",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x11000",
+          "virtual_size": 768,
+          "raw_offset": "0x3000",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x12000",
+          "virtual_size": 768,
+          "raw_offset": "0x3200",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x13000",
+          "virtual_size": 768,
+          "raw_offset": "0x3400",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x14000",
+          "virtual_size": 768,
+          "raw_offset": "0x3600",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x15000",
+          "virtual_size": 768,
+          "raw_offset": "0x3800",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x16000",
+          "virtual_size": 768,
+          "raw_offset": "0x3a00",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x17000",
+          "virtual_size": 768,
+          "raw_offset": "0x3c00",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x18000",
+          "virtual_size": 768,
+          "raw_offset": "0x3e00",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x19000",
+          "virtual_size": 768,
+          "raw_offset": "0x4000",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x1a000",
+          "virtual_size": 768,
+          "raw_offset": "0x4200",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x1b000",
+          "virtual_size": 768,
+          "raw_offset": "0x4400",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x1c000",
+          "virtual_size": 768,
+          "raw_offset": "0x4600",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x1d000",
+          "virtual_size": 768,
+          "raw_offset": "0x4800",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x1e000",
+          "virtual_size": 768,
+          "raw_offset": "0x4a00",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x1f000",
+          "virtual_size": 768,
+          "raw_offset": "0x4c00",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x20000",
+          "virtual_size": 768,
+          "raw_offset": "0x4e00",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x21000",
+          "virtual_size": 768,
+          "raw_offset": "0x5000",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x22000",
+          "virtual_size": 768,
+          "raw_offset": "0x5200",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x23000",
+          "virtual_size": 768,
+          "raw_offset": "0x5400",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x24000",
+          "virtual_size": 768,
+          "raw_offset": "0x5600",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x25000",
+          "virtual_size": 768,
+          "raw_offset": "0x5800",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x26000",
+          "virtual_size": 768,
+          "raw_offset": "0x5a00",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x27000",
+          "virtual_size": 768,
+          "raw_offset": "0x5c00",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x28000",
+          "virtual_size": 768,
+          "raw_offset": "0x5e00",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x29000",
+          "virtual_size": 768,
+          "raw_offset": "0x6000",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x2a000",
+          "virtual_size": 768,
+          "raw_offset": "0x6200",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x2b000",
+          "virtual_size": 768,
+          "raw_offset": "0x6400",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x2c000",
+          "virtual_size": 768,
+          "raw_offset": "0x6600",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x2d000",
+          "virtual_size": 768,
+          "raw_offset": "0x6800",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x2e000",
+          "virtual_size": 768,
+          "raw_offset": "0x6a00",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x2f000",
+          "virtual_size": 768,
+          "raw_offset": "0x6c00",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x30000",
+          "virtual_size": 768,
+          "raw_offset": "0x6e00",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x31000",
+          "virtual_size": 768,
+          "raw_offset": "0x7000",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x32000",
+          "virtual_size": 768,
+          "raw_offset": "0x7200",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x33000",
+          "virtual_size": 768,
+          "raw_offset": "0x7400",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x34000",
+          "virtual_size": 768,
+          "raw_offset": "0x7600",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x35000",
+          "virtual_size": 768,
+          "raw_offset": "0x7800",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x36000",
+          "virtual_size": 768,
+          "raw_offset": "0x7a00",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x37000",
+          "virtual_size": 768,
+          "raw_offset": "0x7c00",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x38000",
+          "virtual_size": 768,
+          "raw_offset": "0x7e00",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x39000",
+          "virtual_size": 768,
+          "raw_offset": "0x8000",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x3a000",
+          "virtual_size": 768,
+          "raw_offset": "0x8200",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x3b000",
+          "virtual_size": 768,
+          "raw_offset": "0x8400",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x3c000",
+          "virtual_size": 768,
+          "raw_offset": "0x8600",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x3d000",
+          "virtual_size": 768,
+          "raw_offset": "0x8800",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x3e000",
+          "virtual_size": 768,
+          "raw_offset": "0x8a00",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x3f000",
+          "virtual_size": 768,
+          "raw_offset": "0x8c00",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x40000",
+          "virtual_size": 768,
+          "raw_offset": "0x8e00",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x41000",
+          "virtual_size": 768,
+          "raw_offset": "0x9000",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x42000",
+          "virtual_size": 768,
+          "raw_offset": "0x9200",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x43000",
+          "virtual_size": 768,
+          "raw_offset": "0x9400",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x44000",
+          "virtual_size": 768,
+          "raw_offset": "0x9600",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x45000",
+          "virtual_size": 768,
+          "raw_offset": "0x9800",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x46000",
+          "virtual_size": 768,
+          "raw_offset": "0x9a00",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x47000",
+          "virtual_size": 768,
+          "raw_offset": "0x9c00",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x48000",
+          "virtual_size": 768,
+          "raw_offset": "0x9e00",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x49000",
+          "virtual_size": 768,
+          "raw_offset": "0xa000",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x4a000",
+          "virtual_size": 768,
+          "raw_offset": "0xa200",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x4b000",
+          "virtual_size": 768,
+          "raw_offset": "0xa400",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x4c000",
+          "virtual_size": 768,
+          "raw_offset": "0xa600",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x4d000",
+          "virtual_size": 768,
+          "raw_offset": "0xa800",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x4e000",
+          "virtual_size": 768,
+          "raw_offset": "0xaa00",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x4f000",
+          "virtual_size": 768,
+          "raw_offset": "0xac00",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x50000",
+          "virtual_size": 768,
+          "raw_offset": "0xae00",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x51000",
+          "virtual_size": 768,
+          "raw_offset": "0xb000",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x52000",
+          "virtual_size": 768,
+          "raw_offset": "0xb200",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x53000",
+          "virtual_size": 768,
+          "raw_offset": "0xb400",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x54000",
+          "virtual_size": 768,
+          "raw_offset": "0xb600",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x55000",
+          "virtual_size": 768,
+          "raw_offset": "0xb800",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x56000",
+          "virtual_size": 768,
+          "raw_offset": "0xba00",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x57000",
+          "virtual_size": 768,
+          "raw_offset": "0xbc00",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x58000",
+          "virtual_size": 768,
+          "raw_offset": "0xbe00",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x59000",
+          "virtual_size": 768,
+          "raw_offset": "0xc000",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x5a000",
+          "virtual_size": 768,
+          "raw_offset": "0xc200",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x5b000",
+          "virtual_size": 768,
+          "raw_offset": "0xc400",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x5c000",
+          "virtual_size": 768,
+          "raw_offset": "0xc600",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x5d000",
+          "virtual_size": 768,
+          "raw_offset": "0xc800",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x5e000",
+          "virtual_size": 768,
+          "raw_offset": "0xca00",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x5f000",
+          "virtual_size": 768,
+          "raw_offset": "0xcc00",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x60000",
+          "virtual_size": 768,
+          "raw_offset": "0xce00",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x61000",
+          "virtual_size": 768,
+          "raw_offset": "0xd000",
+          "raw_size": 512
+        }
+      ],
+      "query": null
+    }
+  },
+  {
+    "id": "dos-short",
+    "fixture": "dos-short",
+    "args": [],
+    "status": 3,
+    "expected": "truncated_dos"
+  },
+  {
+    "id": "pe-short",
+    "fixture": "pe-short",
+    "args": [],
+    "status": 3,
+    "expected": [
+      "truncated_pe",
+      "truncated_optional",
+      "truncated_sections"
+    ]
+  },
+  {
+    "id": "optional-short",
+    "fixture": "optional-short",
+    "args": [],
+    "status": 3,
+    "expected": [
+      "truncated_optional",
+      "truncated_sections",
+      "invalid_headers"
+    ]
+  },
+  {
+    "id": "sections-short",
+    "fixture": "sections-short",
+    "args": [],
+    "status": 3,
+    "expected": [
+      "truncated_sections",
+      "invalid_headers",
+      "truncated_raw"
+    ]
+  },
+  {
+    "id": "raw-short",
+    "fixture": "raw-short",
+    "args": [],
+    "status": 3,
+    "expected": "truncated_raw"
+  },
+  {
+    "id": "bad-mz",
+    "fixture": "bad-mz",
+    "args": [],
+    "status": 3,
+    "expected": "unsupported_format"
+  },
+  {
+    "id": "bad-pe",
+    "fixture": "bad-pe",
+    "args": [],
+    "status": 3,
+    "expected": "unsupported_format"
+  },
+  {
+    "id": "machine",
+    "fixture": "machine",
+    "args": [],
+    "status": 3,
+    "expected": "unsupported_format"
+  },
+  {
+    "id": "pe32",
+    "fixture": "pe32",
+    "args": [],
+    "status": 3,
+    "expected": "unsupported_format"
+  },
+  {
+    "id": "count-zero",
+    "fixture": "count-zero",
+    "args": [],
+    "status": 3,
+    "expected": "invalid_count"
+  },
+  {
+    "id": "count-97",
+    "fixture": "count-97",
+    "args": [],
+    "status": 3,
+    "expected": "invalid_count"
+  },
+  {
+    "id": "optional-small",
+    "fixture": "optional-small",
+    "args": [],
+    "status": 3,
+    "expected": [
+      "truncated_optional",
+      "invalid_directories",
+      "truncated_raw"
+    ]
+  },
+  {
+    "id": "dirs-17",
+    "fixture": "dirs-17",
+    "args": [],
+    "status": 3,
+    "expected": "invalid_directories"
+  },
+  {
+    "id": "dirs-short",
+    "fixture": "dirs-short",
+    "args": [],
+    "status": 3,
+    "expected": "invalid_directories"
+  },
+  {
+    "id": "headers-small",
+    "fixture": "headers-small",
+    "args": [],
+    "status": 3,
+    "expected": "invalid_headers"
+  },
+  {
+    "id": "headers-large",
+    "fixture": "headers-large",
+    "args": [],
+    "status": 3,
+    "expected": "invalid_headers"
+  },
+  {
+    "id": "raw-in-headers",
+    "fixture": "raw-in-headers",
+    "args": [],
+    "status": 3,
+    "expected": "unsupported_layout"
+  },
+  {
+    "id": "rva-in-headers",
+    "fixture": "rva-in-headers",
+    "args": [],
+    "status": 3,
+    "expected": "unsupported_layout"
+  },
+  {
+    "id": "rva-overflow",
+    "fixture": "rva-overflow",
+    "args": [],
+    "status": 3,
+    "expected": "rva_overflow"
+  },
+  {
+    "id": "virtual-zero-raw",
+    "fixture": "virtual-zero-raw",
+    "args": [],
+    "status": 3,
+    "expected": "unsupported_layout"
+  },
+  {
+    "id": "raw-overlap",
+    "fixture": "raw-overlap",
+    "args": [],
+    "status": 3,
+    "expected": "raw_overlap"
+  },
+  {
+    "id": "virtual-overlap",
+    "fixture": "virtual-overlap",
+    "args": [],
+    "status": 3,
+    "expected": "virtual_overlap"
+  },
+  {
+    "id": "e-lfanew-huge",
+    "fixture": "e-lfanew-huge",
+    "args": [],
+    "status": 3,
+    "expected": [
+      "truncated_pe",
+      "truncated_optional"
+    ]
+  },
+  {
+    "id": "raw-pointer-huge",
+    "fixture": "raw-pointer-huge",
+    "args": [],
+    "status": 3,
+    "expected": "truncated_raw"
+  },
+  {
+    "id": "usage-1",
+    "fixture": "base",
+    "args": [
+      "--rva",
+      "0"
+    ],
+    "status": 2,
+    "expected": "usage"
+  },
+  {
+    "id": "usage-2",
+    "fixture": "base",
+    "args": [
+      "--size",
+      "1"
+    ],
+    "status": 2,
+    "expected": "usage"
+  },
+  {
+    "id": "usage-3",
+    "fixture": "base",
+    "args": [
+      "--rva",
+      "-1",
+      "--size",
+      "1"
+    ],
+    "status": 2,
+    "expected": "usage"
+  },
+  {
+    "id": "usage-4",
+    "fixture": "base",
+    "args": [
+      "--rva",
+      "100000000",
+      "--size",
+      "1"
+    ],
+    "status": 2,
+    "expected": "usage"
+  },
+  {
+    "id": "usage-5",
+    "fixture": "base",
+    "args": [
+      "--rva",
+      "ffffffff",
+      "--size",
+      "2"
+    ],
+    "status": 2,
+    "expected": "usage"
+  },
+  {
+    "id": "usage-6",
+    "fixture": "base",
+    "args": [
+      "--rva",
+      "0",
+      "--size",
+      "0"
+    ],
+    "status": 2,
+    "expected": "usage"
+  },
+  {
+    "id": "usage-7",
+    "fixture": "base",
+    "args": [
+      "--rva",
+      "0",
+      "--size",
+      "4097"
+    ],
+    "status": 2,
+    "expected": "usage"
+  },
+  {
+    "id": "usage-8",
+    "fixture": "base",
+    "args": [
+      "--rva",
+      "g",
+      "--size",
+      "1"
+    ],
+    "status": 2,
+    "expected": "usage"
+  },
+  {
+    "id": "usage-9",
+    "fixture": "base",
+    "args": [
+      "--rva",
+      "0",
+      "--size",
+      "1x"
+    ],
+    "status": 2,
+    "expected": "usage"
+  },
+  {
+    "id": "usage-10",
+    "fixture": "base",
+    "args": [
+      "--unknown"
+    ],
+    "status": 2,
+    "expected": "usage"
+  },
+  {
+    "id": "missing",
+    "fixture": "missing",
+    "args": [],
+    "status": 4,
+    "expected": "io"
+  },
+  {
+    "id": "too-large",
+    "fixture": "too-large",
+    "args": [],
+    "status": 3,
+    "expected": "too_large"
+  },
+  {
+    "id": "maximum-file-size",
+    "fixture": "max-size",
+    "args": [],
+    "status": 0,
+    "expected": {
+      "schema_version": 1,
+      "machine": "0x8664",
+      "image_base": "0x140000000",
+      "entry_rva": "0x1010",
+      "size_of_headers": 512,
+      "data_directories": [],
+      "sections": [
+        {
+          "name_hex": "2e74657874000000",
+          "rva": "0x1000",
+          "virtual_size": 768,
+          "raw_offset": "0x200",
+          "raw_size": 512
+        }
+      ],
+      "query": null
+    }
+  },
+  {
+    "id": "maximum-query-size",
+    "fixture": "base",
+    "args": [
+      "--rva",
+      "1000",
+      "--size",
+      "4096"
+    ],
+    "status": 0,
+    "expected": {
+      "schema_version": 1,
+      "machine": "0x8664",
+      "image_base": "0x140000000",
+      "entry_rva": "0x1010",
+      "size_of_headers": 512,
+      "data_directories": [],
+      "sections": [
+        {
+          "name_hex": "2e74657874000000",
+          "rva": "0x1000",
+          "virtual_size": 768,
+          "raw_offset": "0x200",
+          "raw_size": 512
+        }
+      ],
+      "query": {
+        "rva": "0x1000",
+        "size": 4096,
+        "kind": "cross_region",
+        "section_index": 0,
+        "file_offset": null
+      }
+    }
+  },
+  {
+    "id": "second-section-first-raw-byte",
+    "fixture": "two",
+    "args": [
+      "--rva",
+      "0x2000",
+      "--size",
+      "1"
+    ],
+    "status": 0,
+    "expected": {
+      "schema_version": 1,
+      "machine": "0x8664",
+      "image_base": "0x140000000",
+      "entry_rva": "0x1010",
+      "size_of_headers": 512,
+      "data_directories": [],
+      "sections": [
+        {
+          "name_hex": "2e74657874000000",
+          "rva": "0x1000",
+          "virtual_size": 768,
+          "raw_offset": "0x200",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x2000",
+          "virtual_size": 768,
+          "raw_offset": "0x400",
+          "raw_size": 512
+        }
+      ],
+      "query": {
+        "rva": "0x2000",
+        "size": 1,
+        "kind": "section_raw",
+        "section_index": 1,
+        "file_offset": "0x400"
+      }
+    }
+  },
+  {
+    "id": "second-section-last-raw-byte",
+    "fixture": "two",
+    "args": [
+      "--rva",
+      "0x21ff",
+      "--size",
+      "1"
+    ],
+    "status": 0,
+    "expected": {
+      "schema_version": 1,
+      "machine": "0x8664",
+      "image_base": "0x140000000",
+      "entry_rva": "0x1010",
+      "size_of_headers": 512,
+      "data_directories": [],
+      "sections": [
+        {
+          "name_hex": "2e74657874000000",
+          "rva": "0x1000",
+          "virtual_size": 768,
+          "raw_offset": "0x200",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x2000",
+          "virtual_size": 768,
+          "raw_offset": "0x400",
+          "raw_size": 512
+        }
+      ],
+      "query": {
+        "rva": "0x21ff",
+        "size": 1,
+        "kind": "section_raw",
+        "section_index": 1,
+        "file_offset": "0x5ff"
+      }
+    }
+  },
+  {
+    "id": "second-section-zero-fill",
+    "fixture": "two",
+    "args": [
+      "--rva",
+      "0x2200",
+      "--size",
+      "1"
+    ],
+    "status": 0,
+    "expected": {
+      "schema_version": 1,
+      "machine": "0x8664",
+      "image_base": "0x140000000",
+      "entry_rva": "0x1010",
+      "size_of_headers": 512,
+      "data_directories": [],
+      "sections": [
+        {
+          "name_hex": "2e74657874000000",
+          "rva": "0x1000",
+          "virtual_size": 768,
+          "raw_offset": "0x200",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x2000",
+          "virtual_size": 768,
+          "raw_offset": "0x400",
+          "raw_size": 512
+        }
+      ],
+      "query": {
+        "rva": "0x2200",
+        "size": 1,
+        "kind": "zero_fill",
+        "section_index": 1,
+        "file_offset": null
+      }
+    }
+  },
+  {
+    "id": "reverse-table-inventory",
+    "fixture": "reverse-table",
+    "args": [],
+    "status": 0,
+    "expected": {
+      "schema_version": 1,
+      "machine": "0x8664",
+      "image_base": "0x140000000",
+      "entry_rva": "0x1010",
+      "size_of_headers": 512,
+      "data_directories": [],
+      "sections": [
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x2000",
+          "virtual_size": 768,
+          "raw_offset": "0x400",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e74657874000000",
+          "rva": "0x1000",
+          "virtual_size": 768,
+          "raw_offset": "0x200",
+          "raw_size": 512
+        }
+      ],
+      "query": null
+    }
+  },
+  {
+    "id": "reverse-table-first-query",
+    "fixture": "reverse-table",
+    "args": [
+      "--rva",
+      "0x2000",
+      "--size",
+      "1"
+    ],
+    "status": 0,
+    "expected": {
+      "schema_version": 1,
+      "machine": "0x8664",
+      "image_base": "0x140000000",
+      "entry_rva": "0x1010",
+      "size_of_headers": 512,
+      "data_directories": [],
+      "sections": [
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x2000",
+          "virtual_size": 768,
+          "raw_offset": "0x400",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e74657874000000",
+          "rva": "0x1000",
+          "virtual_size": 768,
+          "raw_offset": "0x200",
+          "raw_size": 512
+        }
+      ],
+      "query": {
+        "rva": "0x2000",
+        "size": 1,
+        "kind": "section_raw",
+        "section_index": 0,
+        "file_offset": "0x400"
+      }
+    }
+  },
+  {
+    "id": "reverse-table-second-query",
+    "fixture": "reverse-table",
+    "args": [
+      "--rva",
+      "0x1000",
+      "--size",
+      "1"
+    ],
+    "status": 0,
+    "expected": {
+      "schema_version": 1,
+      "machine": "0x8664",
+      "image_base": "0x140000000",
+      "entry_rva": "0x1010",
+      "size_of_headers": 512,
+      "data_directories": [],
+      "sections": [
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x2000",
+          "virtual_size": 768,
+          "raw_offset": "0x400",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e74657874000000",
+          "rva": "0x1000",
+          "virtual_size": 768,
+          "raw_offset": "0x200",
+          "raw_size": 512
+        }
+      ],
+      "query": {
+        "rva": "0x1000",
+        "size": 1,
+        "kind": "section_raw",
+        "section_index": 1,
+        "file_offset": "0x200"
+      }
+    }
+  },
+  {
+    "id": "touching-intervals-inventory",
+    "fixture": "virtual-touch",
+    "args": [],
+    "status": 0,
+    "expected": {
+      "schema_version": 1,
+      "machine": "0x8664",
+      "image_base": "0x140000000",
+      "entry_rva": "0x1010",
+      "size_of_headers": 512,
+      "data_directories": [],
+      "sections": [
+        {
+          "name_hex": "2e74657874000000",
+          "rva": "0x1000",
+          "virtual_size": 768,
+          "raw_offset": "0x200",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x1300",
+          "virtual_size": 768,
+          "raw_offset": "0x400",
+          "raw_size": 512
+        }
+      ],
+      "query": null
+    }
+  },
+  {
+    "id": "touching-intervals-second-start",
+    "fixture": "virtual-touch",
+    "args": [
+      "--rva",
+      "0x1300",
+      "--size",
+      "1"
+    ],
+    "status": 0,
+    "expected": {
+      "schema_version": 1,
+      "machine": "0x8664",
+      "image_base": "0x140000000",
+      "entry_rva": "0x1010",
+      "size_of_headers": 512,
+      "data_directories": [],
+      "sections": [
+        {
+          "name_hex": "2e74657874000000",
+          "rva": "0x1000",
+          "virtual_size": 768,
+          "raw_offset": "0x200",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x1300",
+          "virtual_size": 768,
+          "raw_offset": "0x400",
+          "raw_size": 512
+        }
+      ],
+      "query": {
+        "rva": "0x1300",
+        "size": 1,
+        "kind": "section_raw",
+        "section_index": 1,
+        "file_offset": "0x400"
+      }
+    }
+  },
+  {
+    "id": "touching-intervals-cross-section",
+    "fixture": "virtual-touch",
+    "args": [
+      "--rva",
+      "0x12ff",
+      "--size",
+      "2"
+    ],
+    "status": 0,
+    "expected": {
+      "schema_version": 1,
+      "machine": "0x8664",
+      "image_base": "0x140000000",
+      "entry_rva": "0x1010",
+      "size_of_headers": 512,
+      "data_directories": [],
+      "sections": [
+        {
+          "name_hex": "2e74657874000000",
+          "rva": "0x1000",
+          "virtual_size": 768,
+          "raw_offset": "0x200",
+          "raw_size": 512
+        },
+        {
+          "name_hex": "2e64617461000000",
+          "rva": "0x1300",
+          "virtual_size": 768,
+          "raw_offset": "0x400",
+          "raw_size": 512
+        }
+      ],
+      "query": {
+        "rva": "0x12ff",
+        "size": 2,
+        "kind": "cross_region",
+        "section_index": 0,
+        "file_offset": null
+      }
+    }
+  },
+  {
+    "id": "headers-exact",
+    "fixture": "headers-exact",
+    "args": [],
+    "status": 0,
+    "expected": {
+      "schema_version": 1,
+      "machine": "0x8664",
+      "image_base": "0x140000000",
+      "entry_rva": "0x1010",
+      "size_of_headers": 304,
+      "data_directories": [],
+      "sections": [
+        {
+          "name_hex": "2e74657874000000",
+          "rva": "0x1000",
+          "virtual_size": 768,
+          "raw_offset": "0x200",
+          "raw_size": 512
+        }
+      ],
+      "query": null
+    }
+  },
+  {
+    "id": "optional-declared-truncated",
+    "fixture": "optional-declared-truncated",
+    "args": [],
+    "status": 3,
+    "expected": [
+      "truncated_optional",
+      "truncated_sections",
+      "invalid_headers"
+    ]
+  }
+]

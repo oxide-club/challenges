@@ -1,0 +1,34 @@
+{
+  "package": "027-pe-inspector",
+  "status": "validated",
+  "reference": "passed",
+  "mutants": "rejected",
+  "pilot": "waived_by_owner",
+  "editorial": "approved",
+  "pilot_waiver": {
+    "approved_by": "responsavel",
+    "date": "2026-10-25",
+    "reason": "Dispensa explícita do piloto para a saída de rascunho dos oito pacotes tecnicamente validados; no_std e Windows continuam em rascunho.",
+    "request": "Resposta do usuário a call_cc76bdf2b404410a89b259c4a68ff51e, item 0: Dispensar piloto; manter no_std e Windows em rascunho"
+  },
+  "validation_scope": {
+    "technical_basis": "Resultado da revisão independente 6 informado pelo responsável nesta sessão; IDs anteriores relacionados pela renumeração de 25/10/2026.",
+    "reference_and_mutants": "Validação anterior preservada; referências completas e matrizes não foram reexecutadas nesta alteração de formatação.",
+    "changes": "Formatação de código e atualização do estado editorial. Preparação dos pacotes e verificações compartilhadas repetidas localmente.",
+    "pilot_executed": false,
+    "remote_ci_executed": false,
+    "publication_executed": false
+  },
+  "public_sha256": {
+    "README.md": "b068142555d458c3617f01ceb02d559a02f4b5590ddc62730311fb2f87427940",
+    "index.md": "2a3fdf652c8eca002d089ffef6007e9f783ecf57e1aa89cc0e53709e19f4e10e",
+    "materials/README.md": "731e9c6ad85858337076d3507697d3e27cc97de19d05e371343c5262b851893c",
+    "materials/fixture-manifest.json": "b99bbd1481ef4b4a15c2a7408a0285ff6789e0facf5ad82ca4c57f9fc0a0da57",
+    "materials/generate.py": "57abb99501ca9f171ef23af84067caa080bfaaeba0996314bafc843882bee661",
+    "materials/offsets.json": "243e09dca22fd2f2f8c04c76cfa98cf0315bde0e6c242b6ea83ca20baa79d41f",
+    "materials/starter/main.rs": "5fcab18c199f6e1ded63b223ccb05d475b7ed79f68ca1b528a7ac05eda0f2ef2",
+    "tests/cases.json": "312a523d41f533f88cbea76d821bb62fdaa8b65785b094f6a81918cf3a87b862",
+    "tests/check.py": "d7ab3452823a96d5a9b93d71a93b9afdc921ec41c94338ee3f34c4e62600c05c",
+    "tests/test.py": "53c6ec5f6794415d6329b7a7204792e847eef429ccc38a143167c99c99b219b6"
+  }
+}

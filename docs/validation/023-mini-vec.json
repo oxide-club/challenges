@@ -1,0 +1,46 @@
+{
+  "package": "023-mini-vec",
+  "status": "validated",
+  "reference": "passed",
+  "mutants": "rejected",
+  "pilot": "waived_by_owner",
+  "editorial": "approved",
+  "pilot_waiver": {
+    "approved_by": "responsavel",
+    "date": "2026-10-25",
+    "reason": "Dispensa explícita do piloto para a saída de rascunho dos oito pacotes tecnicamente validados; no_std e Windows continuam em rascunho.",
+    "request": "Resposta do usuário a call_cc76bdf2b404410a89b259c4a68ff51e, item 0: Dispensar piloto; manter no_std e Windows em rascunho"
+  },
+  "validation_scope": {
+    "technical_basis": "Resultado da revisão independente 6 informado pelo responsável nesta sessão; IDs anteriores relacionados pela renumeração de 25/10/2026.",
+    "reference_and_mutants": "Validação anterior preservada; referências completas e matrizes não foram reexecutadas nesta alteração de formatação.",
+    "changes": "Formatação de código e atualização do estado editorial. Preparação dos pacotes e verificações compartilhadas repetidas localmente.",
+    "pilot_executed": false,
+    "remote_ci_executed": false,
+    "publication_executed": false
+  },
+  "public_sha256": {
+    ".gitignore": "306fd52e74fca6746e12acc750f232de15e71da917756a1270d74c91f5eb7368",
+    "Cargo.lock": "eae805d0a6fba38991dcd85ceb5c97df012634a4b4462574309074d2d48e775b",
+    "Cargo.toml": "97807828709915a540e071d88722527653bfacd642b2e1b7ea9bd3f11e082451",
+    "README.md": "ff2ce7dc7b88c82dcb378899eac17de9637cd53c381f9790f7cb4dc41f5f5270",
+    "index.md": "d135b1d773998c4c40c48e61d262b97c5fa9e83e0f78a065da0187f38fdbeca1",
+    "materials/README.md": "c43e7723fb9e0943e984ea0d03e9b85597a8bd85b8b8bea02b1168f69da5fe10",
+    "references.md": "0e90e7d151a07db4fc6bc2893dfedb642edcc3ceecd921f63b2bf6d7e9d89c43",
+    "report-template.md": "8bf9679ee3195ef6f152da3d4ccb33426a4ff69160fab21ab56572da92b7cbf4",
+    "src/lib.rs": "ab60225f58b89f11a744cecd9859518dbcb7dd7270e2f146538d2af39c222934",
+    "src/support.rs": "639f88dd9a10e216c4c713afddf9f232669c32bfa227a64145e186eda594c588",
+    "tests/check.py": "6babbaf495e6268f81d89a11c676aee1516450a9d8381a023121adb762dad145",
+    "tests/compile.py": "0848e50bd5841d56bb1f09134a618f19ea368e07ef2cc8538af4c4a6167af9f3",
+    "tests/contract.rs": "90be84aa31abb2602e1317c64b6407d582e53eaf1036f651b8660b4a15c5dfc3",
+    "tests/miri.sh": "f03b4f8a49a151ac978d7d7da42950b7400374ce3df6d1a595dc737bec88b1b2",
+    "tests/support/mod.rs": "a522f62d1c81d2efa54b6982e6293106a2f855033c2a2682df0bb9f1197e7b46",
+    "tests/support_contract.rs": "2d63bef8272f8372662181e90f045eb7778161bf6b882abf8fb5b94feb98c14f",
+    "tests/ui/borrow_during_push.fail.rs": "614aac8c55e3c99252423124ca419612900f26672639d905d72f9c5c7b153913",
+    "tests/ui/borrow_during_push.pass.rs": "33175f43410df3396e78f297b30dfc23ffd499c7997b881f92173a7460e384b2",
+    "tests/ui/cases.json": "fdd6c588c307f1dc7affc2a667e323726eb7469e9c43c6b2105a93bd9db21695",
+    "tests/ui/owner_lifetime.fail.rs": "c196be9a732c83716d01bac35720e29d5e319137ec97444b79b42053f4b28f78",
+    "tests/ui/owner_lifetime.pass.rs": "8c705fa3d806f30d52e6541cc947fcbfbc0f844553a8c3e43c4d7ec84448631a",
+    "tests/zst_allocation.rs": "348a27027eef155f91231aeeceb2c617e800e2f92f3c7f81ebcdfb0ccb85641e"
+  }
+}

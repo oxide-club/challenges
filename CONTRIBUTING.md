@@ -18,7 +18,7 @@ Cada diretório contém:
 - `tests/test.py`: executor público que recebe o caminho do programa.
 - `materials/`: entradas e resultados quando úteis; preserve bytes e quebras de linha.
 
-Todas as suítes usam `tests/cases.json` como fonte comum para os executores
+As suítes de executáveis aceitas pelo runner usam `tests/cases.json` como fonte comum para os executores
 Python e Rust. Registre o ID e o título na macro `roadmap!` de
 `tools/oxide-test/src/challenges/mod.rs`: ela incorpora os vetores no binário.
 Mantenha IDs de casos estáveis para `--case` e JSON.
@@ -67,6 +67,10 @@ o executável otimizado. Os testes Rust de integração compilam candidatos C11 
 comparam seus veredictos com os executores Python. Ao alterar um caso durante a
 migração, mantenha ambas as suítes consistentes. As entradas aleatórias de RLE
 usam geradores distintos, determinísticos, cobrindo os mesmos tamanhos.
+
+`make check-packages`, incluído em `make check` e na CI, executa a preparação e as falhas específicas dos starters em cópias temporárias. Consulte `build/package-checks/results.json`: `not_verified` indica ambiente indisponível, não aprovação. A avaliação completa da solução e dos mutantes continua separada da preparação do participante.
+
+Nesta rodada de correções, o responsável autorizou referências e sondas em armazenamento privado persistente fora deste repositório, substituindo a dependência volátil de `/tmp`. Essa exceção não autoriza publicá-las nem alterar `solutions/`. Registre origem, hashes, comandos e revisão dos testes; mantenha fontes privadas fora de relatórios e arquivos distribuídos. A política e os limites dessa preservação estão no registro de resposta de 25/10/2026.
 
 Os testes são executados em programas reais. Use limites de tempo, entradas
 reproduzíveis e mensagens úteis. Não adicione dependências sem necessidade.
@@ -156,3 +160,7 @@ Veja a [configuração e recuperação das notificações](https://github.com/ox
 Para executar os testes sem enviar mensagens: `node --test tools/tests/discord-*.test.mjs`
 com Node.js 24. Mantenha os módulos de `scripts/discord/` sincronizados com os
 correspondentes no repositório do site.
+
+## Cobertura por mecanismo
+
+Registre toda definição em `docs/verification-policy.json`. Siga a [política de cobertura](docs/verification-policy.md). Bibliotecas usam testes de API e compilação; sessões usam seus supervisores. Não crie uma CLI artificial nem vetores vazios. Um rascunho só pode ficar sem verificador com motivo explícito no modo `preparing`. Esse estado não representa validação.

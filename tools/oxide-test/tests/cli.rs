@@ -64,7 +64,29 @@ fn catalog_and_embedded_vectors_cover_every_definition() {
         .iter()
         .map(|item| item["id"].as_str().unwrap())
         .collect();
-    assert_eq!(identifiers, definitions);
+    // Cada definição tem cobertura declarada, inclusive rascunhos e APIs sem CLI.
+    let policy: Value =
+        serde_json::from_slice(&fs::read(root.join("docs/verification-policy.json")).unwrap())
+            .unwrap();
+    let registered: Vec<_> = policy.as_object().unwrap().keys().cloned().collect();
+    assert_eq!(registered, definitions);
+    let embedded: Vec<_> = policy
+        .as_object()
+        .unwrap()
+        .iter()
+        .filter(|(_, entry)| entry["mode"] == "embedded")
+        .map(|(id, _)| id.as_str())
+        .collect();
+    assert_eq!(identifiers, embedded);
+    let policy_check = Command::new("python3")
+        .arg(root.join("tools/verification_policy.py"))
+        .output()
+        .unwrap();
+    assert!(
+        policy_check.status.success(),
+        "{}",
+        String::from_utf8_lossy(&policy_check.stderr)
+    );
     assert!(identifiers.len() >= 21);
     for id in identifiers {
         let (output, listing) = report(&["list", id]);
