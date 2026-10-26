@@ -5,6 +5,10 @@
     "pr:5": {
       "url": "https://github.com/oxide-club/challenges/pull/5",
       "messageId": "1562283743572402197"
+    },
+    "pr:8": {
+      "url": "https://github.com/oxide-club/challenges/pull/8",
+      "pending": true
     }
   },
   "revisions": {}
