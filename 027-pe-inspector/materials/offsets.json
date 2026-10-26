@@ -1,0 +1,26 @@
+{
+  "revision": 1,
+  "fixture": "base",
+  "file_size": 1024,
+  "byte_order": "little-endian",
+  "fields": [
+    {"name":"DOS.magic","offset":0,"width":2,"hex":"4d5a"},
+    {"name":"DOS.e_lfanew","offset":60,"width":4,"value":128},
+    {"name":"PE.signature","offset":128,"width":4,"hex":"50450000"},
+    {"name":"COFF.Machine","offset":132,"width":2,"value":34404},
+    {"name":"COFF.NumberOfSections","offset":134,"width":2,"value":1},
+    {"name":"COFF.SizeOfOptionalHeader","offset":148,"width":2,"value":112},
+    {"name":"Optional.Magic","offset":152,"width":2,"value":523},
+    {"name":"Optional.AddressOfEntryPoint","offset":168,"width":4,"value":4112},
+    {"name":"Optional.ImageBase","offset":176,"width":8,"value":5368709120},
+    {"name":"Optional.SizeOfHeaders","offset":212,"width":4,"value":512},
+    {"name":"Optional.NumberOfRvaAndSizes","offset":260,"width":4,"value":0},
+    {"name":"Section.Name","offset":264,"width":8,"hex":"2e74657874000000"},
+    {"name":"Section.VirtualSize","offset":272,"width":4,"value":768},
+    {"name":"Section.VirtualAddress","offset":276,"width":4,"value":4096},
+    {"name":"Section.SizeOfRawData","offset":280,"width":4,"value":512},
+    {"name":"Section.PointerToRawData","offset":284,"width":4,"value":512}
+  ],
+  "intervals": {"dos":[0,64],"pe_coff":[128,152],"optional":[152,264],"section_table":[264,304],"headers":[0,512],"raw":[512,1024],"virtual_raw":[4096,4608],"virtual_zero_fill":[4608,4864]},
+  "other_fixtures": "Mesma base salvo mutações nomeadas em generate.py. A section table começa em 152 + SizeOfOptionalHeader. Cada entrada ocupa 40 bytes. directories usa 16 diretórios e oito bytes adicionais; count-96 usa headers=4608 e primeira RVA=8192."
+}

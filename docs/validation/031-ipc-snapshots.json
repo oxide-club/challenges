@@ -1,0 +1,38 @@
+{
+  "package": "031-ipc-snapshots",
+  "status": "validated",
+  "reference": "passed",
+  "mutants": "rejected",
+  "pilot": "waived_by_owner",
+  "editorial": "approved",
+  "pilot_waiver": {
+    "approved_by": "responsavel",
+    "date": "2026-10-25",
+    "reason": "Dispensa explícita do piloto para a saída de rascunho dos oito pacotes tecnicamente validados; no_std e Windows continuam em rascunho.",
+    "request": "Resposta do usuário a call_cc76bdf2b404410a89b259c4a68ff51e, item 0: Dispensar piloto; manter no_std e Windows em rascunho"
+  },
+  "validation_scope": {
+    "technical_basis": "Resultado da revisão independente 6 informado pelo responsável nesta sessão; IDs anteriores relacionados pela renumeração de 25/10/2026.",
+    "reference_and_mutants": "Validação anterior preservada; referências completas e matrizes não foram reexecutadas nesta alteração de formatação.",
+    "changes": "Formatação de código e atualização do estado editorial. Preparação dos pacotes e verificações compartilhadas repetidas localmente.",
+    "pilot_executed": false,
+    "remote_ci_executed": false,
+    "publication_executed": false
+  },
+  "public_sha256": {
+    ".gitignore": "b53324a1fb82c9caa2fd8f4bcf53ce044045346cf888b8f17ac832fb4e295715",
+    "Makefile": "789e3a588844fcbd34dd133f2599e381f50fa11986f57dca04343777f1b6add7",
+    "README.md": "608a7c4a25c30d9faa3fbe39f68ad1b14c742a9431d48f56e2794ed86801b220",
+    "index.md": "9d4bcf0563fac1230f907ffb40f74d07d47df58d3d546d2ff9645d2ce6482b6f",
+    "materials/README.md": "452e6043d4ec674744aea1edf6ce70efaf3af30a6b81199fe58d9d0ae98aed25",
+    "materials/region.h": "658bbb85e519c9ce954ec0c27a979c0ae8a61d3f186e951767b3a2d4a2b862b1",
+    "materials/region_probe.c": "e4e1148cf4f92edad4d6c17b62b4a5458bc7075bcd7aa3c6dbf8bf85b2876abb",
+    "references.md": "20a32a4b84b76f2f44e2952f2a3cfe42ac3e08a49a691a676ef76c9dcd8bcdd5",
+    "starter/observer.c": "e2ce5f97968a4f79e4c1454e0ab6d0b5c92eb9a20fafe86fb913a6485e771e76",
+    "starter/target.c": "a91c959a3eb62941633f7159e2daedba7615f7fd2d2749789338911fe4445a97",
+    "tests/check.py": "74890593019d6815d69d4674b69ac46a0e473e867747c612094c79102eb802ab",
+    "tests/fd_audit.c": "436500dd93e7b6c692e0fda4182f51434c5eaeb606ce9b0062d2bda881509c26",
+    "tests/observer.py": "f315f48fa67d2db24710e99528cd8269de90e1e87e0a4b959f50da6ba30f7693",
+    "tests/peer.py": "5231e506fc8892923b199ca856dbb8c0baaea2a928681b5e4673ee2bf332da27"
+  }
+}

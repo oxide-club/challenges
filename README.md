@@ -14,7 +14,7 @@ NNN-name/
   index.md       # Definição do desafio
   README.md      # Ambiente, comandos e orientações de teste
   tests/         # Testes públicos
-  materials/      # Entradas e saídas de teste, quando necessárias
+  materials/     # Entradas e saídas de teste, quando necessárias
 ```
 
 O `index.md` é a especificação canônica. O README do desafio explica como
@@ -29,7 +29,7 @@ sua única área principal em `area`; o registro ordenado fica em
 
 | ID        | Desafio                                 | Guia de testes            |
 | --------- | --------------------------------------- | ------------------------- |
-| `001-wc`  | [Construa seu wc](001-wc/index.md)      | [Guia](001-wc/README.md)  |
+| `001-wc` | [Construa seu wc](001-wc/index.md)   | [Guia](001-wc/README.md) |
 | `002-ppm` | [Gere uma imagem PPM](002-ppm/index.md) | [Guia](002-ppm/README.md) |
 | `003-rle` | [Construa um compressor RLE](003-rle/index.md) | [Guia](003-rle/README.md) |
 | `004-hexdump` | [Hexdump](004-hexdump/index.md) | [Guia](004-hexdump/README.md) |
@@ -64,6 +64,25 @@ aos materiais desses desafios. Quem já participou pode reaproveitar seu trabalh
 sem completar duas implementações; veja as diferenças de contrato e os caminhos
 no [guia de migração](docs/labs-migration.md). Os materiais históricos permanecem
 arquivados em `labs`; a extensão de pool se relaciona opcionalmente ao desafio 018.
+
+## Novos desafios
+
+O verificador de ownership foi retirado por decisão do responsável. Os IDs seguintes foram renumerados, de `024-mini-refcell` a `031-ipc-snapshots`.
+
+As propostas abaixo têm starters, apoios e verificadores próprios, executados por `make check-packages` e incluídos em `make check`. Bibliotecas e sessões não são convertidas em suítes de executáveis do `oxide-test`. Consulte a [política de cobertura](docs/verification-policy.md). Oito pacotes tiveram a saída de rascunho autorizada pelo responsável com dispensa do piloto. `026-no-std` permanece em rascunho pela proveniência/licença do psABI; `030-windows-inspector`, pela validação Windows x64 ainda não executada.
+
+| ID | Desafio | Guia local |
+| --- | --- | --- |
+| `022-typestate` | [Recurso com estados verificados por tipos](022-typestate/index.md) | [Guia](022-typestate/README.md) |
+| `023-mini-vec` | [Vetor dinâmico com gerenciamento explícito de memória](023-mini-vec/index.md) | [Guia](023-mini-vec/README.md) |
+| `024-mini-refcell` | [Célula com borrows verificados em runtime](024-mini-refcell/index.md) | [Guia](024-mini-refcell/README.md) |
+| `025-rust-c-ffi` | [Biblioteca Rust com interface C](025-rust-c-ffi/index.md) | [Guia](025-rust-c-ffi/README.md) |
+| `026-no-std` | [Executável Rust com no_std e startup explícito](026-no-std/index.md) | [Guia](026-no-std/README.md) |
+| `027-pe-inspector` | [Inspetor de executáveis PE](027-pe-inspector/index.md) | [Guia](027-pe-inspector/README.md) |
+| `028-function-interposition` | [Tracing por interposição de funções](028-function-interposition/index.md) | [Guia](028-function-interposition/README.md) |
+| `029-minimal-debugger` | [Debugger mínimo para execução controlada](029-minimal-debugger/index.md) | [Guia](029-minimal-debugger/README.md) |
+| `030-windows-inspector` | [Inspetor de recursos de um processo Windows](030-windows-inspector/index.md) | [Guia](030-windows-inspector/README.md) |
+| `031-ipc-snapshots` | [IPC e snapshots consistentes entre processos](031-ipc-snapshots/index.md) | [Guia](031-ipc-snapshots/README.md) |
 
 ## Como participar
 

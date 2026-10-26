@@ -1,0 +1,43 @@
+{
+  "package": "025-rust-c-ffi",
+  "status": "validated",
+  "reference": "passed",
+  "mutants": "rejected",
+  "pilot": "waived_by_owner",
+  "editorial": "approved",
+  "pilot_waiver": {
+    "approved_by": "responsavel",
+    "date": "2026-10-25",
+    "reason": "Dispensa explícita do piloto para a saída de rascunho dos oito pacotes tecnicamente validados; no_std e Windows continuam em rascunho.",
+    "request": "Resposta do usuário a call_cc76bdf2b404410a89b259c4a68ff51e, item 0: Dispensar piloto; manter no_std e Windows em rascunho"
+  },
+  "validation_scope": {
+    "technical_basis": "Resultado da revisão independente 6 informado pelo responsável nesta sessão; IDs anteriores relacionados pela renumeração de 25/10/2026.",
+    "reference_and_mutants": "Validação anterior preservada; referências completas e matrizes não foram reexecutadas nesta alteração de formatação.",
+    "changes": "Formatação de código e atualização do estado editorial. Preparação dos pacotes e verificações compartilhadas repetidas localmente.",
+    "pilot_executed": false,
+    "remote_ci_executed": false,
+    "publication_executed": false
+  },
+  "public_sha256": {
+    "README.md": "7ddf28743c7f4434909340821730f594635e49a33b3e23d6446eb64de7d3f500",
+    "index.md": "80adc0bef7fc06cc32bec4c9e8633a13b7068b52bf3c4159d99f4702bd350b47",
+    "materials/ORIGIN.md": "ebd9ea6c9f7effef09a1b6988af9cbb244d392c4f6959c9e9a6548ef0ff4cb09",
+    "materials/README.md": "9c87a0d07020ebf28762bc5c5e0d4fabc8db96c2cbd6c7a17010334ad09d5d0e",
+    "materials/fixtures.json": "edd88a65572eecc0a948959bef03b1db0fad242e6da4aab64daa5736c38d77d7",
+    "materials/generate.py": "f5ecc0dd0c2c73e520ec78824e0227bbd37924a13f6369d118cb645d952ce0d0",
+    "materials/starter/oxide.h": "413a922fda3e37cbd33f46536589a1253518c0aa4d6ba954276edbf4421474ae",
+    "materials/starter/rotate.c": "cc1d6d85bd62cfad4c13d8c33366bae52f16fec005aba4ad4cecbb6b80675ab2",
+    "materials/starter/rust/hooks.rs": "1309fc206472e59b1425d977e72f262db6355973f4b16082756d6febac6d8873",
+    "materials/starter/rust/lib.rs": "96f1342fc2d6412f1a4f30635cb088d1111a456b690867bd3c3d722b68a08999",
+    "tests/check.py": "ca703e3373b4816e36154cdd4f9849271335c0d436ddd1e6bcecde217cbb7cdd",
+    "tests/client.c": "c7720708c7b819dc6a5cdf56779d55363737ecd75662899e35f14ebb2d44a855",
+    "tests/destroy.c": "9685ed5b5aca8742c5ac2266d32e7115a047a36459d035471ae2232df9ee70c6",
+    "tests/destroy_poison.c": "c9c29cede7f892cb0221365b5f378e846205f480ed7e8f0aedc4761b7837eff4",
+    "tests/expected.h": "4db88b6d663e4d52236b3aac60571b0ddd3263306df0b8bf22ae6b8a28cd01da",
+    "tests/helper.rs": "a6d442b8cfe4db40718de086c1b8ea5b814302c6022cf88835c9d61f91ea46ca",
+    "tests/layout.rs": "91c3848f75fd5f0499101b08a0e623f49f78d796acb01d883c6d087a29954e33",
+    "tests/lsan_probe.c": "083a0c04c57b0066be77dd822f4b41a074c3598f3d85f76bbb1e028f1da6f512",
+    "tests/lsan_probe.rs": "15fb7a38fc2fa0d12a6470b7502aae3d176e6a6100077c22615983cf4bfeb00b"
+  }
+}

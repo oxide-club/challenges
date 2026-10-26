@@ -1,0 +1,154 @@
+{
+  "base": {
+    "size": 1024,
+    "sha256": "98be45c472dc800f2448c3ddc8405355e8647d7d7aee1521171815859143bcba"
+  },
+  "overlay": {
+    "size": 1031,
+    "sha256": "61afa37599b3232a709effcbcbccfaa6f23b67dfaa09661526d9b04fdd5e0ebf"
+  },
+  "dos-short": {
+    "size": 63,
+    "sha256": "7c53ba2297cd6666e765db7d7b87f6ae3cb501b3c001ecab75898f5c70ef2cf2"
+  },
+  "pe-short": {
+    "size": 151,
+    "sha256": "dca74128471e0fb5597457fe0b18322f090f0e21f8f1ca55d15691178005484e"
+  },
+  "optional-short": {
+    "size": 263,
+    "sha256": "b0cb78dc33d57ad15e0763bd0d484e84cde35ddef43cc79a4ec87b7eb9e4c4f0"
+  },
+  "sections-short": {
+    "size": 303,
+    "sha256": "5ed0449ba9e66d44a9a6415274f2c707ab2597d8df162b2375ffe28612f43b4e"
+  },
+  "raw-short": {
+    "size": 1023,
+    "sha256": "37f10bf0ed27058b29c4a16249f514ab51e3478a8d483716473b62228ed3046e"
+  },
+  "bad-mz": {
+    "size": 1024,
+    "sha256": "06dea797cd4b011d27fa3889fe9303436cb746ee5b1390f14510b28977e0f4da"
+  },
+  "bad-pe": {
+    "size": 1024,
+    "sha256": "588ae406574fbec643df35b5a7640f0bab03a3638f4f321602e5e72036a8abcc"
+  },
+  "machine": {
+    "size": 1024,
+    "sha256": "286ba1189dfaa12025f766493842a654cfd984c64099dbf7c3fef4ff51b8ecee"
+  },
+  "pe32": {
+    "size": 1024,
+    "sha256": "0fd524c154a6d011dd44cd864345703de661935ebcac3f2a8289ec7d27700b2e"
+  },
+  "count-zero": {
+    "size": 1024,
+    "sha256": "9e837b537630fb954b6c89300772d06a7a10f1659757d269b734c5007dfafbf9"
+  },
+  "count-97": {
+    "size": 54272,
+    "sha256": "b149656b90aaaf160db5644708a1a683e9c4df249556cdb4f6bc6fd214a235eb"
+  },
+  "optional-small": {
+    "size": 1024,
+    "sha256": "2fc86f0d6cb57a83d831af987340bd98ac0b9bcd5232e56290e16813c0fd43e8"
+  },
+  "dirs-17": {
+    "size": 1024,
+    "sha256": "ecbddb87127e3923483223b8a6c686c29bd0c82998c7a3b91d075b26ac6fbf8e"
+  },
+  "dirs-short": {
+    "size": 1024,
+    "sha256": "d37602c963515d136ccf11b6cbc23adae544c8f35420470e0678ef953777f4de"
+  },
+  "headers-small": {
+    "size": 1024,
+    "sha256": "5513df22fde72e8b83be322b466a19937ca66ea4c17ad6f5a36c2bb17590ca0e"
+  },
+  "headers-large": {
+    "size": 1024,
+    "sha256": "2d5b3d2ab929366444cdd1c163c5977431e137fb1d0a86a2c33cc831e123de9e"
+  },
+  "raw-in-headers": {
+    "size": 1024,
+    "sha256": "e669793b8901b1dd55d311167fec7a5d81918a94465f0c7ffe71a17d3814b40d"
+  },
+  "rva-in-headers": {
+    "size": 1024,
+    "sha256": "10124e13dfdf90390115a06b6efb07d2f65d316ad89a187b08e5590619674c22"
+  },
+  "rva-overflow": {
+    "size": 1024,
+    "sha256": "3a8f01ac3848016d294b64482497b2cee4321c84fa5cbc1cc62f7c3613afec85"
+  },
+  "virtual-zero-raw": {
+    "size": 1024,
+    "sha256": "c70c95cffdda1c117c13d6ff0dd42a5017b03bb87754fe3a265ceeb7a7d236a6"
+  },
+  "padding": {
+    "size": 1024,
+    "sha256": "6422709e4d677eb3f734dc24f877c1ffb8f523661785821cddda436f9752cd90"
+  },
+  "top-boundary": {
+    "size": 1024,
+    "sha256": "49d17ed0632e69063bd34be0a3701294d14148466ccef4bf0ecfb3b5699cc325"
+  },
+  "e-lfanew-huge": {
+    "size": 1024,
+    "sha256": "1faafe9a52ac83f40b404ed66dacc0bcc0cdaad67dea784bdc791cb2e29b41f2"
+  },
+  "raw-pointer-huge": {
+    "size": 1024,
+    "sha256": "55dac925a078b9c3f66636ab364c2440f9ad5537895d5301c3f6fe12415fdd91"
+  },
+  "empty": {
+    "size": 1024,
+    "sha256": "f4057c41af63f3c680dd98761ad775081b71892b9115a596f3e555b4fc2c9068"
+  },
+  "zero-fill-only": {
+    "size": 1024,
+    "sha256": "ba090054a369de2a0c71ae27eb358141050114168fe8e691ce2093856760618a"
+  },
+  "two": {
+    "size": 1536,
+    "sha256": "3a007ff5f6a720c5a990b5501e5da7f4702469c9d606d5f04f0cbfbca73a994a"
+  },
+  "reverse-table": {
+    "size": 1536,
+    "sha256": "5ae43c621124b32bd5699c827d55363bb19f99497fb8795417a0d5d55a00f1a6"
+  },
+  "virtual-touch": {
+    "size": 1536,
+    "sha256": "dfed24d1c541651b6927da5d04a163d57b496b6c744a83f6b06cf43a60c79809"
+  },
+  "raw-overlap": {
+    "size": 1536,
+    "sha256": "52c757090fa9f92d87b37e1396023c8a0beaefeaa8771bc1b5ee0b8ce42a24fd"
+  },
+  "virtual-overlap": {
+    "size": 1536,
+    "sha256": "cfd686110e55d176b4673b372a2828c89646423b1dd514d192694e69dca24b44"
+  },
+  "directories": {
+    "size": 1024,
+    "sha256": "b2c790570df791b8f1d108b428749ef02477a8c871c154e62a5e2fb55893a987"
+  },
+  "count-96": {
+    "size": 53760,
+    "sha256": "dfd3c7eb8273fafc5a6f9c24c318f31f5da23564ab0d8b4f30abc258e1ed4cc7"
+  },
+  "binary-name": {
+    "size": 1024,
+    "sha256": "10c0fb29fb853c849afd388cb7358a4be8d67d44b1eb1619ca04e353ac629496"
+  },
+  "headers-exact": {
+    "size": 1024,
+    "sha256": "15d27d9b20d2124d24e4fcf6a1f42959cc3beb450949ebfd749e846cbd7cc3b0"
+  },
+  "optional-declared-truncated": {
+    "size": 1024,
+    "sha256": "bfcf8a75bfa2e95aa4c60f5be6279571b48cfbee8e8ba6b08149e282a5fd145e"
+  }
+}

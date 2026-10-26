@@ -1,0 +1,50 @@
+[
+  {
+    "id": "guard_lifetime",
+    "code": "E0597"
+  },
+  {
+    "id": "cell_lifetime",
+    "code": "E0597"
+  },
+  {
+    "id": "cell_sync",
+    "code": "E0277"
+  },
+  {
+    "id": "reader_send",
+    "code": "E0277"
+  },
+  {
+    "id": "writer_send",
+    "code": "E0277"
+  },
+  {
+    "id": "reader_sync",
+    "code": "E0277"
+  },
+  {
+    "id": "writer_sync",
+    "code": "E0277"
+  },
+  {
+    "id": "reader_write",
+    "code": "E0594"
+  },
+  {
+    "id": "guard_clone",
+    "code": "E0277"
+  },
+  {
+    "id": "writer_clone",
+    "code": "E0277"
+  },
+  {
+    "id": "cell_send_rc",
+    "code": "E0277"
+  },
+  {
+    "id": "cell_send_sync_not_send",
+    "code": "E0277"
+  }
+]

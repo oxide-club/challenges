@@ -1,0 +1,40 @@
+{
+  "package": "028-function-interposition",
+  "status": "validated",
+  "reference": "passed",
+  "mutants": "rejected",
+  "pilot": "waived_by_owner",
+  "editorial": "approved",
+  "pilot_waiver": {
+    "approved_by": "responsavel",
+    "date": "2026-10-25",
+    "reason": "Dispensa explícita do piloto para a saída de rascunho dos oito pacotes tecnicamente validados; no_std e Windows continuam em rascunho.",
+    "request": "Resposta do usuário a call_cc76bdf2b404410a89b259c4a68ff51e, item 0: Dispensar piloto; manter no_std e Windows em rascunho"
+  },
+  "validation_scope": {
+    "technical_basis": "Resultado da revisão independente 6 informado pelo responsável nesta sessão; IDs anteriores relacionados pela renumeração de 25/10/2026.",
+    "reference_and_mutants": "Validação anterior preservada; referências completas e matrizes não foram reexecutadas nesta alteração de formatação.",
+    "changes": "Formatação de código e atualização do estado editorial. Preparação dos pacotes e verificações compartilhadas repetidas localmente.",
+    "pilot_executed": false,
+    "remote_ci_executed": false,
+    "publication_executed": false
+  },
+  "public_sha256": {
+    ".gitignore": "b53324a1fb82c9caa2fd8f4bcf53ce044045346cf888b8f17ac832fb4e295715",
+    "Makefile": "d617e2c8796f32081729b9106c17e07feaa9835bd01919f4b559a1ae27e89c92",
+    "README.md": "cb3168a6837569d577acd5d21978b46a82ec058d790e77bf2f17e386da591351",
+    "index.md": "c4eb20cc9c1df57d48ffb3b73412eae96479173c48491289f7fa3abb35539ceb",
+    "materials/README.md": "07c6137fe2e55eda21827d93b8435998c036db8064c9f91d243a39c59a32887e",
+    "materials/calc.h": "07f81d0b80c75742449ada91aa5b89a1c1e0d0b8fec7e647afae6d0543e19a2c",
+    "materials/cases.json": "f0bef469528f32e5ec3198748e97ab88b49182bc404a8ed655bacb5f464b2f02",
+    "references.md": "cfdf50588fb205c19cc522461ad734916912137c5775755fdc265906639ef2d1",
+    "starter/app.c": "00d873bd8092353bacf4ed34c920081515cfefecac75f6d599b45be77f16b887",
+    "starter/calc.c": "c27e9b23cbd9b12ead622faf9a98a05399dc4abb620a87da58fa2a104108ea5c",
+    "starter/trace.c": "8ff7d67c0f5d3ec6899689a826a374e83725a71f28402fd788254fbef316e90a",
+    "tests/check.py": "19d57188bc312a59e1230c8c62d8f9c37dc5aa9334a94287f06c38e92a294097",
+    "tests/client.c": "7746811f46d2f7d4c3281999554a22fc96a0eff7af31b81860810c27e1360c5d",
+    "tests/opaque.c": "ad3027a8dd7fd58b88aa1791eb60157110b82e5142a560a57718c0103b7d64c7",
+    "tests/test.py": "37756db3b6dcef500affa55c718bde8e6bc44a38526ee2fd535f8eee142191c2",
+    "tests/unresolved.c": "73ab6b242b63c0b282c60aabe970609b73b9c55151f6fcfbd025f7fce21ec117"
+  }
+}

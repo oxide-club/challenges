@@ -1,0 +1,10 @@
+[
+  {
+    "id": "borrow_during_push",
+    "code": "E0502"
+  },
+  {
+    "id": "owner_lifetime",
+    "code": "E0597"
+  }
+]

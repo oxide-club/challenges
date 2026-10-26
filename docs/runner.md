@@ -1,7 +1,8 @@
 # Guia de instalação e uso do oxide-test
 
 O `oxide-test` executa os testes públicos de um desafio no seu programa.
-O executável inclui todos os testes.
+O executável inclui as suítes do modo `embedded`. Bibliotecas e sessões usam os verificadores próprios indicados em cada pacote.
+Consulte a [política de cobertura](verification-policy.md) para distinguir preparação e validação.
 
 ## Escolha seu ambiente
 
@@ -239,3 +240,7 @@ Use `oxide_test::run` para executar uma suíte e obter um relatório.
 Consulte a [API no código](../src/lib.rs).
 
 Para alterar o runner, siga o [guia de contribuição](../CONTRIBUTING.md).
+
+### Retificação DES-014 — preparação incompleta
+
+A observação da preparação exige os pares de compilação em 022, 023 e 024 e a suíte `support_contract` em 022 e 023. Em 031, exige executar `build/target` e `build/region-probe`, além de `make all`. Contagem de processos e mensagens de aprovação não substituem essas etapas. A regressão executa verificadores reduzidos em cópias: os dois controles antes aceitos agora são recusados. Esta política detecta omissões acidentais conhecidas; não constitui isolamento contra um verificador deliberadamente hostil.
